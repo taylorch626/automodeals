@@ -1,0 +1,193 @@
+timestamp,price,year,make,model,body,mileage,title_type,city,state,seller,trim,ext_color,int_color,transmission,liters,cylinders,fuel_type,num_doors,ext_condition,int_condition,drive_type
+1583962324,2500,2006,Chrysler,300,Sedan,174300,Rebuilt/Reconstructed Title,Salt Lake City,UT,Owner,,silver,gray,Automatic,,6.0,Gasoline,4.0,Very Good,Very Good,RWD
+1583962274,24988,2019,Kia,Sedona,Minivan,17732,Clean Title,Bountiful,UT,Dealer,EX,white,gray,Automatic,,6.0,Gasoline,5.0,Excellent,Excellent,FWD
+1583962270,22995,2018,Toyota,Sienna,Minivan,48880,Clean Title,American Fork,UT,Dealer,SE,silver,black,Automatic,,6.0,Gasoline,4.0,,,FWD
+1583962258,25995,2018,Ford,F-150,Truck,32691,Clean Title,American Fork,UT,Dealer,XLT,gray,medium earth gray,Automatic,,6.0,Flex Fuel,4.0,,,4-Wheel Drive
+1583962250,250,1999,Dodge,Caravan,Minivan,300000,Clean Title,South Salt Lake,UT,Owner,,,,,,6.0,Flex Fuel,,,,FWD
+1583962233,11199,2013,Nissan,Pathfinder,Sport Utility,95551,,Woods Cross,UT,Dealer,S,brilliant silver,charcoal,Automatic,,6.0,Gasoline,4.0,,,4-Wheel Drive
+1583962165,2500,1996,Ford,Ranger,Truck,123000,Clean Title,South Jordan,UT,Owner,XL,,,Manual,,4.0,Gasoline,2.0,,,
+1583962139,22995,2018,Toyota,Sienna,Minivan,47772,Clean Title,American Fork,UT,Dealer,XLE,gray,ash,Automatic,,6.0,Gasoline,4.0,,,FWD
+1583962139,41995,2019,Ford,F-150,Truck,32684,Clean Title,Springville,UT,Dealer,Lariat,red,black,Automatic,,6.0,Gasoline,,,,4-Wheel Drive
+1583962138,36500,2016,Ford,F-150,Truck,53840,Clean Title,Springville,UT,Dealer,Lariat,silver,black,Automatic,,6.0,Gasoline,,,,4-Wheel Drive
+1583962138,51500,2017,Chevrolet,Silverado 3500HD,Truck,31483,Clean Title,Springville,UT,Dealer,LTZ,black,black,Automatic,,8.0,Diesel,,,,4-Wheel Drive
+1583962126,40995,2017,Ford,F-150,Truck,33220,Clean Title,Springville,UT,Dealer,Lariat,black,black,Automatic,,6.0,Gasoline,,,,4-Wheel Drive
+1583962094,26299,2017,Ford,F-150,Truck,33325,,Woods Cross,UT,Dealer,XLT,magnetic metallic,medium light camel,Automatic,,6.0,Gasoline,4.0,,,4-Wheel Drive
+1583962084,5250,2013,Nissan,Altima,Sedan,95500,Clean Title,Springville,UT,Dealer,2.5 S,black,black,Automatic,,4.0,Gasoline,4.0,Very Good,Very Good,FWD
+1583962083,54515,2019,Chevrolet,Silverado 2500HD,Truck,8748,,Jackson,WY,Dealer,LTZ,silver ice metallic,jet black,Automatic,6.6,8.0,Diesel,4.0,,,4-Wheel Drive
+1583962026,3999,2007,Toyota,Prius,Hatchback,175877,Clean Title,Midvale,UT,Dealer,,blue,beige,Automatic,,4.0,Hybrid,,,,
+1583962022,2750,2005,Subaru,Legacy,Wagon,164387,Clean Title,Midvale,UT,Dealer,Outback,blue,black,Automatic,,4.0,Gasoline,,,,AWD
+1583962012,56650,2019,Ford,Mustang,Coupe,4549,,West Valley City,UT,Dealer,Shelby GT350,ford performance blue metallic,ebony,Manual,,8.0,Gasoline,2.0,,,
+1583961978,31995,2019,Mercedes-Benz,GLC-Class,Sport Utility,6556,Clean Title,Bountiful,UT,Dealer,GLC 300,black,cream,Automatic,,4.0,Gasoline,4.0,Excellent,Excellent,RWD
+1583961950,6995,2009,Lincoln,MKZ,Sedan,91903,Clean Title,Murray,UT,Dealer,,white,tan,Automatic,,6.0,Gasoline,,,,FWD
+1583961939,10995,2012,Ford,Escape,Sport Utility,68712,Clean Title,Murray,UT,Dealer,Limited,gray,gray,Automatic,,6.0,Flex Fuel,,,,4-Wheel Drive
+1583961919,15569,2018,Honda,Civic,Sedan,12741,,Lindon,UT,Dealer,EX,crystal black pearl,black,Automatic,,4.0,Gasoline,4.0,,,
+1583961916,7500,2013,Honda,Civic,Sedan,116000,Clean Title,Salt Lake City,UT,Owner,Hybrid,black,gray,Automatic,,4.0,Hybrid,4.0,Very Good,Very Good,
+1583961885,12995,2009,GMC,1500,Truck,148602,Clean Title,Roy,UT,Dealer,SLE,white,black,Automatic,,8.0,Flex Fuel,,,,4-Wheel Drive
+1583961870,11995,2006,Ford,Econoline Cutaway,,150136,Clean Title,Roy,UT,Dealer,,white,gray,Automatic,,8.0,Diesel,,,,RWD
+1583961854,5995,2009,Chevrolet,Impala,Sedan,66862,Clean Title,Roy,UT,Dealer,3.5L LT,tan,gray,Automatic,,6.0,Gasoline,,,,FWD
+1583961847,3500,2006,Ford,F-250,Truck,175000,Clean Title,Salt Lake City,UT,Owner,XLT,white,gray,Automatic,5.4,8.0,Gasoline,,Excellent,Excellent,4-Wheel Drive
+1583961822,23510,2018,Mitsubishi,Outlander,Sport Utility,21698,,Boise,ID,Dealer,GT,quartz brown metallic,beige,,,6.0,Gasoline,4.0,,,4-Wheel Drive
+1583961813,10490,2010,Honda,Odyssey,Minivan,82300,Clean Title,Orem,UT,Dealer,EX-L,gray,gray,Automatic,,6.0,Gasoline,4.0,Very Good,Very Good,FWD
+1583961791,45786,2017,GMC,Yukon,Sport Utility,60210,,Boise,ID,Dealer,Denali,summit white,jet black,Automatic,,8.0,Gasoline,4.0,,,4-Wheel Drive
+1583961775,56855,2018,GMC,3500,Truck,37505,,Boise,ID,Dealer,Denali,quicksilver metallic,jet black,Automatic,,8.0,Diesel,4.0,,,4-Wheel Drive
+1583961743,12500,1959,Willy's,Wagon,Truck,600,Clean Title,Provo,UT,Owner,,black,red,Manual,,8.0,Gasoline,2.0,Excellent,Excellent,2-Wheel Drive
+1583961733,800,2005,Chevrolet,Impala,Sedan,237568,Clean Title,Provo,UT,Owner,,,,,,6.0,Gasoline,4.0,,,FWD
+1583961711,23500,2006,Dodge,Ram 2500,Truck,163000,Clean Title,Ogden,UT,Owner,Laramie,blue,gray,Manual,,6.0,Diesel,4.0,Good,Good,4-Wheel Drive
+1583961708,12988,2010,Chevrolet,Express Cargo Van,Van,111253,,Boise,ID,Dealer,,white,,Automatic,,6.0,Gasoline,,,,RWD
+1583961705,1500,2004,Ford,Explorer,Sport Utility,143115,Clean Title,Murray,UT,Owner,,white,gray,,,8.0,Gasoline,4.0,Good,Very Good,AWD
+1583961701,29497,2018,Jeep,Wrangler Unlimited,Sport Utility,30020,,Woods Cross,UT,Dealer,Sport S,billet silver metallic clearcoat,black,Automatic,,6.0,Gasoline,4.0,,,4-Wheel Drive
+1583961700,26497,2018,Jeep,Wrangler,Sport Utility,26336,,Woods Cross,UT,Dealer,Sport S,billet silver metallic clearcoat,black,Automatic,,6.0,Gasoline,2.0,,,4-Wheel Drive
+1583961692,25997,2019,Chevrolet,Volt,Sedan,3769,,Woods Cross,UT,Dealer,LT,summit white,light ash dark ash,Automatic,,4.0,Hybrid,4.0,,,
+1583961680,21490,2016,Chevrolet,Traverse,Sport Utility,69638,,Woods Cross,UT,Dealer,LT,iridescent pearl tricoat,ebony,Automatic,,6.0,Gasoline,4.0,,,AWD
+1583961666,2000,1981,Chevrolet,C/K 2500,Truck,180000,Clean Title,North Logan,UT,Owner,,white,gray,Automatic,,8.0,Gasoline,2.0,Fair,Fair,4-Wheel Drive
+1583961662,24997,2018,Chevrolet,Equinox,Sport Utility,9021,,Woods Cross,UT,Dealer,LT,satin steel metallic,jet black,Automatic,,4.0,Diesel,4.0,,,AWD
+1583961658,37997,2019,Chevrolet,Colorado,Truck,7718,,Woods Cross,UT,Dealer,4WD ZR2,summit white,jet black,Automatic,,6.0,Gasoline,4.0,,,4-Wheel Drive
+1583961657,31997,2017,Chevrolet,Colorado,Truck,6547,,Woods Cross,UT,Dealer,4WD Z71,summit white,jet black,Automatic,,6.0,Gasoline,4.0,,,4-Wheel Drive
+1583961656,19997,2017,Chevrolet,Bolt EV,Sport Utility,89709,,Woods Cross,UT,Dealer,Premier,summit white,gray,Automatic,,,Electric,4.0,,,
+1583961653,57497,2019,Cadillac,Escalade ESV,Sport Utility,27065,,Woods Cross,UT,Dealer,Luxury,black raven,jet black,Automatic,,8.0,Gasoline,4.0,,,4-Wheel Drive
+1583961652,20997,2017,Cadillac,ATS,Sedan,43122,,Woods Cross,UT,Dealer,AWD,red obsession tintcoat,light platinum with jet black accents,Automatic,,4.0,Gasoline,4.0,,,AWD
+1583961604,21998,2015,GMC,1500,Truck,136355,,Pocatello,ID,Dealer,SLT,onyx black,jet black,Automatic,,8.0,Gasoline,4.0,,,4-Wheel Drive
+1583961557,6995,2009,Honda,Fit,Wagon,83840,Clean Title,South Salt Lake,UT,Dealer,,gray,gray,Manual,,4.0,Gasoline,5.0,Excellent,Excellent,FWD
+1583961551,2800,2003,Toyota,Tacoma,Truck,260000,Clean Title,Cedar City,UT,Owner,TRD Off Road,,,Manual,,6.0,Gasoline,2.0,,,4-Wheel Drive
+1583961403,12500,2006,Dodge,Ram 2500,Truck,140000,Clean Title,Morgan,UT,Owner,SLT,,,Automatic,,8.0,Gasoline,4.0,,,4-Wheel Drive
+1583961375,25399,2018,Volkswagen,Atlas,Sport Utility,33232,,Cedar City,UT,Dealer,3.6L V6 SE,silver,,Automatic,,6.0,Gasoline,4.0,,,AWD
+1583961371,2700,2004,Porsche,Cayenne,SUV,167000,Clean Title,Murray,UT,Owner,S,green,tan,,,8.0,Gasoline,4.0,Good,Excellent,AWD
+1583961358,16500,2016,Nissan,Altima,Sedan,64500,Clean Title,Willard,UT,Owner,2.5 SL,gray,black,Automatic,,4.0,Gasoline,4.0,Excellent,Excellent,FWD
+1583961343,6600,1992,Dodge,D/W Series,Truck,200000,Rebuilt/Reconstructed Title,Clearfield,UT,Owner,,green,red,Automatic,,6.0,Diesel,,Fair,Good,
+1583961341,29966,2018,Cadillac,XT5,Sport Utility,40296,,Cedar City,UT,Dealer,Premium Luxury AWD,silver,jet black,Automatic,,6.0,Gasoline,4.0,,,AWD
+1583961306,17544,2019,Volkswagen,Jetta,Sedan,22750,,Salt Lake City,UT,Dealer,SEL,silver,titan black,Automatic,,4.0,Gasoline,4.0,,,
+1583961259,18800,2015,Cadillac,ATS,Sedan,50000,Clean Title,South Weber,UT,Owner,Premium,white,beige,Automatic,,6.0,Flex Fuel,4.0,Very Good,Very Good,AWD
+1583961230,500,1998,Toyota,Tercel,Compact,198000,Clean Title,West Jordan,UT,Owner,CE,blue,gray,Automatic,,4.0,Gasoline,2.0,Poor,Fair,FWD
+1583961203,1995,2004,Nissan,Xterra,SUV,218000,Clean Title,Brigham City,UT,Owner,,red,gray,Automatic,,6.0,Gasoline,4.0,Good,Good,2-Wheel Drive
+1583961081,1100,1991,Mazda,B-Series,Truck,100000,Clean Title,South Jordan,UT,Owner,,gray,gray,Manual,,4.0,Gasoline,,,,RWD
+1583961072,1850,2003,BMW,3 Series,Sedan,204000,Clean Title,Provo,UT,Owner,325i,silver,black,Automatic,,6.0,Gasoline,4.0,Good,Good,
+1583961051,14999,2014,Honda,CR-V,Sport Utility,54012,Clean Title,American Fork,UT,Dealer,EX,crystal black pearl,black,Automatic,,4.0,Gasoline,,,,4-Wheel Drive
+1583961037,600,2003,Ford,Focus,Compact,170000,Rebuilt/Reconstructed Title,Cedar City,UT,Owner,,,,,,4.0,Gasoline,4.0,,,FWD
+1583961027,2500,2009,Pontiac,Vibe,Hatchback,180000,Rebuilt/Reconstructed Title,Murray,UT,Owner,,black,gray,Manual,,4.0,Gasoline,4.0,Good,Good,FWD
+1583961017,23998,2018,GMC,1500,Truck,18033,Clean Title,St. George,UT,Dealer,,white,jet black,Automatic,,8.0,Gasoline,2.0,,,RWD
+1583960985,18000,2015,Chrysler,200,Sedan,19945,Clean Title,Montpelier,ID,Dealer,200S,gray,black,Automatic,,6.0,Flex Fuel,4.0,Excellent,Excellent,FWD
+1583960935,12999,2013,Volvo,XC60,Sport Utility,97490,Clean Title,American Fork,UT,Dealer,T6,caspian blue metallic,,Automatic,,6.0,Gasoline,,,,AWD
+1583960887,19492,2015,Subaru,WRX,Sedan,76509,Clean Title,Salt Lake City,UT,Dealer,,white,black,Manual,,4.0,Gasoline,4.0,Excellent,Excellent,AWD
+1583960863,26995,2017,Jeep,Grand Cherokee,Sport Utility,37266,Clean Title,Richfield,UT,Dealer,Limited,diamond black crystal pearlcoat,black w/leather trimmed bucket seats,Automatic,3.6,6.0,Gasoline,4.0,,,4-Wheel Drive
+1583960796,2000,1995,Toyota,Pickup,Truck,121833,Clean Title,Salt Lake City,UT,Owner,,blue,gray,Automatic,,6.0,Gasoline,,Good,Good,4-Wheel Drive
+1583960795,26345,2017,Ram,1500,Truck,40102,,Ogden,UT,Dealer,Big Horn,brilliant black crystal pearlcoat,diesel gray/black,Automatic,,8.0,Gasoline,4.0,,,4-Wheel Drive
+1583960791,31995,2016,Toyota,Tundra,Truck,33486,Clean Title,Idaho Falls,ID,Dealer,Limited,black,black,Automatic,5.7,8.0,Gasoline,4.0,Excellent,Excellent,4-Wheel Drive
+1583960784,15499,2017,Kia,Optima,Sedan,21036,,Ogden,UT,Dealer,LX 1.6T,platinum graphite,black,Automatic,,4.0,Gasoline,4.0,,,
+1583960773,29995,2016,GMC,1500,Truck,29951,Clean Title,Idaho Falls,ID,Dealer,SLE,brown,tan,Automatic,5.3,8.0,Gasoline,4.0,Excellent,Excellent,4-Wheel Drive
+1583960765,5800,2006,Ford,F-250,Truck,165000,Clean Title,Salt Lake City,UT,Owner,,,,,,8.0,Gasoline,2.0,,,
+1583960761,54950,2018,Land Rover,Range Rover Velar,Sport Utility,11585,,Salt Lake City,UT,Dealer,R-Dynamic SE,brown,acorn,Automatic,,6.0,Gasoline,4.0,,,
+1583960725,8495,2013,Chevrolet,Captiva,Sport Utility,84139,Clean Title,Pleasant Grove,UT,Dealer,LS,beige,bronze,Automatic,,4.0,Gasoline,4.0,Excellent,Excellent,FWD
+1583960715,6950,2015,Ford,Fiesta,Sedan,54696,,West Valley City,UT,Dealer,S,magnetic,medium light stone,Automatic,,4.0,Gasoline,4.0,,,
+1583960692,13995,2014,Kia,Optima,Sedan,72916,Clean Title,Lindon,UT,Dealer,SXL Turbo,snow white pearl,black,Automatic,,4.0,Gasoline,,,,
+1583960619,6995,2007,Ford,F-150,Sport Utility,94081,Clean Title,American Fork,UT,Dealer,STX,black,gray,Automatic,,8.0,Gasoline,,Very Good,Very Good,2-Wheel Drive
+1583960601,6700,1975,Ford,F-250,Truck,200000,Clean Title,Herriman,UT,Owner,,blue,blue,Automatic,,8.0,,2.0,Fair,Fair,
+1583960507,4500,2008,Subaru,Legacy,Sedan,89000,Rebuilt/Reconstructed Title,Draper,UT,Dealer,2.5i Limited,black,tan,,,4.0,Gasoline,4.0,Very Good,Very Good,AWD
+1583960490,2200,2004,GMC,Savana,Van,220000,Clean Title,West Valley City,UT,Owner,,white,white,Automatic,,8.0,Gasoline,4.0,Good,Good,2-Wheel Drive
+1583960445,6995,2017,Volkswagen,Jetta,Sedan,82000,Clean Title,North Salt Lake,UT,Dealer,1.8T SEL,,,Automatic,,4.0,Gasoline,,,,FWD
+1583960432,25000,2015,Cadillac,Escalade ESV,SUV,215000,Clean Title,Jackson,WY,Owner,,black,black,,,8.0,Gasoline,,Good,Good,AWD
+1583960408,6500,2010,Ford,Explorer,SUV,115000,Clean Title,Roosevelt,UT,Owner,Eddie Bauer,red,beige,,,6.0,Gasoline,4.0,Good,Good,4-Wheel Drive
+1583960360,13333,2011,GMC,Yukon,Sport Utility,153386,,Murray,UT,Dealer,SLE,,,Automatic,,8.0,Flex Fuel,,,,4-Wheel Drive
+1583960251,8200,2015,Nissan,Leaf,Hatchback,45000,Clean Title,Holladay,UT,Owner,S,white,gray,,,,Electric,4.0,Excellent,Excellent,2-Wheel Drive
+1583960245,5300,2005,Ford,F-150,Truck,177655,Clean Title,Tooele,UT,Owner,XLT,brown,tan,Automatic,,8.0,Gasoline,4.0,Very Good,Very Good,4-Wheel Drive
+1583960222,1450,1997,Ford,Ranger,Truck,2000000,Clean Title,Cedar City,UT,Owner,S,green,beige,Manual,,4.0,Gasoline,2.0,Fair,Good,2-Wheel Drive
+1583960212,13295,2016,Chevrolet,Cruze,Sedan,39223,,Rexburg,ID,Dealer,LT,blue ray metallic,jet black,Automatic,,4.0,Gasoline,,,,
+1583960200,20450,2017,Subaru,Outback,Wagon,32171,Clean Title,Salt Lake City,UT,Dealer,Premium,crystal white pearl,warm ivory,Automatic,,4.0,Gasoline,4.0,Excellent,Excellent,
+1583960123,4250,2003,Subaru,Impreza,Sedan,107000,Rebuilt/Reconstructed Title,Salt Lake City,UT,Owner,WRX,green,black,Manual,2.0,4.0,Gasoline,4.0,Good,Good,AWD
+1583960121,1000,2003,Chrysler,PT Cruiser,Hatchback,130000,Rebuilt/Reconstructed Title,Springville,UT,Owner,GT,red,black,Automanual,,4.0,Gasoline,4.0,Excellent,Excellent,FWD
+1583960107,500,2000,Chevrolet,Cavalier,Sedan,140000,Clean Title,Springville,UT,Owner,,beige,beige,Automatic,,4.0,Gasoline,2.0,,,FWD
+1583960245,5300,2005,Ford,F-150,Truck,177655,Clean Title,Tooele,UT,Owner,XLT,brown,tan,Automatic,,8.0,Gasoline,4.0,Very Good,Very Good,4-Wheel Drive
+1583960222,1450,1997,Ford,Ranger,Truck,2000000,Clean Title,Cedar City,UT,Owner,S,green,beige,Manual,,4.0,Gasoline,2.0,Fair,Good,2-Wheel Drive
+1583960212,13295,2016,Chevrolet,Cruze,Sedan,39223,,Rexburg,ID,Dealer,LT,blue ray metallic,jet black,Automatic,,4.0,Gasoline,,,,
+1583960200,20450,2017,Subaru,Outback,Wagon,32171,Clean Title,Salt Lake City,UT,Dealer,Premium,crystal white pearl,warm ivory,Automatic,,4.0,Gasoline,4.0,Excellent,Excellent,
+1583960123,4250,2003,Subaru,Impreza,Sedan,107000,Rebuilt/Reconstructed Title,Salt Lake City,UT,Owner,WRX,green,black,Manual,2.0,4.0,Gasoline,4.0,Good,Good,AWD
+1583960121,1000,2003,Chrysler,PT Cruiser,Hatchback,130000,Rebuilt/Reconstructed Title,Springville,UT,Owner,GT,red,black,Automanual,,4.0,Gasoline,4.0,Excellent,Excellent,FWD
+1583960107,500,2000,Chevrolet,Cavalier,Sedan,140000,Clean Title,Springville,UT,Owner,,beige,beige,Automatic,,4.0,Gasoline,2.0,,,FWD
+1583960097,4200,2007,Audi,A4,Sedan,129000,Rebuilt/Reconstructed Title,Murray,UT,Dealer,Premium Plus,white,black,,,4.0,Gasoline,4.0,Very Good,Very Good,AWD
+1583960070,39998,2015,Ford,F-350,Truck,77665,Clean Title,Orem,UT,Dealer,Lariat,black,black,Automatic,,8.0,Diesel,4.0,Excellent,Excellent,4-Wheel Drive
+1583960041,13495,2018,Hyundai,Elantra,Sedan,46485,,Rexburg,ID,Dealer,SEL,symphony silver,gray,Automatic,,4.0,Gasoline,,,,FWD
+1583960033,8500,1970,Volkswagen,Beetle,Sedan,50000,Salvage Title,Salt Lake City,UT,Owner,,blue,black,Manual,1.6,4.0,Gasoline,,Excellent,Excellent,2-Wheel Drive
+1583960010,1000,2011,Jeep,Patriot,SUV,200000,Clean Title,West Jordan,UT,Owner,,white,,,,4.0,Gasoline,4.0,Good,Good,FWD
+1583960005,29000,2008,BMW,M3,Coupe,35900,Clean Title,Pleasant Grove,UT,Owner,,white,gray,Automanual,,8.0,Gasoline,2.0,Excellent,Excellent,RWD
+1583959983,2000,2003,Nissan,Altima,Sedan,206000,Clean Title,Logan,UT,Owner,3.5 SE,silver,blue,Manual,,6.0,Gasoline,4.0,Fair,Good,FWD
+1583959927,7888,2011,Mazda,CX-9,Sport Utility,125151,,Murray,UT,Dealer,Touring,,,Automatic,,6.0,Gasoline,,,,AWD
+1583959903,4600,2008,Honda,Civic,Sedan,158924,,St. George,UT,Dealer,Si,,,Manual,,4.0,Gasoline,,,,FWD
+1583959882,8900,2012,Chevrolet,Cruze,Sedan,116286,,St. George,UT,Dealer,LTZ,,,Automatic,,4.0,Gasoline,,,,
+1583959835,31500,2015,GMC,Yukon,Sport Utility,101109,,St. George,UT,Dealer,Denali,,,Automatic,,8.0,Gasoline,,,,4-Wheel Drive
+1583959736,18995,2007,Ford,F-350,Truck,66189,Clean Title,Idaho Falls,ID,Dealer,Lariat,silver,gray,Automatic,,8.0,Diesel,4.0,Excellent,Excellent,4-Wheel Drive
+1583959718,32695,2019,Toyota,Tacoma,Truck,15105,,Rock Springs,WY,Dealer,TRD Off Road,super white,gray,Automatic,,6.0,Gasoline,4.0,,,4-Wheel Drive
+1583959658,52970,2019,Chevrolet,Silverado 2500HD,Truck,22022,,Sandy,UT,Dealer,LTZ,,,Automatic,,8.0,Diesel,,,,4-Wheel Drive
+1583959640,6999,2006,Ford,Econoline Wagon,Van,138813,Clean Title,Brigham City,UT,Owner,,white,gray,,,8.0,Gasoline,3.0,,Good,RWD
+1583959637,10435,2012,Audi,A3,Wagon,72680,Clean Title,Salt Lake City,UT,Dealer,2.0 TDI Premium Plus,deep sea blue pearl,luxor beige,Automatic,,4.0,Diesel,4.0,Excellent,Excellent,FWD
+1583959626,14910,2011,Audi,S6,Sedan,124376,Clean Title,Salt Lake City,UT,Dealer,Prestige,black,,Automatic,,10.0,Gasoline,4.0,,,AWD
+1583959621,41995,2016,Ford,F-350,Truck,76129,Clean Title,Farr West,UT,Owner,,white,tan,,6.7,8.0,Diesel,4.0,Excellent,Excellent,4-Wheel Drive
+1583959618,6000,2015,Chevrolet,Malibu,Sedan,73000,,West Valley City,UT,Owner,LT,gray,black,Automatic,2.5,4.0,Gasoline,4.0,Fair,Excellent,FWD
+1583959515,9000,2014,Nissan,Maxima,Sedan,155000,Clean Title,Salt Lake City,UT,Owner,SV,beige,black,Automatic,,6.0,Gasoline,4.0,Excellent,Very Good,2-Wheel Drive
+1583959502,1450,2005,Dodge,Caravan,Minivan,155000,Clean Title,Idaho Falls,ID,Owner,ES,silver,gray,Automanual,,6.0,Gasoline,4.0,Fair,Fair,FWD
+1583959487,19500,2015,Toyota,4Runner,Sport Utility,85888,Rebuilt/Reconstructed Title,Herriman,UT,Owner,TRD Off Road Premium,silver,black,Automatic,,6.0,Gasoline,4.0,Very Good,Excellent,4-Wheel Drive
+1583959481,1450,2001,Ford,Expedition,Sport Utility,240000,Clean Title,Idaho Falls,ID,Owner,EL,white,gray,Automatic,,8.0,Gasoline,4.0,Good,Fair,4-Wheel Drive
+1583959394,47900,2019,GMC,1500,Truck,11000,Clean Title,Layton,UT,Dealer,AT4,white,black,Automatic,,8.0,Gasoline,4.0,Excellent,Excellent,4-Wheel Drive
+1583959387,2000,2004,Lincoln,Navigator,SUV,235000,Clean Title,Lenexa,KS,Owner,,,,,,8.0,Gasoline,,,,
+1583959385,39595,2019,Chevrolet,Traverse,Sport Utility,15137,,Rexburg,ID,Dealer,Premier,cajun red tintcoat,jet black,Automatic,,6.0,Gasoline,,,,AWD
+1583959293,7995,2013,Ford,Focus,Sedan,54695,Rebuilt/Reconstructed Title,Salt Lake City,UT,Dealer,SE,red,black,,,4.0,Flex Fuel,4.0,,,
+1583959263,24599,2017,Ford,F-150,Truck,46500,Clean Title,Farr West,UT,Owner,XLT,white,gray,,3.5,6.0,Flex Fuel,4.0,Excellent,Excellent,4-Wheel Drive
+1583959259,35900,2006,GMC,TC4500,Industrial / Semi,149491,Clean Title,Farr West,UT,Owner,,white,black,Automatic,6.6,8.0,Diesel,4.0,Very Good,Very Good,4-Wheel Drive
+1583959170,14495,2016,Honda,Civic,Sedan,54451,Clean Title,Sandy,UT,Owner,EX,blue,gray,Automanual,,4.0,Gasoline,4.0,Very Good,Very Good,FWD
+1583959092,22499,2014,Chevrolet,Silverado 1500,Truck,34381,,Boise,ID,Dealer,LT,summit white,jet black,Automatic,,8.0,Flex Fuel,4.0,,,4-Wheel Drive
+1583959059,15499,2018,Volkswagen,Jetta,Sedan,15003,,Boise,ID,Dealer,2.0T GLI,platinum gray metallic,titan black,Automatic,,4.0,Gasoline,4.0,,,
+1583959019,4998,1970,Chevrolet,C20,Truck,60000,Clean Title,Bountiful,UT,Owner,,blue,blue,Automatic,,8.0,Gasoline,2.0,Very Good,Excellent,2-Wheel Drive
+1583958968,23499,2013,Toyota,4Runner,Sport Utility,35772,,Boise,ID,Dealer,,magnetic gray metallic,black,Automatic,,6.0,Gasoline,4.0,,,4-Wheel Drive
+1583958958,1500,2000,Subaru,Outback,Hatchback,216286,Salvage Title,West Bountiful,UT,Owner,,,,,,4.0,Gasoline,,,,AWD
+1583958925,55900,2017,Ford,F-350,Truck,35700,Clean Title,Layton,UT,Dealer,Platinum,white,black,Automatic,,8.0,Diesel,4.0,Excellent,Excellent,4-Wheel Drive
+1583958898,22999,2017,Infiniti,QX60,Sport Utility,25081,,Boise,ID,Dealer,,liquid platinum,graphite,,,6.0,Gasoline,4.0,,,AWD
+1583958818,17995,2016,Chevrolet,Traverse,Sport Utility,33039,Rebuilt/Reconstructed Title,West Jordan,UT,Dealer,LTZ,red,gray,Automatic,,6.0,Gasoline,,,,AWD
+1583958807,2700,1997,Nissan,Pathfinder,Sport Utility,200000,Clean Title,Providence,UT,Owner,LE Platinum,white,gray,Automatic,,6.0,Gasoline,4.0,Good,Good,4-Wheel Drive
+1583958766,200,1998,Toyota,Camry,Sedan,240000,Clean Title,Santaquin,UT,Owner,LE,black,tan,Automatic,3.0,6.0,Gasoline,4.0,Good,Good,FWD
+1583958761,15995,2015,GMC,Acadia,Sport Utility,81605,Rebuilt/Reconstructed Title,West Jordan,UT,Dealer,Denali,black,black,Automatic,,6.0,Gasoline,,,,AWD
+1583958746,900,1998,Toyota,Corolla,Sedan,218542,Clean Title,Salt Lake City,UT,Owner,,green,gray,Automatic,,4.0,Gasoline,4.0,Poor,Poor,FWD
+1583958731,4495,2009,Chevrolet,Malibu,Sedan,127668,Clean Title,Ogden,UT,Dealer,LT,black,gray,Automatic,,4.0,Gasoline,4.0,Very Good,Very Good,FWD
+1583958714,52900,2020,Jeep,Gladiator,Truck,5861,,West Bountiful,UT,Dealer,Rubicon,billet silver metallic clearcoat,black,Automatic,,6.0,Gasoline,4.0,,,4-Wheel Drive
+1583958649,10000,2009,Porsche,Cayenne,Sport Utility,155000,Clean Title,Orem,UT,Owner,Platinum Edition,brown,beige,Automanual,,6.0,Gasoline,,Excellent,Excellent,AWD
+1583958621,17995,2016,BMW,3 Series,Sedan,27454,Clean Title,American Fork,UT,Dealer,320i xDrive,white,black,Automatic,,4.0,Gasoline,,Excellent,Excellent,AWD
+1583958618,15995,2018,Hyundai,Santa Fe,Sport Utility,33697,Clean Title,Bountiful,UT,Dealer,2.4L,nightfall blue,beige,Automatic,,4.0,Gasoline,4.0,,,FWD
+1583958597,2500,2000,Cadillac,DeVille,Sedan,104000,Clean Title,Layton,UT,Dealer,,tan,white,Automatic,,8.0,Gasoline,4.0,Very Good,Excellent,FWD
+1583958595,38900,2018,Ford,F-150,Truck,8500,Clean Title,Layton,UT,Dealer,Lariat,white,black,Automatic,,6.0,Gasoline,4.0,Excellent,Excellent,4-Wheel Drive
+1583958594,42900,2019,Ford,F-150,Truck,16500,Clean Title,Layton,UT,Dealer,,gray,black,Automatic,,6.0,Gasoline,4.0,Excellent,Excellent,4-Wheel Drive
+1583958569,6995,2015,Dodge,Journey,Sport Utility,122852,Clean Title,Bountiful,UT,Dealer,SXT,redline 2 coat pearl,black,Automatic,,6.0,Gasoline,4.0,,,FWD
+1583958557,14995,2017,Toyota,Camry,Sedan,45996,Clean Title,Orem,UT,Dealer,SE,black,black,Automatic,,4.0,Gasoline,4.0,,,FWD
+1583958516,16333,2014,Dodge,Charger,Sedan,74993,Clean Title,Salt Lake City,UT,Dealer,R/T,white,black,Automanual,,8.0,Gasoline,4.0,Very Good,Very Good,RWD
+1583958498,9000,1975,Ford,Expedition,Truck,75000,Clean Title,Riverton,UT,Owner,XLT,black,black,Automatic,,8.0,Gasoline,4.0,Excellent,Excellent,4-Wheel Drive
+1583958454,19495,2018,Toyota,Camry,Sedan,27252,Clean Title,Lehi,UT,Dealer,SE,blue,beige,Automatic,,4.0,Gasoline,4.0,,,FWD
+1583958453,1700000,2001,Dodge,Grand Caravan,Van,185000,Clean Title,Salt Lake City,UT,Owner,,,,Automatic,,6.0,Gasoline,,,,FWD
+1583958425,5995,2005,GMC,Yukon,Sport Utility,120330,Clean Title,Clearfield,UT,Dealer,SLE,black,tan,Automatic,,8.0,Gasoline,4.0,Excellent,Excellent,4-Wheel Drive
+1583958420,14995,2017,Honda,Civic,Sedan,31681,Clean Title,Lehi,UT,Dealer,EX,gray,black,Automatic,,4.0,Gasoline,4.0,,,
+1583958374,37999,2019,Chevrolet,Suburban,SUV,43000,Clean Title,Sandy,UT,Dealer,,white,black,,,8.0,Gasoline,4.0,Very Good,Very Good,4-Wheel Drive
+1583958337,750,2000,Honda,Civic,Sedan,236413,,Spanish Fork,UT,Owner,LX,blue,blue,Automatic,,4.0,Gasoline,4.0,Good,Good,FWD
+1583958203,48920,2018,GMC,2500,Truck,14420,,Salt Lake City,UT,Dealer,SLT,cardinal red,jet black,Automatic,,8.0,Diesel,4.0,,,4-Wheel Drive
+1583958158,17300,2016,Volkswagen,Golf GTI,Sedan,63707,,St. George,UT,Dealer,Autobahn with Performance Package,,,Automatic,,4.0,Gasoline,,,,
+1583958146,11990,2017,Nissan,Altima,Sedan,79960,,Orem,UT,Dealer,2.5 S,white,black,Automatic,,4.0,Gasoline,4.0,,,FWD
+1583958142,28995,2014,Chevrolet,Silverado 1500,Truck,49611,Clean Title,Salt Lake City,UT,Dealer,LTZ,white,black,Automatic,,8.0,Flex Fuel,4.0,Very Good,Very Good,4-Wheel Drive
+1583958135,32900,2012,Ford,F-150,Truck,90440,,St. George,UT,Dealer,SVT Raptor,,,Automatic,,8.0,Gasoline,,,,4-Wheel Drive
+1583958101,39925,2019,Volvo,XC40,Sport Utility,16524,,Salt Lake City,UT,Dealer,Momentum,black,,Automatic,,4.0,Gasoline,4.0,,,AWD
+1583958097,2495,2006,Chevrolet,Malibu,Sedan,182000,Clean Title,Provo,UT,Dealer,LT,white,gray,Automatic,,6.0,Gasoline,4.0,Excellent,Excellent,FWD
+1583958070,7350,2014,Nissan,Altima,Sedan,103500,Clean Title,Vineyard,UT,Owner,2.5 SL,gray,black,Automatic,,4.0,Gasoline,4.0,Good,Good,FWD
+1583958058,16595,2017,Ford,Fusion,Sedan,34715,Clean Title,Orem,UT,Dealer,SE,white,black,Automatic,,4.0,Gasoline,4.0,,,AWD
+1583958026,1200,2010,Buick,Enclave,SUV,177600,Clean Title,Bluffdale,UT,Owner,,,,,,6.0,Gasoline,,,,AWD
+1583958019,3000,2005,Honda,Pilot,SUV,190000,Clean Title,Lehi,UT,Owner,,,,,,6.0,Gasoline,,,,4-Wheel Drive
+1583957933,36990,2018,Chevrolet,Silverado 1500,Truck,32969,,Riverdale,UT,Dealer,LTZ,red hot,jet black,Automatic,,8.0,Gasoline,4.0,,,4-Wheel Drive
+1583957910,19500,2018,Ford,Explorer,Sport Utility,79555,,Riverdale,UT,Dealer,Base,blue,medium stone,Automatic,,6.0,Gasoline,4.0,,,AWD
+1583957899,68999,2019,Ram,2500,Truck,6837,,West Valley City,UT,Dealer,Longhorn,bright white clearcoat,lt mountain brown/brown,Automatic,,6.0,Diesel,4.0,,,4-Wheel Drive
+1583957887,43500,2018,Ram,2500,Truck,56618,,Riverdale,UT,Dealer,Laramie,bright white clearcoat,black,Automatic,,6.0,Diesel,4.0,,,4-Wheel Drive
+1583957869,2750,2009,Honda,Civic,Sedan,220000,Clean Title,North Salt Lake,UT,Dealer,GX,blue,gray,Automatic,,4.0,Gasoline,4.0,Good,Good,2-Wheel Drive
+1583957852,12881,2013,Volkswagen,Passat,Sedan,31062,,Riverdale,UT,Dealer,TDI SE with Sunroof & Nav,gray,,Automatic,,4.0,Diesel,4.0,,,
+1583957840,27668,2017,Mercedes-Benz,GLC-Class,Sport Utility,46447,Clean Title,Draper,UT,Dealer,GLC 300,gray,black,Automatic,,4.0,Gasoline,4.0,,,AWD
+1583957801,9500,2012,Volkswagen,GTI,Hatchback,84501,Clean Title,Salt Lake City,UT,Owner,,white,,Manual,,4.0,Gasoline,2.0,Very Good,Excellent,
+1583957782,33210,2017,Mercedes-Benz,SLC,Convertible,18599,Clean Title,Draper,UT,Dealer,SLC 300,black,black,Automatic,,4.0,Gasoline,2.0,,,RWD
+1583957747,27851,2018,Nissan,Murano,Sport Utility,41381,,St. George,UT,Dealer,Platinum,gun metallic,graphite,Automatic,3.5,6.0,Gasoline,4.0,,,AWD
+1583957723,4500,2004,Toyota,Sequoia,SUV,200285,Clean Title,Manti,UT,Owner,,silver,gray,Automatic,,8.0,Gasoline,4.0,Good,Good,4-Wheel Drive
+1583957713,9984,2014,Kia,Soul,Hatchback,68888,,St. George,UT,Dealer,+,inferno red,black,Automatic,2.0,4.0,Gasoline,4.0,,,FWD
+1583957692,23955,2017,Kia,Cadenza,Sedan,30386,,St. George,UT,Dealer,Technology,moss gray,black,Automatic,3.3,6.0,Gasoline,4.0,,,
+1583957620,18701,2017,Subaru,Forester,Sport Utility,75912,,Bountiful,UT,Dealer,Premium,crystal white pearl,black,Automatic,,4.0,Gasoline,4.0,,,AWD
+1583957609,17000,2007,Toyota,Tacoma,Truck,130000,Clean Title,South Salt Lake,UT,Owner,TRD Sport,white,gray,Manual,,6.0,Gasoline,4.0,Poor,Very Good,4-Wheel Drive
+1583957608,20679,2017,BMW,X1,Sport Utility,43195,,Bountiful,UT,Dealer,xDrive28i,black,black,Automatic,,4.0,Gasoline,4.0,,,AWD
+1583957585,14995,2017,Toyota,Camry,Sedan,81746,,Bountiful,UT,Dealer,Hybrid LE,blue,almond,Automatic,,4.0,Hybrid,4.0,,,FWD
+1583957566,7000,1971,Ford,Maverick,Coupe,130000,Clean Title,Hyrum,UT,Owner,,purple,,Manual,,8.0,Gasoline,2.0,Very Good,Good,RWD
