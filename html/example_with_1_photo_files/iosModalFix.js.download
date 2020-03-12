@@ -1,0 +1,27 @@
+$(document).ready(function () {
+  if (/iPhone OS 11/.test(navigator.userAgent)) {
+    var initialPosition = $(window).scrollTop();
+    var initialStyling = {
+      overflow: document.body.style.overflow,
+      height: document.body.style.height,
+      width: document.body.style.width,
+      position: document.body.style.position,
+    }
+
+    $(document).on('open', function () {
+      document.body.style.overflow = 'hidden';
+      document.body.style.height = '100%';
+      document.body.style.width = '100%';
+      document.body.style.position = 'fixed';
+      initialPosition = $(window).scrollTop();
+    });
+
+    $(document).on('close', function () {
+      document.body.style.overflow = initialStyling.overflow;
+      document.body.style.height = initialStyling.height;
+      document.body.style.width = initialStyling.width;
+      document.body.style.position = initialStyling.position;
+      window.scrollTo(0, initialPosition);
+    });
+  }
+});

@@ -1,0 +1,2658 @@
+<!DOCTYPE html>
+<!-- saved from url=(0099)https://dealer.tradeinvalet.com/TradeInVallet/TradeInValet?EncryptDealerId=oCI8LcKCrdRcPnJ4s1wOow== -->
+<html style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" async="" id="inspsync" src="./inspectlet.js.download"></script><script src="./nr-1167.min.js.download"></script><script type="text/javascript" async="" src="./mixpanel-2-latest.min.js.download"></script><script async="" src="./gtm.js.download"></script><script async="" src="./gtm.js(1).download"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"320af4b6a0","applicationID":"60865015","transactionName":"NVIHZRQCWUZTUkELWQwYKGclTGNHU1VQK1g0VgldAxd0WlxFRw1aDlIXHjIRVlFXeFs0Vw5SEQ==","queueTime":0,"applicationTime":99,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"320af4b6a0",applicationID:"60865015"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1167.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width">
+
+        <meta property="og:locale" content="en_US">
+        <meta property="fb:app_id" content="240923436767007">
+        <meta property="og:url" content="https://dealer.tradeinvalet.com//TradeInVallet//TradeInValet?EncryptDealerId=oCI8LcKCrdRcPnJ4s1wOow==&amp;EncryptSalesStaffId=6mXz76sM0wWSNDvbHhmppw==&amp;LinkId=&amp;IsFirsTime=False&amp;UserType=&amp;TrackType=web&amp;BidSource=">
+        <meta property="og:url:secure_url" content="https://dealer.tradeinvalet.com//TradeInVallet//TradeInValet?EncryptDealerId=oCI8LcKCrdRcPnJ4s1wOow==&amp;EncryptSalesStaffId=6mXz76sM0wWSNDvbHhmppw==&amp;LinkId=&amp;IsFirsTime=False&amp;UserType=&amp;TrackType=web&amp;BidSource=">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="What is Your Car Worth?">
+        <meta property="og:description" content="Click here to get a quick, easy offer on your trade, without bringing it to the dealership!">
+        <meta property="og:image" content="https://carphoriaprodstorage.blob.core.windows.net/carphoriaimages/3bdeokbr.jpg">
+        <meta property="og:image:secure_url" content="https://carphoriaprodstorage.blob.core.windows.net/carphoriaimages/3bdeokbr.jpg">
+        <meta property="og:image:width" content="476">
+        <meta property="og:image:height" content="249">
+
+    <title>TradeInValet</title>
+
+
+<script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-NNQWCWQ');
+</script>
+
+
+        <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    'gtm.start': new Date().getTime(),
+                    event: 'gtm.js'
+                });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-NSWKGS');
+        </script>
+
+
+
+
+
+
+    <script src="./modernizr"></script>
+
+
+</head>
+<body style="">
+
+
+<noscript>
+    <iframe src='https://www.googletagmanager.com/ns.html?id=GTM-NNQWCWQ'
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+
+    <noscript>
+        <iframe src='https://www.googletagmanager.com/ns.html?id=GTM-NSWKGS'
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+
+
+    
+
+
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<script src="./jquery-1.10.2.js.download"></script>
+
+<script src="./jquery-ui.min.js.download" type="text/javascript"></script>
+<script src="./Validations.js.download"></script>
+<script src="./jquery.maskedinput-1.2.2.min.js.download"></script>
+<script src="./autoNumeric.js.download"></script>
+
+<link href="./bootstrap.css" rel="stylesheet">
+<link href="./style-2.css" rel="stylesheet">
+
+    <script type="text/javascript" src="./bootstrap.min.js.download"></script>
+    <script src="./bootstrap-multiselect.js.download"></script>
+    <link rel="stylesheet" href="./bootstrap-multiselect.css">
+
+    <!-- Begin Inspectlet Asynchronous Code -->
+    <script type="text/javascript">
+        (function () {
+            window.__insp = window.__insp || [];
+            __insp.push(['wid', 2021376246]);
+            var ldinsp = function () {
+                if (typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js?wid=2021376246&r=' + Math.floor(new Date().getTime() / 3600000); var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x);
+            };
+            setTimeout(ldinsp, 0);
+        })();
+    </script>
+    <!-- End Inspectlet Asynchronous Code -->
+
+<style>
+
+
+    .colwidthchange .trademaker_labelimg {
+        width: 91px;
+        height: 91px;
+    }
+    .colwidthchange .sterling_labelactvie, .colwidthchange .TradeInSell_labelactvie {
+        background: url(../../Content/DealerBranded/new_circle_bg.png) 0px -91px no-repeat !important;
+        background-size:cover !important;
+    }
+    .col-20p {
+        width:24%;
+    }
+    .colwidthchange .trademaker_span {
+
+        font-size:10px !important;
+
+    }
+    .col-11{
+        width:11%;
+    }
+
+    .loading-email-validation {
+        margin-left: 1em;
+    }
+
+    .section-d-2, .section-d-3, .section-d-4, .section-d-6, .section-d-8, .section-d-14, .section-d-15, .section-d-16, .section-d-18 {
+        display: none;
+    }
+
+    /*.section-d-10 {
+        clear: both !important;
+    }*/
+    .section-d-10,.section-d-11,.section-d-12,.section-d-13,.section-d-14,.section-d-15,.section-d-16,.section-d-17,.section-d-18,.section-d-20,.section-d-21,
+    .section-d-22,.section-d-23{
+        margin-top:-20px;
+    }
+    .input_controlemail {
+        width: 70%;
+        float: left;
+    }
+
+    .input_control {
+        width: 70%;
+    }
+
+    .got-any-of-these input.css-checkbox[type="checkbox"] {
+        display: block !important;
+        width: 65px;
+        height: 65px;
+        top: 40px;
+        position: relative;
+        left: 21px;
+        opacity: 0;
+    }
+
+    .got-any-of-these-row .got-any-of-these input + input + label {
+        margin-top: -58px;
+    }
+
+    @media screen and (max-width:767px) and (min-width:431px) {
+
+        .input_controlemail {
+            width: 90%;
+            float: left;
+        }
+
+        .input_control {
+            width: 90%;
+        }
+    }
+
+
+    @media screen and (max-width:430px) and (min-width:310px) {
+
+        .input_control {
+            width: 84% !important;
+        }
+
+        .input_controlemail {
+            width: 84%;
+            float: left;
+        }
+    }
+
+    .showmediv {
+        width: 58%;
+        float: right;
+        font-size: 9px;
+        text-align: right;
+        color: #b8b5b5;
+        font-style: italic;
+    }
+
+    @media screen and (max-width:768px) and (min-width:310px) {
+        .showmediv {
+            width: 80%;
+        }
+    }
+
+
+    #divunonecheck .trademaker_labelactvie .trademaker_span {
+        color: #fff;
+    }
+
+    .label-sterling {
+        display: intial !important;
+    }
+
+    .label-sterling {
+        display: initial !important;
+    }
+
+    .images-class {
+        float: left;
+    }
+
+    .text-label {
+        float: left;
+        width: 76%;
+        padding-left: 6px;
+    }
+
+    .radio-width {
+        width: 25%;
+        border: 1px solid #676767;
+        padding: 5px 4px;
+        border-radius: 4px;
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        float: left;
+        margin-right: 16px;
+        height: 34px;
+    }
+
+        .radio-width input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+            float: inherit !important;
+            margin-left: 3px;
+        }
+    .trademaker_span {
+        display: table-cell !important;
+        vertical-align: middle;
+    }
+
+    .preferred-dealership {
+        margin-bottom: 10px;
+    }
+
+        .preferred-dealership select, .preferred-dealership span {
+            float: left;
+        }
+
+            .preferred-dealership select ~ img {
+                margin-left: 1em;
+                margin-top: 6px;
+            }
+</style>
+
+<input type="hidden" id="hiddenyearss">
+<input type="hidden" id="hiddenmakess">
+<input type="hidden" id="hiddenmodless">
+<input type="hidden" id="yearmakemodeldropdown" value="">
+
+<input type="hidden" id="trimtext">
+
+<input id="hiddenyear" name="hiddenyear" type="hidden" value="">
+<input id="hiddenmake" name="hiddenmake" type="hidden" value="">
+<input id="hiddenmodle" name="hiddenmodle" type="hidden" value="">
+<input id="hiddentrim" name="hiddentrim" type="hidden" value="">
+
+<input type="hidden" id="tabsactive" value="">
+
+
+<form action="https://dealer.tradeinvalet.com/TradeInVallet/TradeInValet" autocomplete="off" id="tivForm" method="post">    <input type="hidden" id="resultcode">
+    <input type="hidden" id="checkvinbool">
+    <input type="hidden" id="Issinglevalidation">
+<input data-val="true" data-val-number="The field chromeStyleId must be a number." data-val-required="The chromeStyleId field is required." id="chromeStyleId" name="chromeStyleId" type="hidden" value="0"><input id="modelCode" name="modelCode" type="hidden" value=""><input data-val="true" data-val-required="The isLexus field is required." id="isLexus" name="isLexus" type="hidden" value="False"><input data-val="true" data-val-required="The isAudi field is required." id="isAudi" name="isAudi" type="hidden" value="False"><input data-val="true" data-val-required="The CheckIsfcaExistOrNot field is required." id="CheckIsfcaExistOrNot" name="CheckIsfcaExistOrNot" type="hidden" value="False"><input data-val="true" data-val-required="The isToyota field is required." id="isToyota" name="isToyota" type="hidden" value="False"><input data-val="true" data-val-required="The isSubbaru field is required." id="isSubbaru" name="isSubbaru" type="hidden" value="False"><input data-val="true" data-val-number="The field FCAyear must be a number." data-val-required="The FCAyear field is required." id="FCAyear" name="FCAyear" type="hidden" value="0"><input id="FCAmake" name="FCAmake" type="hidden" value=""><input id="FCADatamodel" name="FCADatamodel" type="hidden" value=""><input id="selectedkslusedmakes" name="selectedkslusedmakes" type="hidden" value=""><input id="selectedkslnewmakes" name="selectedkslnewmakes" type="hidden" value=""><input id="TypeofDealer" name="TypeofDealer" type="hidden" value=""><input data-val="true" data-val-required="The Issmarttrade field is required." id="Issmarttrade" name="Issmarttrade" type="hidden" value="False"><input data-val="true" data-val-required="The Ischecksmarttrade field is required." id="Ischecksmarttrade" name="Ischecksmarttrade" type="hidden" value="False"><input data-val="true" data-val-required="The Isksldealers field is required." id="Isksldealers" name="Isksldealers" type="hidden" value="False"><input id="hdntrim" name="hdntrim" type="hidden" value=""><input id="hdntransmssion" name="hdntransmssion" type="hidden" value=""><input id="hdnpreviousurl" name="hdnpreviousurl" type="hidden" value=""><input id="hdnpreviousId" name="hdnpreviousId" type="hidden" value=""><input id="hdnChangeOptionBasedOnType" name="hdnChangeOptionBasedOnType" type="hidden" value=""><input data-val="true" data-val-number="The field DealerId must be a number." data-val-required="The DealerId field is required." id="DealerId" name="DealerId" type="hidden" value="809"><input id="Tracktype" name="Tracktype" type="hidden" value=""><input id="BidSource" name="BidSource" type="hidden" value=""><input id="CheckFCADealer" name="CheckFCADealer" type="hidden" value=""><input id="Usedornone" name="Usedornone" type="hidden" value=""><input id="hdnsterlingnew" name="hdnsterlingnew" type="hidden" value=""><input id="hdnsterlingused" name="hdnsterlingused" type="hidden" value=""><input id="hdntradein" name="hdntradein" type="hidden" value=""><input id="hdnsell" name="hdnsell" type="hidden" value=""><input id="hdnGmDealerCPO" name="hdnGmDealerCPO" type="hidden" value=""><input id="isneworused" name="isneworused" type="hidden" value=""><input data-val="true" data-val-required="The Donmcgilltoyota field is required." id="Donmcgilltoyota" name="Donmcgilltoyota" type="hidden" value="False"><input data-val="true" data-val-required="The Iskslcars field is required." id="Iskslcars" name="Iskslcars" type="hidden" value="True"><input id="Isksldealers" name="Isksldealers" type="hidden" value="False"><input id="multilangugae" name="multilangugae" type="hidden" value="en"><input id="OSInfo" name="OSInfo" type="hidden" value="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36"><input id="BrowserInfo" name="BrowserInfo" type="hidden" value="Chrome 80"><input data-val="true" data-val-number="The field year must be a number." data-val-required="The year field is required." id="year" name="year" type="hidden" value="0"><input id="hdnmake" name="hdnmake" type="hidden" value=""><input id="hdnDatamodel" name="hdnDatamodel" type="hidden" value=""><input id="hdnBodyandStyle" name="hdnBodyandStyle" type="hidden" value=""><input id="hdnEngine" name="hdnEngine" type="hidden" value=""><input id="hdnDriveline" name="hdnDriveline" type="hidden" value=""><input length="0" id="ChromeTransmissions" name="ChromeTransmissions" type="hidden" value=""><input data-val="true" data-val-required="The IsTradeinOrSell field is required." id="IsTradeinOrSell" name="IsTradeinOrSell" type="hidden" value="False"><input data-val="true" data-val-required="The IsConsVehicleInfo field is required." id="IsConsVehicleInfo" name="IsConsVehicleInfo" type="hidden" value="False"><input id="ConsInterestedMake" name="ConsInterestedMake" type="hidden" value=""><input data-val="true" data-val-number="The field ConsInterestedMiles must be a number." data-val-required="The ConsInterestedMiles field is required." id="ConsInterestedMiles" name="ConsInterestedMiles" type="hidden" value="0"><input id="ConsInterestedModel" name="ConsInterestedModel" type="hidden" value=""><input id="ConsInterestedStock" name="ConsInterestedStock" type="hidden" value=""><input id="ConsInterestedTrim" name="ConsInterestedTrim" type="hidden" value=""><input id="ConsInterestedVehicleStatus" name="ConsInterestedVehicleStatus" type="hidden" value=""><input id="ConsInterestedVin" name="ConsInterestedVin" type="hidden" value=""><input data-val="true" data-val-number="The field ConsInterestedYear must be a number." data-val-required="The ConsInterestedYear field is required." id="ConsInterestedYear" name="ConsInterestedYear" type="hidden" value="0"><input id="hdnYMMDetials" name="hdnYMMDetials" type="hidden" value=""><input id="hdnYMMDetials_autofill" name="hdnYMMDetials_autofill" type="hidden" value=""><input id="LeadType" name="LeadType" type="hidden" value=""><input id="LinkId" name="LinkId" type="hidden" value=""><input data-val="true" data-val-number="The field SalesPersonId must be a number." data-val-required="The SalesPersonId field is required." id="SalesPersonId" name="SalesPersonId" type="hidden" value="0"><input id="Iskslcars" name="Iskslcars" type="hidden" value="True"><input id="ShiftDigitalSessionId" name="ShiftDigitalSessionId" type="hidden" value="">    <input type="hidden" id="previouscheck">
+    <input type="hidden" id="hdnWranglerAndCjType" value="0">
+    <div id="btnStartdetails1" onclick="return null;" tabindex="2" class="rightalign"></div>
+    <input type="hidden" style="    width: 100%;" value="True" id="hdnksldata">
+    <div id="scrolldiv"></div>
+
+<link href="./css" rel="stylesheet">
+<div class="container container_vehicleksl">
+
+    <div class="row kaslmargT30 paddB10">
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12  logo ksl_logo kslmb_paddL13"><img src="./dqicv21i.jpg" alt="Logo" class="kslr_logo22" style="width: 250px;height: 63px;"></div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12  steps-section ksl_section_top">
+
+            <ul class="kslcars_tabs tabs">
+                    <li id="detailsli"><a id="details" href="https://dealer.tradeinvalet.com/TradeInVallet/TradeInValet?EncryptDealerId=oCI8LcKCrdRcPnJ4s1wOow==#tabs1" class="kslcarsactive">Details</a></li>
+
+                <li id="conditionsli"><a id="conditions" class="kslcarsinactive" href="https://dealer.tradeinvalet.com/TradeInVallet/TradeInValet?EncryptDealerId=oCI8LcKCrdRcPnJ4s1wOow==#Conditions">Condition</a></li>
+                <li id="optionsli"><a id="options" class="kslcarsinactive" href="https://dealer.tradeinvalet.com/TradeInVallet/TradeInValet?EncryptDealerId=oCI8LcKCrdRcPnJ4s1wOow==#Options">Options</a></li>
+                <li id="delieveryli"><a id="delievery" class="kslcarsinactive" href="https://dealer.tradeinvalet.com/TradeInVallet/TradeInValet?EncryptDealerId=oCI8LcKCrdRcPnJ4s1wOow==#Delivery">Delivery</a></li>
+            </ul>
+
+        </div>
+
+    </div>
+    <div class="line_eb margB6"></div>
+    <div class="row">
+        <div class="col-md-12 kslcol-mdpadd0">
+            <div class=" ksl_pane" style="width:100%; display:table;">
+                                    <section id="tabs1" class="innercontainer hidewenSingleLEntry paddT20">
+                        
+                        
+                        <h1>
+                            <span class="step-number" style="display:none;">
+                                <span>1</span>
+                            </span>
+                            <label class="heading-text" style="font-size: 24px;color: #000;">
+                                Get a guaranteed cash offer for your car          
+                                              </label>
+                        </h1>
+                        <div style="clear:both;"></div>
+                        <div class="row margB15">
+                            <div class="col-md-12 col-sm-12">
+                                <p class="pagraph" style="font-size:15px !important;">
+                                    KSL Cars now provides you with another effective way to sell your car. Just enter your vehicle information below, get an appraisal (by a real human, not a robot!), and, if the offer looks good, take it to the specified dealer and pick up your check. It’s that easy!
+                                </p>
+                            </div>
+                        </div>
+    <div class="line_eb margB15 "></div>
+                        <h1>
+                            <span class="step-number" style="display:none;">
+                                <span>1</span>
+                            </span>
+                            <label class="heading-text margT15" style="font-size: 24px;color: #000;">
+                                Start by entering your VIN below
+                            </label>
+                        </h1>
+                        <div style="clear:both;"></div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <p class="pagraph" style="font-size:15px !important;">
+                                    Your car has a fingerprint! It's called a Vehicle Identification Number (VIN) and although it is not required, it sure helps us get the most accurate value for your car. Your VIN can be found on your insurance card and/or where your driver's side dashboard meets your windshield.
+                                </p>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="row">
+                            <div class="line_width_inner margB15"></div>
+                        </div>
+
+                        <div class="row margB48">
+
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 vinnumberksl">
+                                <label class="gray_colot46 fs16 fw-600 Raleway mb_pull-right">VIN Number <img id="vinerrormsgimg" src="./ImageErrorExclamatoeyMarks.png" style="margin-top: -6px; display:none; width:20px; height:20px;"></label>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 vinnumberksl">
+                                <div class="vincode_input">
+                                    <input class="form-control formcontrol_input Raleway" id="vin" maxlength="17" name="vin" tabindex="1" type="text" value="">
+                                    <span id="vinerrormsg" style="color:red; float:left;"> </span>
+                                </div>
+                                <div class="vin_div3 vinnumberksl">
+
+                                    <button type="button" class="kslrbule_btn cursor vind_codekaslbrd vi_btn_decode kslmb_top15" id="vin-decode-id" onclick="return decodevin();" tabindex="2">VIN Decode</button>
+
+                                    <input type="button" style="display:none" onclick="return decodevin(&#39;Details&#39;);" name="decodevinDETAILS" value="DECODED DETAILS" class="cloudsmallbtn">
+                                </div>
+                            </div>
+
+                            <div class="vin_div1 text-right"></div>
+                            <div class="vin_div2">
+
+
+                            </div>
+
+
+
+                        </div>
+                        <div class="line_eb margB15 "></div>
+                        
+                        <div class="row margB15">
+                            <div class="col-md-12">
+                                <h1>
+                                    <label class="heading-text margT15" style="font-size: 24px;color: #000;">
+                                        Don’t know your VIN? Let’s try it this way
+                                    </label>
+                                </h1>
+                            </div>
+                        </div>
+
+                        <h1 class="aboutCar text-center" style="display:none;">
+                            Tell us about YOUR car! <br>Get a REAL OFFER from a REAL PERSON <span class="blue_text_theme">(no need to bring it in)</span>.
+                        </h1>
+
+                        <div class="row magB10">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <label class="mb_pull-right gray_colot46 fs16 fw-60 Raleway"><span>*</span>Year <img id="yearerrormsgimg" src="./ImageErrorExclamatoeyMarks.png" style="margin-top: -6px; display:none; width:20px; height:20px;"></label>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-7 col-xs-12">
+                                <div class="">
+                                    <select class="form-control formcontrol_inputksl Raleway" id="CBRYear" name="year" tabindex="2"><option value="0">SELECT</option><option value="2021">2021</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2001">2001</option><option value="2000">2000</option><option value="1999">1999</option><option value="1998">1998</option><option value="1997">1997</option><option value="1996">1996</option><option value="1995">1995</option><option value="1994">1994</option><option value="1993">1993</option><option value="1992">1992</option><option value="1991">1991</option><option value="1990">1990</option><option value="1989">1989</option><option value="1988">1988</option><option value="1987">1987</option><option value="1986">1986</option><option value="1985">1985</option><option value="1984">1984</option><option value="1983">1983</option><option value="1982">1982</option><option value="1981">1981</option></select>
+                                    <span id="yearerrormsg" style="color:red;"> </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row magB10">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <label class="mb_pull-right gray_colot46 fs16 fw-60 Raleway"><span>*</span>Make <img id="makeerrormsgimg" src="./ImageErrorExclamatoeyMarks.png" style="margin-top: -6px; display:none; width:20px; height:20px;"></label>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-7 col-xs-12">
+                                <div class="">
+                                    <select class="form-control formcontrol_inputksl Raleway" id="CBRMakes" name="make" tabindex="3" disabled=""><option selected="selected" value="">SELECT</option>
+</select>
+                                    <span id="makeerrormsg" style="color:red;"> </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row magB10">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <label class="mb_pull-right gray_colot46 fs16 fw-60 Raleway"><span>*</span>Model <img id="Datamodelerrormsgimg" src="./ImageErrorExclamatoeyMarks.png" style="margin-top: -6px; display:none; width:20px; height:20px;"></label>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-7 col-xs-12">
+                                <div class="">
+                                    <select class="form-control formcontrol_inputksl Raleway" id="CBRModel" name="Datamodel" tabindex="4" disabled=""><option selected="selected" value="">SELECT</option>
+</select>
+                                    <span id="Datamodelerrormsg" style="color:red;"> </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row magB10">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <label class="mb_pull-right gray_colot46 fs16 fw-60 Raleway"><span>*</span>Trim <img id="trimerrormsgimg" src="./ImageErrorExclamatoeyMarks.png" style="margin-top: -6px; display:none; width:20px; height:20px;"></label>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-7 col-xs-12">
+                                <div class="">
+
+                                    <select class="form-control formcontrol_inputksl Raleway" id="CBRTrim" name="trim" tabindex="5" disabled=""><option selected="selected" value="">SELECT</option>
+</select>
+                                    <span id="trimerrormsg" style="color:red;"> </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row magB10">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <label class="mb_pull-right gray_colot46 fs16 fw-60 Raleway"><span>*</span>Body and Style <img id="BodyandStyleerrormsgimg" src="./ImageErrorExclamatoeyMarks.png" style="margin-top: -6px; display:none; width:20px; height:20px;"></label>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-7 col-xs-12">
+                                <div class="">
+
+                                    <select class="form-control formcontrol_inputksl Raleway" id="CBRBodyandStyle" name="BodyAndStyle" tabindex="6" disabled=""><option selected="selected" value="">SELECT</option>
+</select>
+                                    <span id="BodyandStyleerrormsg" style="color:red;"> </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row magB10" id="dvEnginedropdown">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <label class="mb_pull-right gray_colot46 fs16 fw-60 Raleway"><span>*</span>Engine <img id="Engineerrormsgimg" src="./ImageErrorExclamatoeyMarks.png" style="margin-top: -6px; display:none; width:20px; height:20px;"></label>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-7 col-xs-12">
+                                <div class="">
+                                    <select class="form-control formcontrol_inputksl Raleway" id="CBREngine" name="Engine" tabindex="7" disabled=""><option value="0">SELECT</option></select>
+                                    <span id="Engineerrormsg" style="color:red;"> </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row magB10" style="display:none;" id="dvEnginetxt">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <label class="mb_pull-right gray_colot46 fs16 fw-60 Raleway"><span>*</span>Engine <img id="Engineerrormsgtxtimg" src="./ImageErrorExclamatoeyMarks.png" style="margin-top: -6px; display:none; width:20px; height:20px;"></label>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-7 col-xs-12">
+                                <div class="">
+                                    <input class="form-control formcontrol_input Raleway" id="CBREnginetxt" maxlength="320" name="Engine" tabindex="7" type="text" value="">
+                                    <span id="Engineerrormsgtxt" style="color:red;"> </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row magB10" id="dvDrivelinedropdown">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <label class="mb_pull-right gray_colot46 fs16 fw-60 Raleway"><span>*</span>Driveline <img id="Drivelineerrormsgimg" src="./ImageErrorExclamatoeyMarks.png" style="margin-top: -6px; display:none; width:20px; height:20px;"></label>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-7 col-xs-12">
+                                <div class="">
+                                    <select class="form-control formcontrol_inputksl Raleway" id="CBRDriveline" name="Driveline" tabindex="8" disabled=""><option value="0">SELECT</option></select>
+                                    <span id="Drivelineerrormsg" style="color:red;"> </span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row magB10" style="display:none;" id="dvDrivelinetxt">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <label class="mb_pull-right gray_colot46 fs16 fw-60 Raleway"><span>*</span>Driveline <img id="Drivelineerrormsgtxtimg" src="./ImageErrorExclamatoeyMarks.png" style="margin-top: -6px; display:none; width:20px; height:20px;"></label>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-7 col-xs-12">
+                                <div class="">
+
+                                    <select class="form-control formcontrol-inputksl Raleway" id="CBRDrivelinetxt" name="Driveline" tabindex="7"><option selected="selected" value="0">Select</option>
+<option value="AWD - All Wheel Drive (full time)">AWD - All Wheel Drive (full time)</option>
+<option value="4WD - 4 Wheel Drive (part time)">4WD - 4 Wheel Drive (part time)</option>
+<option value="2WD - 2 Wheel Drive">2WD - 2 Wheel Drive</option>
+<option value="FWD - Front Wheel Drive">FWD - Front Wheel Drive</option>
+<option value="RWD - Rear Wheel Drive">RWD - Rear Wheel Drive</option>
+</select>
+
+
+                                    
+                                    <span id="Drivelineerrormsgtxt" style="color:red;"> </span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div style="display:none;" class="row magB10">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <label class="mb_pull-right gray_colot46 fs16 fw-60 Raleway">Transmission <img id="transmissionerrormsgimg" src="./ImageErrorExclamatoeyMarks.png" style="margin-top: -6px; display:none; width:20px; height:20px;"></label>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-7 col-xs-12">
+                                <div class="">
+
+                                    <select class="form-control formcontrol_inputksl Raleway" id="transmission" name="transmission" tabindex="7"><option value="transmission">Transmission</option>
+<option selected="selected" value="AUTOMATIC">AUTOMATIC</option>
+<option value="MANUAL">MANUAL</option>
+<option value="CVT">CVT</option>
+<option value="AUTOMATED MANUAL (DSG)">AUTOMATED MANUAL (DSG)</option>
+</select>
+                                    <span id="transmissionerrormsg" style="color:red;"> </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row magB10" style="display:none;">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <label class="mb_pull-right gray_colot46 fs16 fw-60 Raleway"><span></span>Fuel Type <img id="errloopAutocomp" src="./ImageErrorExclamatoeyMarks.png" style="margin-top: -6px; display:none; width:20px; height:20px;"></label>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-7 col-xs-12">
+                                <div class="">
+
+                                    <select class="form-control formcontrol_inputksl Raleway" id="drpFuelType" name="FuelType" tabindex="8"><option value="">Fuel Type</option>
+<option selected="selected" value="Gas">Gas</option>
+<option value="Diesel">Diesel</option>
+<option value="Hybrid">Hybrid</option>
+<option value="Electric Only">Electric Only</option>
+</select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row magB10">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <label class="mb_pull-right gray_colot46 fs16 fw-60 Raleway"><span>*</span>Current Odometer <img id="odometererrormsgimg" src="./ImageErrorExclamatoeyMarks.png" style="margin-top: -6px; display:none; width:20px; height:20px;"></label>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-7 col-xs-12">
+                                <div class="">
+                                    <input class="form-control formcontrol_input Raleway" id="odometer" max="999999" name="odometer" onblur="fn_checkodometer(this.id);" onkeyup="Textboxkeypress(this.id)" pattern="[0-9]{0,6}" step="1" tabindex="9" type="number" value="">
+                                    <span id="odometererrormsg" style="color:red;"> </span>
+                                    <input type="hidden" id="hdnodometerconfirm">
+                                    <div class="row" style="display:none;" id="dvOdometerConfirm">
+                                        <div class="col-md-6 col-sm-6">
+                                            <input type="button" id="btnyes" value="Yes" class="kslrbule_btn cursor vind_codekaslbrd vi_btn_decode kslmb_top15">
+                                            <input type="button" id="btnno" value="No" class="kslrbule_btn cursor vind_codekaslbrd vi_btn_decode kslmb_top15">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row magB10">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"> </div>
+                            <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12"></div>
+                            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                                <div class="rightalign shadowed kslrbule_btn pull-left cursor kslmargT65" id="btndetails" tabindex="10">Next </div>
+                            </div>
+                        </div>
+
+                        <div class="row" style="display:none;">
+                            <div class="col-md-12">
+
+                                <p class="easiest_para">
+                                    The easiest appraisal you'll ever do. Period.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+
+
+                <section id="tabs2" style="display:none;" class="innercontainer conditions paddT10">
+                    <h1 class="margT15">
+                        <span class="step-number" style="display:none;"><span>2</span></span> <span class="heading-text ksl_header fs22 fw-600 Raleway gray_color33">
+                            What condition is your vehicle in? <img id="conditionimg" src="./ImageErrorExclamatoeyMarks.png" style="margin-top: -6px; display:none; width:20px; height:20px;">
+                        </span>
+                    </h1>
+                    <div style="clear:both;"></div>
+                    <span id="conditionerrmessage" style="color:red"></span>
+                    <div class="row margT10">
+                        <div class="col-lg-9 col-md-9 kslpaddL33">
+
+
+                            <div class="row">
+                                <div class="kslcars_just-between-section">
+
+                                    <div class="just-between col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width16 ">
+                                        <input class="rdoniceone" id="rdoniceone" name="ConditionTypes" style="display:none;" type="radio" value="NiceOne">
+                                        <label for="rdoniceone"><span class="span-text">&nbsp;</span></label>
+
+                                    </div>
+
+                                    <div class="just-between col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width16">
+                                        <input class="rdoniceone" id="rdobetterone" name="ConditionTypes" style="display:none;" type="radio" value="BetterOne">
+                                        <label for="rdobetterone"><span class="span-text">&nbsp;</span></label>
+
+                                    </div>
+
+                                    <div class="just-between col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width16">
+                                        <input class="rdoniceone" id="rdoaverage" name="ConditionTypes" style="display:none;" type="radio" value="Average">
+                                        <label for="rdoaverage"><span class="span-text">&nbsp;</span></label>
+
+                                    </div>
+
+                                    <div class="just-between col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width16">
+                                        <input class="rdoniceone" id="rdofewissue" name="ConditionTypes" style="display:none;" type="radio" value="FewIssues">
+                                        <label for="rdofewissue"><span class="span-text">&nbsp;</span></label>
+
+                                    </div>
+
+                                    <div class="just-between col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width16">
+                                        <input class="rdoniceone" id="rdoclucnker" name="ConditionTypes" style="display:none;" type="radio" value="Clunker">
+                                        <label for="rdoclucnker"><span class="span-text">&nbsp;</span></label>
+
+                                    </div>
+                                    `
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <h1 class="ksl_header fs22 fw-600 Raleway gray_color33" style="margin-top:10px; margin-bottom:0px;">Did you buy it new?</h1>
+                                    <div class="row kslpaddL18">
+
+                                        <div class="col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width32">
+                                            <div class="kslcars_first-or-not">
+                                                <input id="rdosingleowner" class="greybtn" name="ConditionOwners" style="display:none;" type="radio" value="Singleowner">
+                                                <label for="rdosingleowner"></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width32">
+                                            <div class="kslcars_multi-or-not">
+                                                <input id="rdomultiowner" class="greybtn" name="ConditionOwners" style="display:none;" type="radio" value="MultiOwner">
+                                                <label for="rdomultiowner"><span>Nope</span></label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+    <div class="col-lg-6 col-md-6 col-sm-12" id="dvTransmissionsVisible">
+
+        <h1 class="ksl_header fs22 fw-600 Raleway gray_color33" style="margin-top:10px; margin-bottom:0px;">Transmission <img id="transmissionerrmessageimg" src="./ImageErrorExclamatoeyMarks.png" style="margin-top: -6px; display:none; width:20px; height:20px;"></h1>
+        <div class="row">
+           
+            <div class="col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width32">
+                <div class="kslcars_automatic-or-not">
+                    <input id="rdoautomatic" class="greybtn" name="Transmissions" style="display:none;" type="radio" value="Automatic">
+                    <label for="rdoautomatic"></label>
+                </div>
+            </div>
+            <div class="col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width32">
+                <div class="kslcars_manual-or-not">
+                    <input id="rdomanual" class="greybtn" name="Transmissions" style="display:none;" type="radio" value="Manual">
+                    <label for="rdomanual"></label>
+                </div>
+            </div>
+
+            <span id="transmissionerrmessage" style="color:red;display:table;"></span>
+        </div>
+    </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row magB10">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"> </div>
+                        <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12">
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                                <div class="rightalign shadowed kslrbule_btn mbkslmargT22 pull-right cursor" tabindex="16" id="btnconditions">Next </div>
+
+                        </div>
+                    </div>
+
+
+                </section>
+
+
+                <section id="tabs3" style="display:none;" class="innercontainer options paddT20">
+                    <h1><span class="step-number" style="display:none;"><span>3</span></span> <span class="heading-text ksl_header fs22 fw-600 Raleway gray_color33">Got any of these?</span></h1>
+                    <div style="clear:both;"></div>
+                    <span id="anyoftheseerrmessage" style="color:red"></span>
+
+                    <div class="row margT10">
+
+                        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 kslpaddL33">
+                            <div class="row kslcars_got-any-of-these-row">
+                                    <div class="col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width16 section-d-0">
+                                        <div class="kslcars_got-any-of-these">
+                                            <input id="TradeInValletTrimList_0__Name" name="TradeInValletTrimList[0].Name" type="hidden" value="Navigation">
+
+                                            <input id="checkbox-18" style="vertical-align:3px; display:none;" class="css-checkbox checkboxanyofthese" data-val="true" data-val-required="The Checked field is required." name="TradeInValletTrimList[0].Checked" tabindex="18" type="checkbox" value="true"><input name="TradeInValletTrimList[0].Checked" type="hidden" value="false">
+
+
+                                            <label for="checkbox-18"><span>Navigation</span></label>
+
+                                        </div>
+
+
+
+
+                                    </div>
+                                    <div class="col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width16 section-d-1">
+                                        <div class="kslcars_got-any-of-these">
+                                            <input id="TradeInValletTrimList_1__Name" name="TradeInValletTrimList[1].Name" type="hidden" value="Bluetooth">
+
+                                            <input id="checkbox-26" style="vertical-align:3px; display:none;" class="css-checkbox checkboxanyofthese" data-val="true" data-val-required="The Checked field is required." name="TradeInValletTrimList[1].Checked" tabindex="26" type="checkbox" value="true"><input name="TradeInValletTrimList[1].Checked" type="hidden" value="false">
+
+
+                                            <label for="checkbox-26"><span>Bluetooth</span></label>
+
+                                        </div>
+
+
+
+
+                                    </div>
+                                    <div class="col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width16 section-d-2">
+                                        <div class="kslcars_got-any-of-these">
+                                            <input id="TradeInValletTrimList_2__Name" name="TradeInValletTrimList[2].Name" type="hidden" value="Diesel">
+
+                                            <input id="checkbox-28" style="vertical-align:3px; display:none;" class="css-checkbox checkboxanyofthese" data-val="true" data-val-required="The Checked field is required." name="TradeInValletTrimList[2].Checked" tabindex="28" type="checkbox" value="true"><input name="TradeInValletTrimList[2].Checked" type="hidden" value="false">
+
+
+                                            <label for="checkbox-28"><span>Diesel</span></label>
+
+                                        </div>
+
+
+
+
+                                    </div>
+                                    <div class="col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width16 section-d-3">
+                                        <div class="kslcars_got-any-of-these">
+                                            <input id="TradeInValletTrimList_3__Name" name="TradeInValletTrimList[3].Name" type="hidden" value="2nd Row Captain Seats">
+
+                                            <input id="checkbox-31" style="vertical-align:3px; display:none;" class="css-checkbox checkboxanyofthese" data-val="true" data-val-required="The Checked field is required." name="TradeInValletTrimList[3].Checked" tabindex="31" type="checkbox" value="true"><input name="TradeInValletTrimList[3].Checked" type="hidden" value="false">
+
+
+                                            <label for="checkbox-31"><span>2nd Row Captain Seats</span></label>
+
+                                        </div>
+
+
+
+
+                                    </div>
+                                    <div class="col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width16 section-d-4">
+                                        <div class="kslcars_got-any-of-these">
+                                            <input id="TradeInValletTrimList_4__Name" name="TradeInValletTrimList[4].Name" type="hidden" value="Hard Top">
+
+                                            <input id="checkbox-33" style="vertical-align:3px; display:none;" class="css-checkbox checkboxanyofthese" data-val="true" data-val-required="The Checked field is required." name="TradeInValletTrimList[4].Checked" tabindex="33" type="checkbox" value="true"><input name="TradeInValletTrimList[4].Checked" type="hidden" value="false">
+
+
+                                            <label for="checkbox-33"><span>Hard Top</span></label>
+
+                                        </div>
+
+
+
+
+                                    </div>
+                                    <div class="col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width16 section-d-5">
+                                        <div class="kslcars_got-any-of-these">
+                                            <input id="TradeInValletTrimList_5__Name" name="TradeInValletTrimList[5].Name" type="hidden" value="Rear Seat TV">
+
+                                            <input id="checkbox-22" style="vertical-align:3px; display:none;" class="css-checkbox checkboxanyofthese" data-val="true" data-val-required="The Checked field is required." name="TradeInValletTrimList[5].Checked" tabindex="22" type="checkbox" value="true"><input name="TradeInValletTrimList[5].Checked" type="hidden" value="false">
+
+
+                                            <label for="checkbox-22"><span>Rear Seat TV</span></label>
+
+                                        </div>
+
+
+
+
+                                    </div>
+                                    <div class="col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width16 section-d-6">
+                                        <div class="kslcars_got-any-of-these">
+                                            <input id="TradeInValletTrimList_6__Name" name="TradeInValletTrimList[6].Name" type="hidden" value="Soft Top">
+
+                                            <input id="checkbox-34" style="vertical-align:3px; display:none;" class="css-checkbox checkboxanyofthese" data-val="true" data-val-required="The Checked field is required." name="TradeInValletTrimList[6].Checked" tabindex="34" type="checkbox" value="true"><input name="TradeInValletTrimList[6].Checked" type="hidden" value="false">
+
+
+                                            <label for="checkbox-34"><span>Soft Top</span></label>
+
+                                        </div>
+
+
+
+
+                                    </div>
+                                    <div class="col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width16 section-d-7">
+                                        <div class="kslcars_got-any-of-these">
+                                            <input id="TradeInValletTrimList_7__Name" name="TradeInValletTrimList[7].Name" type="hidden" value="Sunroof">
+
+                                            <input id="checkbox-19" style="vertical-align:3px; display:none;" class="css-checkbox checkboxanyofthese" data-val="true" data-val-required="The Checked field is required." name="TradeInValletTrimList[7].Checked" tabindex="19" type="checkbox" value="true"><input name="TradeInValletTrimList[7].Checked" type="hidden" value="false">
+
+
+                                            <label for="checkbox-19"><span>Sunroof</span></label>
+
+                                        </div>
+
+
+
+
+                                    </div>
+                                    <div class="col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width16 section-d-8">
+                                        <div class="kslcars_got-any-of-these">
+                                            <input id="TradeInValletTrimList_8__Name" name="TradeInValletTrimList[8].Name" type="hidden" value="Power Top">
+
+                                            <input id="checkbox-35" style="vertical-align:3px; display:none;" class="css-checkbox checkboxanyofthese" data-val="true" data-val-required="The Checked field is required." name="TradeInValletTrimList[8].Checked" tabindex="35" type="checkbox" value="true"><input name="TradeInValletTrimList[8].Checked" type="hidden" value="false">
+
+
+                                            <label for="checkbox-35"><span>Power Top</span></label>
+
+                                        </div>
+
+
+
+
+                                    </div>
+                                    <div class="col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width16 section-d-9">
+                                        <div class="kslcars_got-any-of-these">
+                                            <input id="TradeInValletTrimList_9__Name" name="TradeInValletTrimList[9].Name" type="hidden" value="Leather">
+
+                                            <input id="checkbox-21" style="vertical-align:3px; display:none;" class="css-checkbox checkboxanyofthese" data-val="true" data-val-required="The Checked field is required." name="TradeInValletTrimList[9].Checked" tabindex="21" type="checkbox" value="true"><input name="TradeInValletTrimList[9].Checked" type="hidden" value="false">
+
+
+                                            <label for="checkbox-21"><span>Leather</span></label>
+
+                                        </div>
+
+
+
+
+                                    </div>
+                                    <div class="col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width16 section-d-10">
+                                        <div class="kslcars_got-any-of-these">
+                                            <input id="TradeInValletTrimList_10__Name" name="TradeInValletTrimList[10].Name" type="hidden" value="Heated Seats">
+
+                                            <input id="checkbox-24" style="vertical-align:3px; display:none;" class="css-checkbox checkboxanyofthese" data-val="true" data-val-required="The Checked field is required." name="TradeInValletTrimList[10].Checked" tabindex="24" type="checkbox" value="true"><input name="TradeInValletTrimList[10].Checked" type="hidden" value="false">
+
+
+                                            <label for="checkbox-24"><span>Heated Seats</span></label>
+
+                                        </div>
+
+
+
+
+                                    </div>
+                                    <div class="col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width16 section-d-11">
+                                        <div class="kslcars_got-any-of-these">
+                                            <input id="TradeInValletTrimList_11__Name" name="TradeInValletTrimList[11].Name" type="hidden" value="Cooled Seats">
+
+                                            <input id="checkbox-25" style="vertical-align:3px; display:none;" class="css-checkbox checkboxanyofthese" data-val="true" data-val-required="The Checked field is required." name="TradeInValletTrimList[11].Checked" tabindex="25" type="checkbox" value="true"><input name="TradeInValletTrimList[11].Checked" type="hidden" value="false">
+
+
+                                            <label for="checkbox-25"><span>Cooled Seats</span></label>
+
+                                        </div>
+
+
+
+
+                                    </div>
+                                    <div class="col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width16 section-d-12">
+                                        <div class="kslcars_got-any-of-these">
+                                            <input id="TradeInValletTrimList_12__Name" name="TradeInValletTrimList[12].Name" type="hidden" value="Factory Wheel Upgrade">
+
+                                            <input id="checkbox-20" style="vertical-align:3px; display:none;" class="css-checkbox checkboxanyofthese" data-val="true" data-val-required="The Checked field is required." name="TradeInValletTrimList[12].Checked" tabindex="20" type="checkbox" value="true"><input name="TradeInValletTrimList[12].Checked" type="hidden" value="false">
+
+
+                                            <label for="checkbox-20"><span>Factory Wheel Upgrade</span></label>
+
+                                        </div>
+
+
+
+
+                                    </div>
+                                    <div class="col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width16 section-d-13">
+                                        <div class="kslcars_got-any-of-these">
+                                            <input id="TradeInValletTrimList_13__Name" name="TradeInValletTrimList[13].Name" type="hidden" value="Keyless Entry">
+
+                                            <input id="checkbox-23" style="vertical-align:3px; display:none;" class="css-checkbox checkboxanyofthese" data-val="true" data-val-required="The Checked field is required." name="TradeInValletTrimList[13].Checked" tabindex="23" type="checkbox" value="true"><input name="TradeInValletTrimList[13].Checked" type="hidden" value="false">
+
+
+                                            <label for="checkbox-23"><span>Keyless Entry</span></label>
+
+                                        </div>
+
+
+
+
+                                    </div>
+                                    <div class="col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width16 section-d-14">
+                                        <div class="kslcars_got-any-of-these">
+                                            <input id="TradeInValletTrimList_14__Name" name="TradeInValletTrimList[14].Name" type="hidden" value="Lifted">
+
+                                            <input id="checkbox-29" style="vertical-align:3px; display:none;" class="css-checkbox checkboxanyofthese" data-val="true" data-val-required="The Checked field is required." name="TradeInValletTrimList[14].Checked" tabindex="29" type="checkbox" value="true"><input name="TradeInValletTrimList[14].Checked" type="hidden" value="false">
+
+
+                                            <label for="checkbox-29"><span>Lifted</span></label>
+
+                                        </div>
+
+
+
+
+                                    </div>
+                                    <div class="col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width16 section-d-15">
+                                        <div class="kslcars_got-any-of-these">
+                                            <input id="TradeInValletTrimList_15__Name" name="TradeInValletTrimList[15].Name" type="hidden" value="3rd Rows Seats">
+
+                                            <input id="checkbox-32" style="vertical-align:3px; display:none;" class="css-checkbox checkboxanyofthese" data-val="true" data-val-required="The Checked field is required." name="TradeInValletTrimList[15].Checked" tabindex="32" type="checkbox" value="true"><input name="TradeInValletTrimList[15].Checked" type="hidden" value="false">
+
+
+                                            <label for="checkbox-32"><span>3rd Rows Seats</span></label>
+
+                                        </div>
+
+
+
+
+                                    </div>
+                                    <div class="col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width16 section-d-16">
+                                        <div class="kslcars_got-any-of-these">
+                                            <input id="TradeInValletTrimList_16__Name" name="TradeInValletTrimList[16].Name" type="hidden" value="Remote Start">
+
+                                            <input id="checkbox-36" style="vertical-align:3px; display:none;" class="css-checkbox checkboxanyofthese" data-val="true" data-val-required="The Checked field is required." name="TradeInValletTrimList[16].Checked" tabindex="36" type="checkbox" value="true"><input name="TradeInValletTrimList[16].Checked" type="hidden" value="false">
+
+
+                                            <label for="checkbox-36"><span>Remote Start</span></label>
+
+                                        </div>
+
+
+
+
+                                    </div>
+                                    <div class="col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width16 section-d-17">
+                                        <div class="kslcars_got-any-of-these">
+                                            <input id="TradeInValletTrimList_17__Name" name="TradeInValletTrimList[17].Name" type="hidden" value="Parking Sensors">
+
+                                            <input id="checkbox-27" style="vertical-align:3px; display:none;" class="css-checkbox checkboxanyofthese" data-val="true" data-val-required="The Checked field is required." name="TradeInValletTrimList[17].Checked" tabindex="27" type="checkbox" value="true"><input name="TradeInValletTrimList[17].Checked" type="hidden" value="false">
+
+
+                                            <label for="checkbox-27"><span>Parking Sensors</span></label>
+
+                                        </div>
+
+
+
+
+                                    </div>
+                                    <div class="col-xs-4 col-xs-44 col-sm-15 col-md-15 ksl-col-width16 section-d-18">
+                                        <div class="kslcars_got-any-of-these">
+                                            <input id="TradeInValletTrimList_18__Name" name="TradeInValletTrimList[18].Name" type="hidden" value="Backup Camera">
+
+                                            <input id="checkbox-30" style="vertical-align:3px; display:none;" class="css-checkbox checkboxanyofthese" data-val="true" data-val-required="The Checked field is required." name="TradeInValletTrimList[18].Checked" tabindex="30" type="checkbox" value="true"><input name="TradeInValletTrimList[18].Checked" type="hidden" value="false">
+
+
+                                            <label for="checkbox-30"><span>Backup Camera</span></label>
+
+                                        </div>
+
+
+
+
+                                    </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-15 col-md-3 col-lg-3"></div>
+                    </div>
+
+                    <h1 style="margin-top:5px;" class="ksl_header fs22 fw-600 Raleway gray_color33 paddT15">
+                        Is that your final answer?
+                    </h1>
+
+
+                    <div class="row">
+                        <div class="col-md-9 col-sm-9">
+                            <p class="pagraphksl fs16 fw-400 Raleway gray_color46 margB10"> Tell us anything about this vehicle you would want to know if YOU were buying it.  Good or bad, the more info you provide the more accurate your offer will be.</p>
+                        </div>
+
+                        <div class="row kslmb_mrg0">
+                            <div class="col-md-8 col-sm-8">
+                                <textarea class="commentsarea form-control form-control_textareaksl Raleway fs16" cols="20" id="tellmemore" maxlength="300" name="tellmemore" row="5" rows="2" tabindex="28"></textarea>
+                            </div>
+                                <div class="col-md-4 col-sm-4 btn-step-3">
+                                    <div class="rightalign shadowed kslrbule_btn pull-right cursor mb_margtop99" tabindex="16" id="btnoptions">Next </div>
+                                </div>
+
+
+
+                        </div>
+                        </div>
+                </section>
+
+
+                <section id="tabs4" style="display:none;" class="innercontainer delievery paddT20 eventtag">
+
+                    <h1 class="pad_b_15">
+                        <span class="step-number" style="display:none;"><span>4</span></span>
+
+                        <span class="ksl_header fs22 fw-600 Raleway gray_color33">Who should we send the appraisal to?</span>
+
+                    </h1>
+                    <div style="clear:both;"></div>
+
+                    <div class="row magB10 margT45">
+                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                            <label class="mb_pull-right gray_colot46 fw-60 Raleway fs16">First Name <img id="FullNameerrormsgimg" src="./ImageErrorExclamatoeyMarks.png" style="margin-top: -6px; display:none; width:20px; height:20px;"></label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-7 col-xs-12">
+                            <div class="">
+                                <input class="form-control formcontrol_input Raleway" id="FullName" maxlength="39" name="ConsumerModel.FirstName" onkeyup="Textboxkeypress(this.id)" tabindex="30" type="text" value="">
+                                <span id="FullNameerrormsg" style="color:red;"> </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row magB10">
+                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                            <label class="mb_pull-right gray_colot46 fw-60 Raleway fs16">Last Name <img id="LastNameerrormsgimg" src="./ImageErrorExclamatoeyMarks.png" style="margin-top: -6px; display:none; width:20px; height:20px;"></label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-7 col-xs-12">
+                            <div class="">
+                                <input class="form-control formcontrol_input Raleway" id="LastName" maxlength="39" name="ConsumerModel.LastName" onkeyup="Textboxkeypress(this.id)" tabindex="30" type="text" value="">
+                                <span id="LastNameerrormsg" style="color:red;"> </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row magB10">
+                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                            <label class="mb_pull-right gray_colot46 fw-60 Raleway fs16">Mobile Number (to text offer) <img id="Phoneerrormsgimg" src="./ImageErrorExclamatoeyMarks.png" style="margin-top: -6px; display:none; width:20px; height:20px;"></label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-7 col-xs-12">
+                            <div class="">
+                                <input class="form-control formcontrol_input Raleway" id="Phone" maxlength="10" name="ConsumerModel.Phone" onkeypress="return IsNumberKeywithdotmob(event);" onkeyup="Textboxkeypress(this.id)" tabindex="31" type="tel" value="">
+                                <span id="Phoneerrormsg" style="color:red;"> </span>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row magB10">
+                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                            <label class="mb_pull-right gray_colot46 fw-60 Raleway fs16">Email (to email offer) <img id="lblinvalidemailimg" src="./ImageErrorExclamatoeyMarks.png" style="margin-top: -6px; display:none; width:20px; height:20px;"></label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-7 col-xs-12">
+                            <div class="">
+                                <input class="form-control formcontrol_input Raleway" id="Email" maxlength="70" name="ConsumerModel.Email" onkeyup="Textboxkeypress(this.id)" tabindex="32" type="email" value="">
+
+
+                                <img style="display:none; width: 30px;    text-align: right;   padding-left: 5px; margin: 0px; float: right; margin-right: -33px; margin-top: -28px;" id="emailcorrectimg" src="./Emailrightimage.jpg">
+                                <span style="color:red;" id="lblinvalidemail"></span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row magB10">
+                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                            <label class="mb_pull-right gray_colot46 fw-60 Raleway fs16">Zip Code <img id="ZipCodeerrormsgimg" src="./ImageErrorExclamatoeyMarks.png" style="margin-top: -6px; display:none; width:20px; height:20px;"></label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-7 col-xs-12">
+                            <div class="">
+                                <input class="form-control formcontrol_input Raleway" id="ZipCode" max="99999" name="ConsumerModel.ZipCode" pattern="[0-9]{0,5}" step="1" tabindex="33" type="number" value="">
+                                <span id="ZipCodeerrormsg" style="color:red;"> </span>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                                            <div class="row magB10">
+                            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                <label class="mb_pull-right gray_colot46 Raleway margT15 Raleway fs16" style="font-weight:bold;">Will your next car be NEW or USED? <img id="neworusedimg" src="./ImageErrorExclamatoeyMarks.png" style="margin-top: -6px; display:none; width:20px; height:20px;"></label>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-7 col-xs-12">
+                                <div id="divSterlingnew" class="usede_div">
+                                    <input data-val="true" data-val-required="The Sterlingnew field is required." id="Sterlingnew" name="Sterlingnew" type="hidden" value="False">
+
+                                    <input id="checkbox-Sterlingnew" style="vertical-align:3px; display:none;" class="css-checkbox trademakercheckboxanyofthese  form-control formcontrol_input Raleway" name="Sterlingnew" type="checkbox" value="true"><input name="Sterlingnew" type="hidden" value="false">
+
+
+                                    <label id="lblsterling" class="kslcars_labelimg kslcars_labelinactvie" for="checkbox-Sterlingnew">
+                                        <span class="trademaker_span Raleway" style="display:table; font-size:12px;width: 100%; margin-top: 26px; text-transform: uppercase;">New</span>
+
+                                    </label>
+
+                                </div>
+
+                                <div id="divSterlingused" class="usede_div">
+                                    <div class="">
+                                        <input data-val="true" data-val-required="The Sterlingused field is required." id="Sterlingused" name="Sterlingused" type="hidden" value="False">
+
+                                        <input id="checkbox-Sterlingused" style="vertical-align:3px; display:none;" class="css-checkbox trademakercheckboxanyofthese" name="Sterlingused" type="checkbox" value="true"><input name="Sterlingused" type="hidden" value="false">
+
+
+                                        <label id="lblsterlingused" class="kslcars_labelimg kslcars_labelinactvie" for="checkbox-Sterlingused">
+                                            <span class="trademaker_span Raleway" style="display:table; font-size:12px;width: 100%;  margin-top: 26px; text-transform: uppercase;">Used</span>
+
+                                        </label>
+
+                                    </div>
+
+
+
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                        <div class="row magB10">
+                            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-7 col-xs-12">
+                                <span id="tradetypemakererrmessage" style="color:red"></span>
+                            </div>
+                        </div>
+                    
+
+                    <div class="row tabs4 kaslmargT70">
+                        <div class="col-md-4 col-sm-5 text-right"></div>
+                        <div class="col-md-4 col-sm-4">
+                        </div>
+                            <div class="col-md-4   btn-step-4 col-sm-3" style="position:relative;">
+
+                                <button type="submit" class="rightalign shadowed kslrbule_btn pull-right cursor" tabindex="16" value="Show Me the Money!" style="border:0px;    width: 248px;margin-top:30px;max-width: 300px; " onclick="return TradeInValidation();"> Show Me The Money</button>
+                                <div id="popup-disabled" style="position:absolute;   width: 263px; height:100%; background:rgba(255, 255, 255, 0.69); top:0px; right:0px; display:none;"></div>
+                            </div>
+
+
+                    </div>
+                    <div class="row tabs4 margT30">
+                        <div class="col-md-12 text-right">
+                            <div class="showmedivksl fs11 fw-500 gray_color46 Raleway">
+                                <span id="spanDisclaimer">By clicking "Show Me The Money", I authorize this Trade-In Valet Dealer and its service providers to send me my vehicle appraisal, and SMS text messages, phone calls, and/or voicemail messages using automated technology or prerecorded voice for marketing purposes to the number above. This consent is not required to sell my vehicle or to make a purchase, and I can revoke my consent at any time.  Message and data rates may apply.</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+
+    </div>
+    <input class="yearmakemodelhiddenvals" id="yearmakemodelhidden" maxlength="100" name="yearmakemodelhidden" style="display:none;" type="text" value="">
+    <input type="text" id="hiddeninputforymm" style="visibility:hidden; display:none;">
+
+
+</div>
+    <div class="loader-bg" id="loader-bg" style="display: none;"></div>
+    <div class="sk-circle" id="loader-content" style="display: none;">
+        <div class=" sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+    </div>
+    <script>
+    var CustAppServiceByChromeData = 'https://customerapplication.azurewebsites.net/services/GetChromeDataInformation';
+        var _currentDealerId = '809';
+    var CustAppEmailVerficationCheck = 'https://customerapplication.azurewebsites.net/Services/EmailVerficationCheck';
+    var ViewResEnglishTrim = "SELECT"
+    var ViewResEnglishYear = "SELECT"
+    var ViewResEnglishMake = "SELECT"
+    var ViewResEnglishModel = "SELECT"
+
+    var ViewResEnglishEngine = "SELECT"
+    var ViewResEnglishDriveline = "SELECT"
+
+    var ViewResEnglishVincheckvalidation = "Please enter valid vin";
+    var ViewResEnglishmakevalidation = 'Please select make';
+
+    var ViewResEnglishBodyandStyle = 'SELECT';
+
+    var ViewResEnglishemailvalidation = 'Please enter a valid email';
+    var ViewResEnglishmodelvalidation = 'Please select model';
+    var ViewResEnglishyearvalidation = 'Please select year';
+    var ViewResEnglishtrimvalidation = 'Please select trim';
+    var ViewResEnglishbodystylevalidation = 'Please select Body and Style';
+    var ViewResEnglishEnginevalidation = "Please enter Engine";
+    var ViewResEnglishDrivelinevalidation = "Please Select Driveline";
+    var ViewResEnglishtransmissionvalidation = "Please select transmission";
+
+    var ViewResEnglishtransmission = "SELECT";
+
+    var ViewResPlaceholderYMM = "Type your vehicle&#39;s year, make, and model here";
+
+    var ViewResEnglishodometervalidation = "Please enter odometer";
+    var ViewResEnglishSingleLineEntryValid = "Sorry! Could not find vehicle entered";
+
+    var ViewResEnglishStateValidation = "Please select state";
+    var ViewResEnglishLicenceValidation = "Please enter license plate number";
+
+    var ViewResEnglishIscarFxValid = "Please enter vehicle year, make, model";
+    var ViewResEnglishtransmissionvalidation = "Please select transmission";
+
+    var Issinglelineentry = JSON.parse('false');
+    var IsCarfaxVin = JSON.parse('false');
+
+    var Kslcars = 'True';
+    var Isfcalead = 'False';
+    var IsSubbaru = 'False';
+    var IsLexus = 'False';
+    var IsToyota = 'False';
+    var subaruProvider = 'AUTOLOOP';
+    var lexusProvider = 'TradeInValet';
+    var toyotaProvider = 'TradeInValet';
+    var kslcarsdealers = 'False';
+    var Typeofdealer = '';
+    var CheckDealertype = '';
+    var toyotacheck = 'False';
+    var Smarttrade = 'False';
+    var Iskalcars = 'True';
+    var ResultCount = '30';
+    var isFirstVinkey = false;
+    var isFirstOdokey = false;
+    var isFirstTellmemorekey = false;
+    var isFirstkeyFirstname = false;
+    var isFirstkeyLastname = false;
+    var isFirstMobilekey = false;
+    var isFirstEmailkey = false;
+    var isFirstZipkey = false;
+    var isSingleLineFirstKey = false;
+    var isFirstLicencePlate = false;
+    var isFCAFirstTimePressOrSelect = false;
+
+    function FCATopPostMessage() {
+        top.postMessage(JSON.stringify({
+            type: "CustomTagEvent",
+            eventName: "start",
+            eventAction: "form",
+            attributes: {
+                formDescription: "lead",
+                formType: "vendor trade in tool",
+                displayType: "inPage",
+                displayFormat: "iframe",
+                tradeInProvider: "TradeInValet"
+            }
+        }), '*');
+    }
+
+    function loadDisclaimer() {
+        $.ajax({
+            url: '/TradeInVallet/GetDisclaimer',
+            dataType: 'json',
+            type: 'GET',
+            success: function (data) {
+                $('#spanDisclaimer').html(data.disclaimer);
+            },
+            error: function (err) {
+                console.error(err);
+            }
+        });
+    }
+
+    function configureSalesPersonSelection() {
+        $('#ddlPreferredDealership').change(function () {
+            var preferredDealershipId = $(this).val();
+            $("#salesPersonContent").html("");
+
+            if (preferredDealershipId && parseInt(preferredDealershipId) > 0) {
+                $('#ddlPreferredDealership').removeClass("errorbox");
+                $("#preferredDealershipErrorMsg").html("");
+                $("#preferredDealershipErrorMsg").hide();
+                $(".loading-salesperson").removeClass('hidden');
+
+                $("#salesPersonContent").load('/TradeInVallet/LoadSalesPersonList'
+                    + '?dealerId=' + preferredDealershipId
+                    + "&isAudi=" + 'False'
+                    + "&isSpanish=" + 'False'
+                    + '&isSmartTrade=' + 'False'
+                    + "&isSingleLine=" + 'False'
+                );
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        configureSalesPersonSelection();
+        loadDisclaimer();
+        // sendMessage1("Send message 123");
+        //   $("#StateCode").attr('autocomplete', 'off');
+        $("#FullName").val('')
+        $("#LastName").val('')
+        Iskalcars = 'True';
+        $('#hdnksldata').val('True')
+        Isfcalead = 'False';
+        IsSubbaru = 'False';
+        IsLexus = 'False';
+        IsToyota = 'False';
+        kslcarsdealers = 'False';
+        Typeofdealer = '';
+        if (Isfcalead == "True") {
+            $("#vin").bind("keypress", function (event) {
+                if (isFCAFirstTimePressOrSelect == false) {
+                    FCATopPostMessage();
+                    isFCAFirstTimePressOrSelect = true;
+                }
+            });
+            $("#vin").bind('paste', function () {
+                if (isFCAFirstTimePressOrSelect == false) {
+                    FCATopPostMessage();
+                    isFCAFirstTimePressOrSelect = true;
+                }
+            });
+            $("#CBRYear").change(function () {
+                if (isFCAFirstTimePressOrSelect == false) {
+                    FCATopPostMessage();
+                    isFCAFirstTimePressOrSelect = true;
+                }
+            });
+            //SINGLE LINE ENTRY
+            $("#loopAutocomp").bind("keypress", function (event) {
+                if (isFCAFirstTimePressOrSelect == false) {
+                    FCATopPostMessage();
+                    isFCAFirstTimePressOrSelect = true;
+                }
+            });
+            // SINGLE LINE ENTRY and ISCARFAX is true
+            $("#StateCode").change(function () {
+                if (isFCAFirstTimePressOrSelect == false) {
+                    FCATopPostMessage();
+                    isFCAFirstTimePressOrSelect = true;
+                }
+            });
+            $("#txtLicencePlate").bind("keypress", function (event) {
+                if (isFCAFirstTimePressOrSelect == false) {
+                    FCATopPostMessage();
+                    isFCAFirstTimePressOrSelect = true;
+                }
+            });
+            $("#txtLicencePlate").bind('paste', function () {
+                if (isFCAFirstTimePressOrSelect == false) {
+                    FCATopPostMessage();
+                    isFCAFirstTimePressOrSelect = true;
+                }
+            });
+        }
+        if ((Iskalcars == 'True') || (kslcarsdealers == 'True' && Typeofdealer == 'KSL')) {
+            ViewResEnglishTrim = ViewResEnglishTrim;
+            ViewResEnglishBodyandStyle = ViewResEnglishBodyandStyle;
+            ViewResEnglishEngine = ViewResEnglishEngine;
+            ViewResEnglishDriveline = ViewResEnglishDriveline;
+        }
+
+        else {
+            CustAppServiceByChromeData = 'https://customerapplication.azurewebsites.net/services/GetChromeDataInformation';
+            ViewResEnglishTrim = "SELECT";
+            ViewResEnglishBodyandStyle = 'SELECT';
+            ViewResEnglishEngine = "SELECT";
+            ViewResEnglishDriveline = "SELECT";
+            ViewResEnglishemailvalidation = 'Please enter a valid email';
+            ViewResEnglishmakevalidation = 'Please select make';
+            ViewResEnglishVincheckvalidation = "Please enter valid vin";
+            VieResEnglishIscarFxValid = "Please enter vehicle year, make, model";
+            ViewResEnglishtransmission = "SELECT";
+        }
+
+        $('.custom-tab li, .newcustom-tab li').first().addClass("kslcarsactive");
+        var SalesId = '0';
+
+        if (SalesId != "" && SalesId != null && SalesId != "0") {
+            $("#ddlSalesStaffID").val(SalesId);
+            $("#ddlSalesStaffID").hide();
+            $("#lblsalesperson").hide();
+            $("#divIsSalesPerson").hide();
+
+        }
+        else {
+            $("#ddlSalesStaffID").show();
+            $("#lblsalesperson").show();
+            $("#divIsSalesPerson").show();
+        }
+    });
+
+    </script>
+<script src="./Scripts"></script>
+        <script type="text/javascript">
+
+
+
+            // Send a message to the child iframe
+            //var iframeEl = document.getElementById('iframtiv');
+            //var btn = document.getElementById('btnsubmit');
+            //// Send a message to the child iframe
+            //var sendMessage = function (msg) {
+            //    // Make sure you are sending a string, and to stringify JSON
+            //    iframeEl.contentWindow.postMessage(msg, '*');
+            //};
+
+
+
+            //// Listen to message from child window
+            //bindEvent(window, 'message', function (e) {
+            //    var random = $('.main-column').attr("data-listing")//$('#txtdata').val();
+            //    sendMessage('' + random);
+            //});
+
+
+            //bindEvent(btn, 'click', function (e) {
+            //    debugger
+            //    var random = $('#txtdata').val();
+            //    sendMessage('' + random);
+            //});
+
+
+
+
+
+            function Start() {
+                if (IsCarfaxVin) {
+                    getcarfaxdetails("start", "")//Start
+                }
+                else {
+                    $("#loader-bg").hide();
+                    $("#loader-content").hide();
+                    GetStartDetailstoNextStep();
+                }
+            }
+
+            function Details() {
+
+                var errorcounr = 0;
+
+                errorcounr = ValidateVehicleInfo();
+                console.log(errorcounr);
+
+                if (errorcounr > 0) {
+                    return false;
+                }
+                else {
+
+
+
+                    $("#tabs2").css("display", "block");
+                    $("#tabs1").css("display", "none");
+                    $("#conditions").removeClass("kslcarsinactive");
+                    $("#details").parent().removeClass("kslcarsactive");
+                    $("#conditions").addClass("kslcarsactive");
+                    $("#conditions").parent().addClass("kslcarsactive");
+
+                }
+            }
+
+            function Conditions() {
+                var errorcount = 0;
+                var ConditionTypescheckedvalue = $("input[name='ConditionTypes']:checked").val();
+                var Transmissionscheckedvalue = "";
+
+                if ($('#dvTransmissionsVisible').is(":visible"))
+                    Transmissionscheckedvalue = $("input[name='Transmissions']:checked").val();
+
+                var optionTypescheckedvalues = '';
+                var optionTypescheckedvalue = document.getElementsByClassName('checkboxanyofthese');
+                var Engine = $("#CBREngine").val();
+
+                if (ConditionTypescheckedvalue == undefined || ConditionTypescheckedvalue == '') {
+
+                    $("#conditionerrmessage").html("Please Select a Condition");
+                    $("#conditionimg").show();
+                    errorcount++;
+                }
+                else {
+
+                    $("#conditionerrmessage").html('');
+                    $("#conditionimg").hide();
+                }
+
+                if ($('#dvTransmissionsVisible').is(":visible")) {
+                    if (Transmissionscheckedvalue == undefined || Transmissionscheckedvalue == '') {
+                        $("#transmissionerrmessage").html("Please Select a Transmission");
+                        $("#transmissionerrmessageimg").show();
+                        errorcount++;
+                    }
+                    else {
+                        $("#transmissionerrmessage").html('');
+                        $("#transmissionerrmessageimg").hide();
+                    }
+                }
+
+                if (errorcount > 0) {
+                    return false;
+                }
+                else {
+
+                    $("#tabs3").css("display", "block");
+                    $("#tabs2").css("display", "none");
+                    $("#options").removeClass("kslcarsinactive");
+                    $("#options").addClass("kslcarsactive");
+
+                    $("#details").parent().removeClass("kslcarsactive");
+                    $("#conditions").parent().removeClass("kslcarsactive");
+                    $("#options").addClass("kslcarsactive");
+                    $("#options").parent().addClass("kslcarsactive");
+                }
+                $("#tellmemore").focus();
+
+                ChangeOptionBasedOnType($('#hdnChangeOptionBasedOnType').val());
+                $('html, body').animate({ scrollTop: $('#scrolldiv').offset().top }, 'slow');
+                //$("#details").focus();
+
+
+            }
+
+
+            function Options() {
+
+                var errorcount = 0;
+                var optionTypescheckedvalues = '';
+                var optionTypescheckedvalue = document.getElementsByClassName('checkboxanyofthese');
+
+
+                $("#tabs4").css("display", "block");
+                $("#tabs3").css("display", "none");
+
+
+
+                $("#delievery").removeClass("kslcarsinactive");
+                $("#delievery").addClass("kslcarsactive");
+
+                $("#details").parent().removeClass("kslcarsactive");
+                $("#conditions").parent().removeClass("kslcarsactive");
+                $("#options").parent().removeClass("kslcarsactive");
+                $("#delievery").addClass("kslcarsactive");
+                $("#delievery").parent().addClass("kslcarsactive");
+
+                $("#FullName").focus();
+                $('html, body').animate({ scrollTop: $('#scrolldiv').offset().top }, 'slow');
+                //$("#details").focus();
+            }
+
+
+            function Delivery() {
+
+                $(".needtodisable").click();
+                $(".rightalign").click();
+
+
+            }
+
+            function ClearingValidations() {
+                $("#tabs1 span").html("");
+                $("select").removeClass("errorbox");
+                $(".buttonhide").prop('disabled', false);
+                $(".buttonhide").removeClass("disabled");
+                cleardropdowns();
+                $("#CBRYear").prop('disabled', false);
+
+                $("#odometererrormsg").html("");
+                $("#odometer").removeClass("errorbox");
+
+                $("#CBRModel").prop('disabled', true);
+                $("#CBRMakes").prop('disabled', true);
+                $("#CBRTrim").prop('disabled', true);
+                $("#CBRBodyandStyle").prop('disabled', true);
+            }
+
+
+            //When enter Key is Clicked
+
+            //$(document).keypress(function (e) {
+
+            //    if (e.which == 13) {
+
+            //        if ($('#tabs0').is(":visible")) {
+
+            //            var vinvalues = $("#vin").val();
+
+            //            //If vin is not null
+
+            //            if (vinvalues != null & vinvalues != '') {
+
+            //                ClearingValidations();
+            //                return decodevin();
+            //            }
+            //            else {
+
+            //                // Else Navigating to Next page by validating
+            //                var errorcounr = 0;
+
+            //                errorcounr = ValidateVehicleInfo();
+
+            //                if (errorcounr > 0) {
+            //                    return false;
+            //                }
+            //                else {
+            //                    Start();
+            //                }
+
+            //            }
+            //        }
+            //        else if ($('#tabs1').is(":visible")) {
+
+            //            Details();
+
+            //        }
+            //        else if ($('#tabs2').is(":visible")) {
+
+            //            Conditions();
+
+            //        }
+            //        else if ($('#tabs3').is(":visible")) {
+
+            //            Options();
+
+            //        }
+            //        else if ($('#tabs4').is(":visible")) {
+            //            Delivery();
+
+            //        }
+            //    }
+            //});
+
+
+
+
+            $(document).ready(function () {
+
+                $("input[name='ConditionTypes']").click(function () {
+                    $("#conditionerrmessage").html('');
+                    $("#conditionimg").hide();
+                });
+                $("input[name='Transmissions']").click(function () {
+                    $("#transmissionerrmessage").html('');
+                    $("#transmissionerrmessageimg").hide();
+                });
+                $(document).on("keyup", function (event) {
+
+                    if (event.which == 13) {
+                        var vinvalues = $("#vin").val();
+
+                        if ($('#tabs0').is(":visible")) {
+
+                            var vinvalues = $("#vin").val();
+
+                            //If vin is not null
+
+                            //if (vinvalues != null & vinvalues != '') {
+
+                            //    ClearingValidations();
+                            //    return decodevin();
+                            //}
+                            //else {
+
+                                // Else Navigating to Next page by validating
+                                var errorcounr = 0;
+
+                                errorcounr = ValidateVehicleInfo();
+
+                                if (errorcounr > 0) {
+                                    return false;
+                                }
+                                else {
+                                    Start();
+                                }
+
+                           // }
+                        }
+
+                        else if ($('#tabs1').is(":visible")) {
+
+                            $("#btndetails").click();
+
+                        }
+                        else
+                            if ($('#tabs2').is(":visible")) {
+
+                                $("#btnconditions").click();
+
+                            }
+                            else if ($('#tabs3').is(":visible")) {
+
+                                $("#btnoptions").click();
+
+
+                            }
+                            else if ($('#tabs4').is(":visible")) {
+                                Delivery();
+
+                            }
+
+                    }
+                });
+                $("#btndetails").click(function () {
+
+                    var errorcounr = 0;
+                    errorcounr = ValidateVehicleInfo();
+
+                    if (errorcounr > 0) {
+                        return false;
+                    }
+                    else {
+
+                        $("#tabs2").css("display", "block");
+                        $("#tabs1").css("display", "none");
+                        $("#conditions").removeClass("kslcarsinactive");
+                        $("#details").parent().removeClass("kslcarsactive");
+                        $("#conditions").addClass("kslcarsactive");
+                        $("#conditions").parent().addClass("kslcarsactive");
+
+                    }
+                    $('html, body').animate({ scrollTop: $('#scrolldiv').offset().top }, 'slow');
+                    $("#conditions").focus();
+                });
+
+
+
+                $("#btnconditions").click(function () {
+
+                    var errorcount = 0;
+                    var ConditionTypescheckedvalue = $("input[name='ConditionTypes']:checked").val();
+                    var Transmissionscheckedvalue = "";
+
+                    if ($('#dvTransmissionsVisible').is(":visible"))
+                        Transmissionscheckedvalue = $("input[name='Transmissions']:checked").val();
+
+                    var optionTypescheckedvalues = '';
+                    var optionTypescheckedvalue = document.getElementsByClassName('checkboxanyofthese');
+                    var Engine = $("#CBREngine").val();
+
+                    if (ConditionTypescheckedvalue == undefined || ConditionTypescheckedvalue == '') {
+
+                        $("#conditionerrmessage").html("Please Select a Condition");
+                        $("#conditionimg").show();
+                        errorcount++;
+                    }
+                    else {
+
+                        $("#conditionerrmessage").html('');
+                        $("#conditionimg").hide();
+                    }
+
+                    if ($('#dvTransmissionsVisible').is(":visible")) {
+                        if (Transmissionscheckedvalue == undefined || Transmissionscheckedvalue == '') {
+                            $("#transmissionerrmessage").html("Please Select a Transmission");
+                            $("#transmissionerrmessageimg").show();
+                            errorcount++;
+                        }
+                        else {
+                            $("#transmissionerrmessage").html('');
+                            $("#transmissionerrmessageimg").hide();
+                        }
+                    }
+
+                    if (errorcount > 0) {
+                        return false;
+                    }
+                    else {
+
+                        $("#tabs3").css("display", "block");
+                        $("#tabs2").css("display", "none");
+                        $("#options").removeClass("kslcarsinactive");
+                        $("#options").addClass("kslcarsactive");
+
+                        $("#details").parent().removeClass("kslcarsactive");
+                        $("#conditions").parent().removeClass("kslcarsactive");
+                        $("#options").addClass("kslcarsactive");
+                        $("#options").parent().addClass("kslcarsactive");
+                    }
+
+                    ChangeOptionBasedOnType($('#hdnChangeOptionBasedOnType').val());
+                    $('html, body').animate({ scrollTop: $('#scrolldiv').offset().top }, 'slow');
+                    $("#options").focus();
+
+                });
+
+                $("#btnoptions").click(function () {
+
+                    var errorcount = 0;
+                    var optionTypescheckedvalues = '';
+                    var optionTypescheckedvalue = document.getElementsByClassName('checkboxanyofthese');
+
+
+                    $("#tabs4").css("display", "block");
+                    $("#tabs3").css("display", "none");
+                    $("#delievery").removeClass("kslcarsinactive");
+                    $("#delievery").addClass("kslcarsactive");
+
+                    $("#details").parent().removeClass("kslcarsactive");
+                    $("#conditions").parent().removeClass("kslcarsactive");
+                    $("#options").parent().removeClass("kslcarsactive");
+                    $("#delievery").addClass("kslcarsactive");
+                    $("#delievery").parent().addClass("kslcarsactive");
+
+                    $('html, body').animate({ scrollTop: $('#scrolldiv').offset().top }, 'slow');
+                    $("#delievery").focus();
+                });
+
+                $('#btndetailsBack').click(function () {
+                    $('ul li').removeClass("active-tab");
+                    $("#Startli").addClass("active-tab");
+                    $('input[type="text"]').removeClass("errorbox");
+                    $("#tabs2").css('display', 'none');
+                    $("#tabs3").css('display', 'none');
+                    $("#tabs4").css('display', 'none');
+
+                    $("#tabs1").css('display', 'none');
+                    $("#tabs0").css('display', 'block');
+                    //$("#loopAutocomp").focus();
+                    $("#Starts").focus();
+                });
+
+                $('#btnConditionBack').click(function () {
+                    $('ul li').removeClass("active-tab");
+                    $("#detailsli").addClass("active-tab");
+                    $('input[type="text"]').removeClass("errorbox");
+                    $("#tabs2").css('display', 'none');
+                    $("#tabs3").css('display', 'none');
+                    $("#tabs4").css('display', 'none');
+
+                    $("#tabs1").css('display', 'block');
+                    $("#tabs0").css('display', 'none');
+                    $("#details").focus();
+                });
+
+                $('#btnoptionsBack').click(function () {
+                    $('ul li').removeClass("active-tab");
+                    $("#conditionsli").addClass("active-tab");
+                    $('input[type="text"]').removeClass("errorbox");
+                    $("#tabs2").css('display', 'block');
+                    $("#tabs3").css('display', 'none');
+                    $("#tabs4").css('display', 'none');
+
+                    $("#tabs1").css('display', 'none');
+                    $("#tabs0").css('display', 'none');
+                    $("#conditions").focus();
+                });
+
+                $('#btndelieveryBack').click(function () {
+                    $('ul li').removeClass("active-tab");
+                    $("#optionsli").addClass("active-tab");
+                    $('input[type="text"]').removeClass("errorbox");
+                    $("#tabs2").css('display', 'none');
+                    $("#tabs3").css('display', 'block');
+                    $("#tabs4").css('display', 'none');
+
+                    $("#tabs1").css('display', 'none');
+                    $("#tabs0").css('display', 'none');
+                    $("#options").focus();
+                });
+
+
+                $("ul.tabs a").click(function () {
+
+                    if (IsCarfaxVin && $('#tabs0').is(":visible")) {
+                        var errorcounr = 0;
+
+                        $("#errStateCode").html("");
+                        $("#errLicencePlate").html("");
+                        $("#spnErrmsg").html("");
+
+                        var stateCode = $('#StateCode option:selected').val();
+                        var licencePlate = $('#txtLicencePlate').val().trim();
+
+                        if (stateCode == "") {
+                            $("#errStateCode").html(ViewResEnglishStateValidation);
+                            errorcounr++;
+                        }
+
+                        if (licencePlate == "") {
+                            $("#errLicencePlate").html(ViewResEnglishLicenceValidation);
+                            errorcounr++;
+                        }
+                        if (errorcounr > 0) {
+                            return false;
+                        }
+                    }
+
+
+                    var tabasthis = this;
+                    var TabName = $(tabasthis).attr("id");
+
+                    GetNextSteps(TabName, tabasthis);
+                    $('html, body').animate({ scrollTop: $('#scrolldiv').offset().top }, 'slow');
+
+                });
+            });
+
+            function GetNextSteps(TabName, tabasthis) {
+                TabName = $(tabasthis).attr("id");
+
+                $("ul.tabs li").each(function (index) {
+                    $(this).removeClass("kslcarsactive");
+                });
+
+                var tabsactive = $("#tabsactive").val();
+
+                if (tabsactive == "" || tabsactive == null) {
+                    $(tabasthis).parent().addClass("kslcarsactive");
+                }
+                else {
+                    if (!Issinglelineentry && !IsCarfaxVin)
+                        $("#detailsli").addClass("active-tab");
+                    else {
+                        if (tabsactive != "Startli") {
+                            $(tabsactive).parent().addClass("kslcarsactive");
+                        }
+                        else {
+                            $("#Startli").addClass("active-tab");
+                            if (IsCarfaxVin)
+                                $("#txtLicencePlate").focus();
+                            else if (Issinglelineentry)
+                                $("#loopAutocomp").focus();
+                        }
+                    }
+                }
+
+                TabVisible(TabName);
+
+                $($(tabasthis).attr("href")).show();
+
+                return false;
+            }
+
+            function GetStartDetailstoNextStep() {
+                $('ul li').removeClass("active-tab");
+
+
+                $("#tabs1").css("display", "block");
+                $("#tabs0").css("display", "none");
+                $("#details").removeClass("kslcarsinactive");
+                $("#conditions").parent().removeClass("kslcarsactive");
+                $("#details").addClass("kslcarsactive");
+                $("#details").parent().addClass("kslcarsactive");
+
+            }
+
+
+
+        </script>
+    <script>
+    function TabVisible(TabName) {
+
+        if (TabName == "Starts") {
+            $('input[type="text"]').removeClass("errorbox");
+            $("#tabs2").css('display', 'none');
+            $("#tabs3").css('display', 'none');
+            $("#tabs4").css('display', 'none');
+
+            $("#tabs1").css('display', 'none');
+            $("#loopAutocomp").focus();
+        }
+
+        if (TabName == "details") {
+            $('input[type="text"]').removeClass("errorbox");
+            $("#tabs2").css('display', 'none');
+            $("#tabs3").css('display', 'none');
+            $("#tabs4").css('display', 'none');
+
+            if (Issinglelineentry || IsCarfaxVin)
+                $("#tabs0").css('display', 'none');
+
+        }
+        if (TabName == "conditions") {
+            $('input[type="text"]').removeClass("errorbox");
+            $("#tabs1").css('display', 'none');
+            $("#tabs3").css('display', 'none');
+            $("#tabs4").css('display', 'none');
+
+            if (Issinglelineentry || IsCarfaxVin)
+                $("#tabs0").css('display', 'none');
+
+        }
+        if (TabName == "options") {
+            $('input[type="text"]').removeClass("errorbox");
+            $("#tabs1").css('display', 'none');
+            $("#tabs2").css('display', 'none');
+            $("#tabs4").css('display', 'none');
+
+            if (Issinglelineentry || IsCarfaxVin)
+                $("#tabs0").css('display', 'none');
+
+        }
+        if (TabName == "delievery") {
+            $('input[type="text"]').removeClass("errorbox");
+            $("#tabs1").css('display', 'none');
+            $("#tabs2").css('display', 'none');
+            $("#tabs3").css('display', 'none');
+
+            if (Issinglelineentry || IsCarfaxVin)
+                $("#tabs0").css('display', 'none');
+        }
+    }
+
+    function setmultilangugae() {
+        $(".kslcars_got-any-of-these-row input[type=checkbox]").removeAttr('checked', 'checked');
+    }
+    function TradeInValidation() {
+        $("#selectedkslnewmakes").val(($('select#kslnew').val()));
+        $("#selectedkslusedmakes").val(($('select#kslused').val()));
+        var isfocusset = false;
+        var returnVal = true;
+        var Email = $("#Email").val();
+        var Name = $("#FullName").val().trim();
+        var Lastname = $("#LastName").val().trim();
+        var IsTradeinorSell = 'False';
+        var Optionsfromquestion = 'New or Used';
+        var ZipCode = $("#ZipCode").val();
+        var Phone = $("#Phone").val();
+        var checktypedealer = '';
+        var Sterlinkistcount = '9';
+        var isneworused = '';
+        var optionTypescheckedvalue = document.getElementsByClassName('trademakercheckboxanyofthese');
+        var errcount = 0;
+        var IsSterling = $("#hdnsterlingused").val();
+        var Issterlingnew = $("#hdnsterlingnew").val();
+        var Istradein = $("#hdntradein").val();
+        var Issell = $("#hdnsell").val();
+        var gmcpo = $("#hdnGmDealerCPO").val();
+        var Iskslr = 'True';
+        var Isfcalead = 'False';
+        var Issubaru = 'False';
+        var IsLexus = 'False';
+        var IsToyota = 'False';
+        var Issmarttrade = 'False';
+        var Isksldealerscheck = 'False';
+        var IsBorderDealer = 'False';
+        var isParentDealership = 'False' === 'True';
+        var preferredDealershipId = $('#ddlPreferredDealership').val();
+
+        if (checktypedealer == "Trademaker" || checktypedealer == "Sterling") {
+            if (Issterlingnew == "True" || Issterlingnew == "true") {
+                if (Sterlinkistcount > 0) {
+                    if ($('#divtrademaker input[type=checkbox]:checked').length == 0) {
+                        $("#trademakererrmessage").text("Please pick New or Used");
+                        $("#neworusedimg").show();
+                        errcount++;
+                    }
+                    else {
+                        $("#neworusedimg").hide();
+                        $("#trademakererrmessage").text('');
+                    }
+                }
+            }
+
+
+        }
+
+        if (Issubaru == "True" || IsLexus == "True" || IsToyota=="True") {
+            if ((IsSterling == "" && Issterlingnew == "" && gmcpo == "") || (IsSterling == "false" && Issterlingnew == "false" && gmcpo == "false")) {
+                $("#tradetypemakererrmessage").text("Please pick New,CPO, or Used");
+                $("#neworusedimg").show();
+                errcount++;
+            }
+            else {
+                $("#neworusedimg").hide();
+                $("#tradetypemakererrmessage").text('');
+            }
+        }
+        else {
+
+            if ('no' == "yes") {
+                //if (Iskslr != "True") {
+                if (checktypedealer == "Sterling" || isneworused != "Used" || checktypedealer == "GM Dealer Digital") {
+
+                    if (Optionsfromquestion != "" && IsTradeinorSell == "True") {
+
+                        if (Optionsfromquestion == "New or Used") {
+                            if (((IsSterling == "" && Issterlingnew == "") || (IsSterling == "false" && Issterlingnew == "false")) && (gmcpo == "" || gmcpo == "false")) {
+                                $("#tradetypemakererrmessage").text("Please pick New or Used");
+                                $("#neworusedimg").show();
+                                errcount++;
+                            }
+                            else {
+                                $("#neworusedimg").hide();
+                                $("#tradetypemakererrmessage").text('');
+                            }
+                        }
+
+                        else if (Isfcalead == "False" && Optionsfromquestion == "Trade-In or Sell") {
+                            if (((Istradein == "" && Issell == "")) || ((Istradein == "false" && Issell == "false")) && (gmcpo == "" || gmcpo == "false")) {
+                                $("#tradetypemakererrmessage").text("Please pick Trade-In or Sell");
+                                $("#neworusedimg").show();
+                                errcount++;
+                            }
+                            else {
+                                $("#neworusedimg").hide();
+                                $("#tradetypemakererrmessage").text('');
+                            }
+                        }
+
+                    }
+
+                    else {
+                        if (((IsSterling == "" && Issterlingnew == "") || (IsSterling == "false" && Issterlingnew == "false")) && (gmcpo == "" || gmcpo == "false")) {
+                            $("#tradetypemakererrmessage").text("Please pick New or Used");
+                            $("#neworusedimg").show();
+                            errcount++;
+                        }
+                        else {
+                            $("#neworusedimg").hide();
+                            $("#tradetypemakererrmessage").text('');
+                        }
+                    }
+
+                }
+                else if (Isfcalead == "False" && Optionsfromquestion == "Trade-In or Sell") {
+                    if ((Istradein == "" && Issell == "") || (Istradein == "false" && Issell == "false")) {
+                        $("#tradetypemakererrmessage").text("Please pick Trade-In or Sell");
+                        $("#neworusedimg").show();
+                        errcount++;
+                    }
+                    else {
+                        $("#neworusedimg").hide();
+                        $("#tradetypemakererrmessage").text('');
+                    }
+                }
+
+                //  }
+            }
+            else {
+                //if (Iskslr != "True") {
+                if (checktypedealer == "Sterling" || isneworused != "Used") {
+
+
+                    if (Optionsfromquestion != "" && IsTradeinorSell == "True") {
+
+                        if (Optionsfromquestion == "New or Used") {
+                            if ((IsSterling == "" && Issterlingnew == "") || (IsSterling == "false" && Issterlingnew == "false")) {
+                                $("#tradetypemakererrmessage").text("Please pick New or Used");
+                                $("#neworusedimg").show();
+                                errcount++;
+                            }
+                            else {
+                                $("#neworusedimg").hide();
+                                $("#tradetypemakererrmessage").text('');
+                            }
+                        }
+
+                        else if (Isfcalead == "False" && Optionsfromquestion == "Trade-In or Sell") {
+                            if ((Istradein == "" && Issell == "") || (Istradein == "false" && Issell == "false")) {
+                                $("#tradetypemakererrmessage").text("Please pick Trade-In or Sell");
+                                $("#neworusedimg").show();
+                                errcount++;
+                            }
+                            else {
+                                $("#neworusedimg").hide();
+                                $("#tradetypemakererrmessage").text('');
+                            }
+                        }
+
+                    }
+                    else {
+                        if ((IsSterling == "" && Issterlingnew == "") || (IsSterling == "false" && Issterlingnew == "false")) {
+                            $("#tradetypemakererrmessage").text("Please pick New or Used");
+                            $("#neworusedimg").show();
+                            errcount++;
+                        }
+                        else {
+                            $("#neworusedimg").hide();
+                            $("#tradetypemakererrmessage").text('');
+                        }
+                    }
+                }
+                else if (Isfcalead == "False" && Optionsfromquestion == "Trade-In or Sell") {
+                    if ((Istradein == "" && Issell == "") || (Istradein == "false" && Issell == "false")) {
+                        $("#tradetypemakererrmessage").text("Please pick Trade-In or Sell");
+                        $("#neworusedimg").show();
+                        errcount++;
+                    }
+                    else {
+                        $("#neworusedimg").hide();
+                        $("#tradetypemakererrmessage").text('');
+                    }
+                }
+                //}
+            }
+        }
+
+        if (checktypedealer == "Trademaker") {
+            if ($('#divtrademaker input[type=checkbox]:checked').length == 0) {
+                $("#trademakererrmessage").text("Please Select at least one brand");
+                errcount++;
+            }
+            else {
+
+                $("#trademakererrmessage").text('');
+            }
+        }
+
+
+
+        var ddlSalesStaffID = $('#ddlSalesStaffID').val();
+        var IsSalesPerson = $("#IsSalesPerson").prop("checked") ? 1 : 0;
+
+
+
+        if (Name == null || Name == "") {
+            $("#FullName").addClass("errorbox");
+            if (!isfocusset) {
+                document.getElementById("FullName").focus();
+                isfocusset = true;
+            }
+            $("#FullNameerrormsgimg").show();
+            $("#FullNameerrormsg").html("Please enter your first name");
+            errcount++;
+
+        }
+        else {
+            $("#FullName").removeClass("errorbox");
+            $("#FullNameerrormsg").html("");
+            $("#FullNameerrormsgimg").hide();
+        }
+
+        if (Lastname == null || Lastname == "") {
+            $("#LastName").addClass("errorbox");
+            if (!isfocusset) {
+                document.getElementById("LastName").focus();
+                isfocusset = true;
+            }
+            $("#LastNameerrormsgimg").show();
+            $("#LastNameerrormsg").html("Please enter your last name");
+            errcount++;
+
+        }
+        else {
+            $("#LastName").removeClass("errorbox");
+            $("#LastNameerrormsg").html("");
+            $("#LastNameerrormsgimg").hide();
+        }
+
+        var myRegxp = /([0-9]{10})|(\([0-9]{3}\)\s+[0-9]{3}\-[0-9]{4})/;
+
+        if (Phone == null || Phone == "" || Phone == "(___) ___-____" || Phone.length < 10) {
+            $("#Phone").addClass("errorbox");
+            if (!isfocusset) {
+                document.getElementById("Phone").focus();
+                isfocusset = true;
+            }
+            $("#Phoneerrormsg").html("In case we need more info");
+            $("#Phoneerrormsgimg").show();
+            errcount++;
+
+        }
+        else {
+            if (myRegxp.test(Phone) == false) {
+                $("#Phoneerrormsg").html("In case we need more info");
+                $("#Phoneerrormsgimg").show();
+                errcount++;
+            }
+            else {
+                $("#Phone").removeClass("errorbox");
+                $("#Phoneerrormsg").html("");
+                $("#Phoneerrormsgimg").hide();
+            }
+        }
+
+        if (Email == null || Email == "") {
+            $("#Email").addClass("errorbox");
+            if (!isfocusset) {
+                document.getElementById("Email").focus();
+                isfocusset = true;
+            }
+            $("#lblinvalidemail").html(ViewResEnglishemailvalidation);
+            $("#lblinvalidemailimg").show();
+
+            errcount++;
+        }
+        else {
+            if (!validateEmail(Email)) {
+                $("#Email").addClass("errorbox");
+                $("#emailcorrectimg").hide();
+                if (!isfocusset) {
+                    document.getElementById("Email").focus();
+                    isfocusset = true;
+                }
+                $("#lblinvalidemail").html(ViewResEnglishemailvalidation);
+                $("#lblinvalidemailimg").show();
+                errcount++;
+            }
+            else {
+                var emailValidationResult = $("#resultcode").val();
+                var validResults = ["200", "207", "215"];
+                if (validResults.indexOf(emailValidationResult) < 0) {
+                    errcount++;
+                }
+            }
+        }
+        if (IsBorderDealer == "False" && $('#statesddl').val() == "" || $('#statesddl').val() == 0) {
+            $('#statesddl').addClass("errorbox");
+
+            $("#StateCodeerrormsg").html("Please select your state");
+            $("#StateCodeerrormsgimg").show();
+            errcount++;
+        }
+        else {
+            $('#statesddl').removeClass("errorbox");
+            //$('#IsSalesPerson').removeClass("errorbox");
+            $("#StateCodeerrormsg").html("");
+            $("#StateCodeerrormsgimg").hide();
+        }
+
+        if (ZipCode == null || ZipCode == "" || /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(ZipCode) == false) {
+            $("#ZipCode").addClass("errorbox");
+            if (!isfocusset) {
+                document.getElementById("ZipCode").focus();
+                isfocusset = true;
+            }
+            $("#ZipCodeerrormsg").html("Location affects your car&#39;s value")
+            $("#ZipCodeerrormsgimg").show();
+            errcount++;
+
+        }
+        else {
+            if (ZipCode.length >= 5) {
+                $("#ZipCode").removeClass("errorbox");
+                $("#ZipCodeerrormsg").html("")
+                $("#ZipCodeerrormsgimg").hide();
+            }
+            else {
+                $("#ZipCode").addClass("errorbox");
+                if (!isfocusset) {
+                    document.getElementById("ZipCode").focus();
+                    isfocusset = true;
+                    $("#ZipCodeerrormsgimg").show();
+                }
+                errcount++;
+            }
+
+        }
+
+        if (isParentDealership) {
+            if (!preferredDealershipId || parseInt(preferredDealershipId) <= 0) {
+                $('#ddlPreferredDealership').addClass('errorbox');
+                if (!isfocusset) {
+                    document.getElementById("ddlPreferredDealership").focus();
+                    isfocusset = true;
+                }
+                $("#preferredDealershipErrorMsg").html("Please select your preferred dealership")
+                $("#preferredDealershipErrorMsg").show();
+                errcount++;
+            }
+
+            if (!$(".loading-salesperson").hasClass('hidden')) {
+                if (!isfocusset) {
+                    document.getElementById("ddlPreferredDealership").focus();
+                    isfocusset = true;
+                }
+
+                errcount++;
+            }
+        }
+
+        if (ddlSalesStaffID == "" && IsSalesPerson == 0) {
+            $('#ddlSalesStaffID').addClass("errorbox");
+            $('#IsSalesPerson').addClass("errorbox");
+            if (!isfocusset) {
+                document.getElementById("ddlSalesStaffID").focus();
+                isfocusset = true;
+            }
+            $("#Saleseerrormsg").html("Please select your favorite salesperson");
+            $("#Saleseerrormsgimg").show();
+            errcount++;
+        }
+        else {
+            $('#ddlSalesStaffID').removeClass("errorbox");
+            $('#IsSalesPerson').removeClass("errorbox");
+            $("#Saleseerrormsg").html("");
+            $("#Saleseerrormsgimg").hide();
+        }
+        if (Iskslr == "True" || Isksldealerscheck == "True") {
+            Isfcalead = "False";
+        }
+        if (Isfcalead == "True" || Issubaru == "True" || IsLexus == "True" || IsToyota == "True") {
+            var FCAMake = $("#FCACBRMakes").val();
+            var FCAModel = $("#FCACBRModel").val();
+            var FCAYear = $("#FCACBRYear").val();
+
+            if (!FCAMake || FCAMake == "" || FCAMake == "0") {
+                $("#FCACBRMakes").addClass("errorbox");
+                if (!isfocusset) {
+                    document.getElementById("FCACBRMakes").focus();
+                    isfocusset = true;
+                }
+                $("#FCAmakeerrormsg").html("Please select make");
+                $("#FCAmakeerrormsgimg").show();
+                errcount++;
+            }
+            else {
+                $("#FCAmakeerrormsg").html("");
+                $("#FCAmakeerrormsgimg").hide();
+                $("#FCACBRMakes").removeClass("errorbox");
+            }
+            if (!FCAModel || FCAModel == "" || FCAModel == "0") {
+                $("#FCACBRModel").addClass("errorbox");
+                if (!isfocusset) {
+                    document.getElementById("FCACBRModel").focus();
+                    isfocusset = true;
+                }
+                $("#FCADatamodelerrormsgimg").show();
+                $("#FCADatamodelerrormsg").html("Please select model");
+                errcount++;
+            }
+            else {
+                $("#FCADatamodelerrormsgimg").hide();
+                $("#FCADatamodelerrormsg").html("");
+                $("#FCACBRModel").removeClass("errorbox");
+            }
+            if (FCAYear == "" || FCAYear == null || FCAYear == "0") {
+                $("#FCACBRYear").addClass("errorbox");
+                if (!isfocusset) {
+                    document.getElementById("FCACBRYear").focus();
+                    isfocusset = true;
+                }
+                $("#FCAyearerrormsgimg").show();
+                $("#FCAyearerrormsg").html("Please select year");
+                errcount++;
+            }
+            else {
+                $("#FCAyearerrormsg").html("");
+                $("#FCAyearerrormsgimg").hide();
+                $("#FCACBRYear").removeClass("errorbox");
+            }
+        }
+        if (errcount > 0) {
+
+            return false;
+        }
+        else {
+            var transmission = $("#transmission").val();
+
+            $('#popup-disabled').show();
+
+            if (Issinglelineentry || IsCarfaxVin) {
+
+                $('#CBRYear').val(ChromeDataService.vehicleDescription.modelYearField);
+                $('#year').val(ChromeDataService.vehicleDescription.modelYearField);
+
+
+                $('#hdnmake').val(ChromeDataService.vehicleDescription.bestMakeNameField);
+                $('#hdnDatamodel').val(ChromeDataService.vehicleDescription.bestModelNameField);
+                if (Issinglelineentry && ($('#hdnYMMDetials').val() != "" || $('#hdnYMMDetials_autofill').val() != "")) {
+
+                    $('#hdntrim').val(ChromeDataService.vehicleDescription.bestTrimNameField);
+                    $('#hdnBodyandStyle').val(changesinStyleField(ChromeDataService.vehicleDescription.styleField[0].nameWoTrimField));
+                }
+                else if (IsCarfaxVin) {
+                    $("#CBRTrim").prop('disabled', false);
+
+                    $('#hdntrim').val($("#CBRTrim option:selected").text());
+
+                    $("#CBRBodyandStyle").prop('disabled', false);
+                    $('#hdnBodyandStyle').val($("#CBRBodyandStyle option:selected").text());
+
+                    $('#hdnBodyandStyle').val(changesinStyleField(ChromeDataService.vehicleDescription.styleField[0].nameWoTrimField));
+
+                    $('#txtLicencePlate').val($('#txtLicencePlate').val().trim());
+                }
+
+                $('#ChromeTransmissions').val($("#CBRTransmission option:selected").text());
+
+                if ($("#CBRYear option:selected").text() == "0") {
+                    Trackingtivrecords($('#year').val(), $('#hdnmake').val(), $('#hdnDatamodel').val(), '', 'Desktop', 'CBRYearIssinglelineorcarfaxvalidationcheck', '809');
+                }
+                if ($('#year').val() == "0") {
+                    Trackingtivrecords($('#year').val(), $('#hdnmake').val(), $('#hdnDatamodel').val(), '', 'Desktop', 'yearIssinglelineorcarfaxvalidationcheck', '809');
+                }
+            }
+            else {
+                $("#CBRModel").prop('disabled', false);
+                $("#CBRMakes").prop('disabled', false);
+                $("#CBRYear").prop('disabled', false);
+
+                $("#CBRTrim").prop('disabled', false);
+                $("#CBRBodyandStyle").prop('disabled', false);
+
+                $('#hdntrim').val($("#CBRTrim option:selected").text());
+                $('#year').val($("#CBRYear option:selected").text());
+                $('#hdnmake').val($("#CBRMakes option:selected").text());
+                $('#hdnDatamodel').val($("#CBRModel option:selected").text());
+                $('#hdnBodyandStyle').val($("#CBRBodyandStyle option:selected").text());
+            }
+
+            $("#CBREngine").prop('disabled', false);
+            $("#CBRDriveline").prop('disabled', false);
+            $("#CBREnginetxt").prop('disabled', false);
+            $("#CBRDrivelinetxt").prop('disabled', false);
+
+            if ($("#CBRDrivelinetxt").val() == "" || $("#CBRDrivelinetxt").val() == "0") {
+                $('#hdnDriveline').val($("#CBRDriveline option:selected").val());
+            }
+            else {
+                $('#hdnDriveline').val($("#CBRDrivelinetxt").val().trim());
+            }
+
+            if ($("#CBREnginetxt").val() == "") {
+                $('#hdnEngine').val($("#CBREngine option:selected").val());
+            }
+            else {
+                $('#hdnEngine').val($("#CBREnginetxt").val().trim());
+            }
+
+            if ($("#CBRYear option:selected").text() == "0") {
+                Trackingtivrecords($('#year').val(), $('#hdnmake').val(), $('#hdnDatamodel').val(), '', 'Desktop', 'CBRYearvalidationcheck', '809');
+            }
+            if ($('#year').val() == "0") {
+                Trackingtivrecords($('#year').val(), $('#hdnmake').val(), $('#hdnDatamodel').val(), '', 'Desktop', 'yearvalidationcheck', '809');
+            }
+
+            $('#FCAyear').val($("#FCACBRYear option:selected").text());
+            $('#FCADatamodel').val($("#FCACBRModel option:selected").text());
+            $('#FCAmake').val($("#FCACBRMakes option:selected").text());
+
+            $("#drpFuelType").val("");
+            $("#btnStartdetails1").focus();
+
+            //$('#popup-disabled').show();
+            //if (Issinglelineentry || IsCarfaxVin) {
+            // document.forms[0].submit();
+            //}
+            //return true;
+        }
+
+    }
+
+
+    //function bindEvent(element, eventName, eventHandler) {
+    //    debugger
+    //    if (element.addEventListener) {
+    //        element.addEventListener(eventName, eventHandler, false);
+    //    } else if (element.attachEvent) {
+    //        element.attachEvent('on' + eventName, eventHandler);
+    //    }
+    //}
+
+
+    // addEventListener support for IE8
+    //bindEvent(window, 'message', function (e) {
+    //    sendMessage("sendMessage1");
+    //});
+
+
+    // Send a message to the child iframe
+    // var iframeEl = document.getElementById('iframtiv');
+
+    function sendMessage1(msg) {
+        window.parent.postMessage(msg, '*');
+        //    iframeEl.contentWindow.postMessage(msg, '*');
+    };
+
+    </script>
+</form>
+
+<script type="text/javascript" src="./loop.mixpanel.js.download"></script>
+<script type="text/javascript">
+
+    try {
+        if (isCookieEnabled()) {
+            var loopMixpanel = new LoopMixpanel(
+                '809',
+                '155.98.164.36',
+                '85731c775b785cee74b2dc9ca7b71f11',
+                {
+                    'origin': 'web',
+                    'isSingleLineEntry': false,
+                    'isCarfaxVin': false,
+                    'isKSLCars': true,
+                    'iKSLDealers': false,
+                    'checkFCADealer': '',
+                    'isSmartTrade': false,
+                    'isBorderDealer': false,
+                    'isToyota': false,
+                    'isLexus': false,
+                    'isSubaru': false,
+                    'optionsForQuestion': 'New or Used',
+                    'checkIsFcaExistOrNot': false
+                },
+                {
+                    prefix: 'original'
+                });
+        }
+    } catch(e) { }
+
+    function isCookieEnabled() {
+        if (navigator.cookieEnabled) return true;
+
+        document.cookie = "cookietest=1";
+        var ret = document.cookie.indexOf("cookietest=") != -1;
+        document.cookie = "cookietest=1; expires=Thu, 01-Jan-1970 00:00:01 GMT";
+
+        return ret;
+    }
+
+</script>
+
+<script type="text/javascript">
+    if (loopMixpanel) {
+        loopMixpanel.initForm();
+    }
+</script>
+
+
+    
+
+
+</body></html>

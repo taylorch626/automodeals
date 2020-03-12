@@ -1,0 +1,343 @@
+﻿(function (c, a) {
+    if (!a.__SV) {
+        var b = window; try { var d, m, j, k = b.location, f = k.hash; d = function (a, b) { return (m = a.match(RegExp(b + "=([^&]*)"))) ? m[1] : null }; f && d(f, "state") && (j = JSON.parse(decodeURIComponent(d(f, "state"))), "mpeditor" === j.action && (b.sessionStorage.setItem("_mpcehash", f), history.replaceState(j.desiredHash || "", c.title, k.pathname + k.search))) } catch (n) { } var l, h; window.mixpanel = a; a._i = []; a.init = function (b, d, g) {
+            function c(b, i) {
+                var a = i.split("."); 2 == a.length && (b = b[a[0]], i = a[1]); b[i] = function () {
+                    b.push([i].concat(Array.prototype.slice.call(arguments,
+                        0)))
+                }
+            } var e = a; "undefined" !== typeof g ? e = a[g] = [] : g = "mixpanel"; e.people = e.people || []; e.toString = function (b) { var a = "mixpanel"; "mixpanel" !== g && (a += "." + g); b || (a += " (stub)"); return a }; e.people.toString = function () { return e.toString(1) + ".people (stub)" }; l = "disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+            for (h = 0; h < l.length; h++) c(e, l[h]); var f = "set set_once union unset remove delete".split(" "); e.get_group = function () { function a(c) { b[c] = function () { call2_args = arguments; call2 = [c].concat(Array.prototype.slice.call(call2_args, 0)); e.push([d, call2]) } } for (var b = {}, d = ["get_group"].concat(Array.prototype.slice.call(arguments, 0)), c = 0; c < f.length; c++) a(f[c]); return b }; a._i.push([b, d, g])
+        }; a.__SV = 1.2; b = c.createElement("script"); b.type = "text/javascript"; b.async = !0; b.src = "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL ?
+            MIXPANEL_CUSTOM_LIB_URL : "file:" === c.location.protocol && "//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//) ? "https://cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js" : "//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js"; d = c.getElementsByTagName("script")[0]; d.parentNode.insertBefore(b, d)
+    }
+})(document, window.mixpanel || []);
+
+(function () {
+    'use strict';
+
+    const LoopMixpanel = function (dealerId, userIp, token, dealerFlags, options) {
+        this.dealerId = dealerId;
+        this.userIp = userIp;
+        this.token = token;
+        this.dealerFlags = dealerFlags;
+        this.options = Object.assign(LoopMixpanel.defaults, options);
+    }
+
+    LoopMixpanel.prototype.initLandingPage = function initLandingPage() {
+        if (this.dealerFlags) {
+            this.dealerFlags.isFromLandingPage = true;
+        }
+        sessionStorage.removeItem('loopMixpanel');
+        init.call(this, this.options.landingPageEvent);
+
+        sessionStorage.setItem('loopMixpanel', this.properties.id);
+        sessionStorage.setItem('isFromLandingPage', true);
+    }
+
+    LoopMixpanel.prototype.initForm = function initForm() {
+        init.call(this);
+        this.targets = getTargets.call(this);
+
+        configureObservers.call(this);
+        configureLicenseGoBack.call(this);
+        configureFormSubmission.call(this);
+    }
+
+    LoopMixpanel.prototype.initMobile = function initMobile() {
+        this.initForm();
+
+        configureMobileNavigation.call(this);
+        if (this.options.prefix === 'original') {
+            this.timeEvent('form', 'completed');
+        } else {
+            this.timeEvent('start', 'next');
+        }
+    }
+
+    LoopMixpanel.prototype.log = function log() {
+        console.log('[properties]', this.properties);
+        console.log('[formType]', this.options.prefix);
+    }
+
+    LoopMixpanel.prototype.timeEvent = function timeEvent(name, event) {
+        mixpanel.time_event(this.options.prefix + "/" + name + "/" + (event || ''));
+    };
+
+    LoopMixpanel.prototype.trackEvent = function trackEvent(name, event, properties) {
+        mixpanel.track(this.options.prefix + "/" + name + "/" + (event || ''), properties);
+    };
+
+    function init(event) {
+        this.properties = getSuperProperties.call(this);
+
+        mixpanel.init(this.token);
+        mixpanel.register(this.properties);
+
+        this.trackEvent(event || 'load');
+    }
+
+    function getSuperProperties() {
+        const _this = this;
+        const properties = {
+            id: getValueFromLandingPage('loopMixpanel') || getUniqueIdentifier(),
+            dealerId: this.dealerId,
+            userIp: this.userIp
+        };
+
+        if (this.dealerFlags) {
+            Object.keys(this.dealerFlags).forEach(function (key) {
+                properties[key] = _this.dealerFlags[key];
+            });
+        }
+
+        properties['isFromLandingPage'] = properties.isFromLandingPage || Boolean(getValueFromLandingPage('isFromLandingPage')) || false;
+
+        return properties;
+    }
+
+    function getTargets() {
+        if (this.properties.origin === 'web') {
+            return [
+                { id: 'Startli', name: 'start', event: 'next' },
+                { id: 'detailsli', name: 'details', event: 'next' },
+                { id: 'conditionsli', name: 'conditions', event: 'next' },
+                { id: 'optionsli', name: 'options', event: 'next' },
+                { id: 'delieveryli', name: (this.options.prefix === 'original' ? 'delivery' : 'info'), event: 'showme' }
+            ];
+        } else if (this.properties.origin === 'srv') {
+            return [
+                { id: 'showroom_tab1', name: 'customer-detail', event: 'next' },
+                { id: 'showroom_tab2', name: 'vehicle-detail', event: 'next' },
+                { id: 'showroom_tab3', name: 'vehicle-condition', event: 'next' },
+                { id: 'showroom_tab4', name: 'vehicle-options', event: 'next' }
+            ];
+        } else {
+            return [{ name: 'start', event: 'next' }];
+        }
+    }
+
+    function configureObservers() {
+        const _this = this;
+        let previousElementId;
+
+        const callback = function callback(mutationsList, observer) {
+            const mutation = mutationsList.pop();
+
+            if (mutation) {
+                const id = mutation.target.id;
+                const element = _this.targets.find(function (item) {
+                    return item.id === id;
+                });
+
+                if (element) {
+                    if (_this.targets.indexOf(element) === 0 && !previousElementId) {
+                        _this.timeEvent(element.name, element.event);
+
+                        previousElementId = element.id;
+                    } else {
+                        const previousElement = _this.targets.find(function (item) {
+                            return item.id === previousElementId;
+                        });
+
+                        if (previousElement) {
+                            if (previousElement.id === element.id) {
+                                return;
+                            }
+
+                            _this.trackEvent(previousElement.name, previousElement.event);
+                        }
+
+                        _this.timeEvent(element.name, element.event);
+                        previousElementId = element.id;
+                    }
+                }
+            }
+        };
+
+        const observer = new MutationObserver(callback);
+        const config = {
+            attributes: true,
+            attributeOldValue: true,
+            attributeFilter: ['class']
+        };
+        this.targets.forEach(function (item) {
+            const node = document.getElementById(item.id);
+
+            if (node) {
+                observer.observe(node, config);
+            }
+        });
+    }
+
+    function configureLicenseGoBack() {
+        const _this = this;
+        const btnGoBack = document.getElementById('btnautocompcheck');
+
+        if (btnGoBack) {
+            btnGoBack.onclick = function () {
+                _this.targets[0].name = 'singlestart';
+                _this.trackEvent('start', 'goback');
+                _this.timeEvent('singlestart', 'next');
+            };
+        }
+
+        var btnBackToLicense = document.getElementById('btnbackcarfax');
+
+        if (btnBackToLicense) {
+            const backToCarfax = btnBackToLicense.onclick;
+
+            btnBackToLicense.onclick = function () {
+                _this.targets[0].name = 'start';
+                _this.timeEvent('start', 'next');
+                backToCarfax();
+            };
+        }
+    }
+
+    function configureMobileNavigation() {
+        const _this = this;
+        const event = function event(callback) {
+            if (callback()) {
+                const element = _this.targets.slice(-1)[0];
+                if (element) {
+                    _this.trackEvent(element.name, element.event);
+                }
+
+                _this.timeEvent('form', 'completed');
+            }
+        };
+
+        const btnStartdetails = document.getElementById('btnStartdetails');
+        if (btnStartdetails) {
+            const onclick = btnStartdetails.onclick;
+            btnStartdetails.onclick = function () {
+                event(onclick);
+            };
+        }
+
+        const btnStartdetails3 = document.getElementById('btnStartdetails3');
+        if (btnStartdetails3) {
+            const onclick = btnStartdetails3.onclick;
+            btnStartdetails3.onclick = function () {
+                event(onclick);
+            };
+        }
+
+        const btndetailsBack = document.getElementById('btndetailsBack');
+        if (btndetailsBack) {
+            const onclick = btndetailsBack.onclick;
+            btndetailsBack.onclick = function () {
+                const element = _this.targets.slice(-1)[0];
+                if (element) {
+                    _this.timeEvent(element.name, element.event);
+                }
+                onclick();
+            };
+        }
+    }
+
+    function configureFormSubmission() {
+        const _this = this;
+        const form = document.getElementById('tivForm');
+        if (form) {
+            form.onsubmit = function (e) {
+                if (_this.properties.origin !== 'srv') {
+                    if (e.defaultPrevented) {
+                        return;
+                    }
+                    e.preventDefault();
+                }
+
+                let hasUserComment = false;
+                const element = _this.targets.slice(-1)[0];
+
+                const txtTellMeMore = document.getElementById(_this.options.tellMeMoreId);
+                if (txtTellMeMore && txtTellMeMore.value.length > 0) {
+                    hasUserComment = true;
+                }
+
+                let nextCarType = 'n/a';
+                const newUsedCpo = {
+                    'checkbox-Sterlingnew': 'new',
+                    'checkbox-Sterlingused': 'used',
+                    'checkbox-Sterlingcpo': 'cpo'
+                }
+
+                const selected = document.querySelector('#checkbox-Sterlingnew:checked, #checkbox-Sterlingused:checked, #checkbox-Sterlingcpo:checked');
+                if (selected && selected.id) {
+                    nextCarType = newUsedCpo[selected.id];
+                }
+
+                if (element && element.id) {
+                    _this.trackEvent(element.name, element.event);
+                }
+
+                _this.trackEvent('form', 'completed', { hasUserComment: hasUserComment, newUsedCpo: nextCarType });
+
+                if (_this.properties.origin !== 'srv') {
+                    setTimeout(function () {
+                        form.removeEventListener('onsubmit', form.onsubmit);
+                        form.submit();
+                    }, 300);
+                }
+            }
+        }
+    }
+
+    function getValueFromLandingPage(property) {
+        const value = sessionStorage.getItem(property);
+        sessionStorage.removeItem(property);
+
+        return value;
+    }
+
+    LoopMixpanel.defaults = {
+        prefix: '',
+        tellMeMoreId: 'tellmemore',
+        landingPageEvent: 'landingpage'
+    }
+
+    window.LoopMixpanel = LoopMixpanel;
+
+    if (!Object.assign) {
+        // Pollyfil IE
+        Object.assign = function assign(target, obj) {
+            var to = Object(target);
+            if (obj != null) {
+                for (var nextKey in obj) {
+                    if (Object.prototype.hasOwnProperty.call(obj, nextKey)) {
+                        to[nextKey] = obj[nextKey];
+                    }
+                }
+            }
+            return to;
+        }
+    }
+
+    if (!Array.prototype.find) {
+        // Pollyfil IE
+        Array.prototype.find = function (predicate) {
+            var list = Object(this);
+            var length = list.length >>> 0;
+            var thisArg = arguments[1];
+            var value;
+
+            for (var i = 0; i < length; i++) {
+                value = list[i];
+                if (predicate.call(thisArg, value, i, list)) {
+                    return value;
+                }
+            }
+            return undefined;
+        };
+    }
+
+})();
+
+function getUniqueIdentifier() {
+    const crypto = window.crypto || window.msCrypto;
+    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, function (c) {
+        return (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16);
+    });
+}

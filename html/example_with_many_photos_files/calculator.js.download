@@ -1,0 +1,231 @@
+/**
+ * Set default field params
+ */
+var calculatePayment = {
+
+  /**
+   * calculate the payment, and reset the fields back to default
+   */
+  calcPayment: function () {
+    // Unset all previous error signifiers
+    $('.error').html('');
+    $('.red').removeClass("red");
+    $('#pc_calculated_payment').html(0.00);
+
+    var result = true;
+    var errors = [];
+
+    var P = $('#pc_price').val().split("$").join("");
+
+
+    if (P == undefined || P == '') {
+      errors.push(["pc_price", "This field is required."]);
+      result = false;
+    } else if (isNaN(P)) {
+      errors.push(["pc_price", "Price of Vehicle must be a number."]);
+      result = false;
+    }
+
+    var pc_rate = $('#pc_rate').val().split('%').join('');
+    if (pc_rate == undefined || pc_rate == '') {
+      errors.push(["pc_rate", "This field is required."]);
+      result = false;
+    } else if (isNaN(pc_rate)) {
+      errors.push(["pc_rate", "Interest Rate must be a number."]);
+      result = false;
+    } else if (pc_rate < 1) {
+      errors.push(["pc_rate", "Please add a percentage rate (ex. 3.24)."]);
+      result = false;
+    } else {
+      var r = pc_rate / 1200;
+    }
+
+    var n = $('#pc_months').val();
+    if (n == undefined || n == '') {
+      errors.push(["pc_months", "This field is required."]);
+      result = false;
+    } else if (isNaN(n) || n < 1) {
+      errors.push(["pc_months", "Months in Loan must be a number greater than zero."]);
+      result = false;
+    }
+
+    var dp = $('#pc_down_payment').val().split('$').join('') - 0;
+    if (isNaN(dp) || dp == undefined) {
+      errors.push(["pc_down_payment", "Down Payment Amount must be a number."]);
+      result = false;
+    }
+
+    var trade = $('#pc_trade_amt').val().split('$').join('') - 0;
+    if (isNaN(trade) || trade == undefined) {
+      errors.push(["pc_trade_amt", "Amount for Trade-in must be a number."]);
+      result = false;
+    }
+
+    if (result == false) {
+      for (var a = 0; a < errors.length; a++) {
+        $("#" + errors[a][0] + "_error").html("<div class='form-notice red'>" + errors[a][1] + "</div>");
+        $('#' + errors[a][0]).parent().parent().addClass("red");
+      }
+      $('#' + errors[0][0]).focus();
+    } else {
+      var hardPart = r / (Math.pow((1 + r), n) - 1);
+      var principle = (P - dp - trade);
+      var payment = (r + (hardPart)) * principle;
+      $('#pc_calculated_payment').html(payment.toFixed(2));
+    }
+  },
+
+  /**
+   * Reset the form values
+   */
+  resetForm: function () {
+    $('.error').html(''); // removes all error messages
+    $('.red').removeClass("red"); // removes red on form-element
+
+    $('#pc_rate').val("3.24%");
+    $("#pc_months").val("60");
+    $('#pc_down_payment').val("");
+    $('#pc_trade_amt').val("");
+    $('#pc_calculated_payment').html(0.00);
+    $('#pc_price').val($('#price').val()).focus();
+  },
+
+  /**
+   * Insert the sponser logo, address, and search page links
+   */
+  insertSponsorData: function (data) {
+    var address = data.dealerInfo.street;
+
+    if (data.dealerInfo.city) {
+      address += '<br / >' + data.dealerInfo.city;
+    }
+    if (data.dealerInfo.state) {
+      address += ', ' + data.dealerInfo.state;
+    }
+    if (data.dealerInfo.zip) {
+      address += ' ' + data.dealerInfo.zip;
+    }
+
+    var sponsorDOMMap = {
+      logo: {
+        data: data.dealerInfo.logo,
+        attribute: 'src'
+      },
+      name: data.dealerInfo.dealerName,
+      'number-link': data.dealerInfo.phone,
+      number: data.dealerInfo.phone,
+      'address-link': {
+        data: 'http://maps.google.com/?q=' + address,
+        attribute: 'href'
+      },
+      address: address,
+      'see-all-make-model': {
+        data: data.dealerInfo.makeModelLink,
+        attribute: 'href'
+      },
+      'see-all-cars': {
+        data: data.dealerInfo.seeAllLink,
+        attribute: 'href'
+      }
+    };
+
+    for (var k in sponsorDOMMap) {
+      if (typeof sponsorDOMMap[k] == 'string') {
+        $('.sponsor-' + k).html(sponsorDOMMap[k]);
+      } else if (typeof sponsorDOMMap[k] == 'object') {
+        $('.sponsor-' + k).attr(sponsorDOMMap[k].attribute, sponsorDOMMap[k].data);
+      }
+    }
+
+    if(data.dealerInfo.logo) {
+      $('.sponsor-logo').css("display", "block");
+    }
+
+  },
+
+  /**
+   * Get the sponsor based on the id passed through the payment calculator widget from DFP
+   * @param {number} id - memberId of the sponsor
+   */
+  getCalcSponsor: function (id) {
+    $('.sponsor-logo').css("display", "none");
+    var self = this;
+    var data = {
+      params: {
+        id: id,
+        make: document.getElementById("make").value,
+        model: document.getElementById("model").value,
+        price: document.getElementById("price").value,
+        newUsed: document.getElementById("newUsed").value
+      }
+    };
+
+    $.ajax({
+      url: '/listing/pc-sponsor/format/json',
+      method: 'POST',
+      data: data,
+      timeout: 30000
+    }).success(function (sponsorData) {
+      self.insertSponsorData(sponsorData);
+    });
+  }
+}
+
+/**
+ * Generate the ads based on the sponsor
+ * 
+ * @param {string} pc_url - url passed through the calculator Dfp widget
+ */
+function calcpay_execute(pc_url) {
+  window.frames['calcpayButton'].location = pc_url;
+
+  var pcUrlArr = pc_url.split('/');
+  var id = pcUrlArr[pcUrlArr.length - 1];
+  var newUsed = $('#newUsed').val();
+
+  // share of voice banks, not dealers
+  var sov = [2343789];
+  if (id.indexOf(sov) >= 0) {
+    $('#sponsored-by .links').addClass("hidden");
+  }
+
+  calculatePayment.getCalcSponsor(id);
+
+  var calcLgSlot, calcSmSlot;
+  googletag.cmd.push(function () {
+    calcLgSlot = googletag
+      .defineSlot('/6686/ddm.ksl/Cars', [[728, 90]], 'calc-lg')
+      .addService(googletag.pubads())
+      .setTargeting('ctype', newUsed)
+      .setTargeting('pos', 'calclg')
+      .setTargeting('v', 'calcpay')
+      .setTargeting('mid', id)
+      .setTargeting('cstatpos', 'calc_bottom_1');
+
+    calcSmSlot = googletag
+      .defineSlot('/6686/ddm.ksl/Cars', [[320, 100]], 'calc-sm')
+      .addService(googletag.pubads())
+      .setTargeting('ctype', newUsed)
+      .setTargeting('pos', 'calcsm')
+      .setTargeting('v', 'calcpay')
+      .setTargeting('mid', id)
+      .setTargeting('cstatpos', 'calc_bottom_sm');
+  });
+
+  document.getElementById('calc-lg').setAttribute('data-slotname', 'calc-lg');
+  document.getElementById('calc-sm').setAttribute('data-slotname', 'calc-sm');
+  runCalcAds();
+
+  ddm.modal($('.pc-sponsor-modal')).open();
+}
+
+$(document).ready(function () {
+  /**
+   * bind the click to close the modal
+   */
+  $('.pc-sponsor-modal .ddm-modal__head .icon-close').click(function () {
+    ddm.modal($('.pc-sponsor-modal')).close();
+    calculatePayment.resetForm();
+    document.activeElement.blur();
+  });
+});

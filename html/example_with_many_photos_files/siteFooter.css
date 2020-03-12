@@ -1,0 +1,74 @@
+.site-footer {
+  background: #30302F;
+  position: relative;
+  float: left;
+  width: 100%;
+  padding: 5px;
+}
+
+.site-footer a {
+  color: #fff;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+
+.site-footer .container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.site-footer .inside {
+  padding: 5px 5px 20px 5px;
+  font-size: 9px;
+  color: #fff;
+}
+
+.site-footer .top {
+  padding-bottom: 20px;
+}
+
+.site-footer .KSLlogo img {
+  width: 37%;
+  height: auto;
+}
+
+.site-footer .main_links {
+  float: left;
+  padding: 20px 0;
+  font-size: 13px;
+}
+
+.site-footer .copyright {
+  border-top: 1px dotted #fff;
+  padding: 1em 0 0;
+  margin: 1em 0 0;
+}
+
+
+@media (min-width: 550px) {
+  .site-footer .inside {
+    padding: 10px 10px 20px 10px;
+  }
+  
+  .site-footer .KSLlogo img {
+    width: 15%;
+  }
+  
+  .site-footer .main_links {
+    float: right;
+    padding: initial;
+    font-size: 11px;
+  }
+}
+
+@media (min-width: 750px) {
+  .site-footer .inside {
+    padding: 20px;
+  }
+  
+  .site-footer .main_links {
+    font-size: 13px;
+  }
+}
+

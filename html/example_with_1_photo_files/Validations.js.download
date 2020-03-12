@@ -1,0 +1,364 @@
+﻿function handle(e) {
+    var kCode = e.keyCode || e.charCode; // for cross browser check    
+    if (kCode === 60 || kCode == 62) {
+        return false;
+    }
+    return true;
+}
+
+function RestrictKeys(sender, id) {
+    var value = (sender.value);
+
+    for (var i = 0; i < value.length; i++) {
+        if (value.charAt(i) === '<' || value.charAt(i) == '>') {
+            alert('Invalid Text');
+            jQuery("#" + id).val('');
+            setTimeout(function () {
+                jQuery("[id$='" + id + "']:first").attr("tabindex", 0).focus();
+            }, 300);
+            break;
+            return false;
+        }
+    }
+
+    return true;
+}
+
+function CheckYear(sender, id) {
+    var value = (sender.value);
+    if (!isNaN(value) && value.replace(/(^\s*)|(\s*$)/gi, "") !== '') {
+        var currentTime = new Date();
+        var year = currentTime.getFullYear();
+        if (value <= 1900 || value > year) {
+            if (value > year)
+            { alert('Year Must Lessthen or Equal to Current Year'); }
+            if (value <= 1900)
+            { alert('Year Must Graterthen 1900'); }
+
+            jQuery("#" + id).val('');
+            setTimeout(function () {
+                jQuery("[id$='" + id + "']:first").attr("tabindex", 0).focus();
+            }, 300);
+            return false;
+        }
+    }
+    return true;
+}
+
+/*** FileUpload********/
+jQuery(document).ready(function () { });
+
+function CheckImg(id) {
+    jQuery("#" + id + "").change(function () {
+        jQuery('#bbp_loader').show();
+        var val = jQuery(this).val();
+        switch (val.substring(val.lastIndexOf('.') + 1).toLowerCase()) {
+            case 'gif': case 'jpg': case 'png': case 'bmp': case 'tif':
+             
+                if (jQuery.browser.msie) {
+                    //before making an object of ActiveXObject,
+                    //please make sure ActiveX is enabled in your IE browser
+                   
+                    var objFSO = new ActiveXObject("Scripting.FileSystemObject");
+
+                    var filePath = jQuery("#" + id)[0].value;
+
+                    var objFile = objFSO.getFile(filePath);
+
+                }
+                    //for FF, Safari, Opeara and Others
+                else {
+
+                    var objFile = jQuery("#" + id)[0].files[0];
+
+                }
+                var formData = new FormData();
+                formData.append('objCB', jQuery("#frmCarphoriaBidReq").serialize())
+                formData.append(id, objFile);
+                jQuery.ajax({
+                    url: "/Service/CompressandUploadImage",
+                    type: "POST",
+                    data: formData,
+
+                    processData: false,  // tell jQuery not to process the data
+                    contentType: false,   // tell jQuery not to set contentType
+                    success: function (data) {
+                        jQuery("#bbp_loader").hide();
+                    },
+                    error: function (data) {
+                        jQuery("#bbp_loader").hide();
+                    }
+                })
+
+
+                break;
+            default:
+                jQuery(this).val('');
+                // error message here
+                alert("Please Select Images Only");
+                jQuery("#bbp_loader").hide();
+                jQuery(this).replaceWith(jQuery(this).clone());
+                break;
+        }
+    });
+}
+function validateEmail(sEmail) {
+    var filter = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+    if (filter.test(sEmail)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function CheckImgwithDollar(id) {
+    $("#" + id + "").change(function () {
+        $('#bbp_loader').show();
+        var val = $(this).val();
+        switch (val.substring(val.lastIndexOf('.') + 1).toLowerCase()) {
+            case 'gif': case 'jpg': case 'png': case 'bmp': case 'tif':
+
+                if ($.browser.msie) {
+                    //before making an object of ActiveXObject,
+                    //please make sure ActiveX is enabled in your IE browser
+
+                    var objFSO = new ActiveXObject("Scripting.FileSystemObject");
+
+                    var filePath = $("#" + id)[0].value;
+
+                    var objFile = objFSO.getFile(filePath);
+
+                }
+                    //for FF, Safari, Opeara and Others
+                else {
+
+                    var objFile = $("#" + id)[0].files[0];
+
+                }
+                var formData = new FormData();
+                formData.append('objCB', $("#frmCarphoriaBidReq").serialize())
+                formData.append(id, objFile);
+                $.ajax({
+                    url: "/Service/CompressandUploadImage",
+                    type: "POST",
+                    data: formData,
+
+                    processData: false,  // tell jQuery not to process the data
+                    contentType: false,   // tell jQuery not to set contentType
+                    success: function (data) {
+                        $("#bbp_loader").hide();
+                    },
+                    error: function (data) {
+                        $("#bbp_loader").hide();
+                    }
+                })
+
+                break;
+            default:
+                $(this).val('');
+                // error message here
+                alert("Please Select Images Only");
+                $("#bbp_loader").hide();
+                $(this).replaceWith($(this).clone());
+                break;
+        }
+    });
+}
+
+//get file path from client system
+function getNameFromPath(strFilepath) {
+    var objRE = new RegExp(/([^\/\\]+)$/);
+    var strName = objRE.exec(strFilepath);
+    if (strName == null) {
+        return null;
+    }
+    else {
+        return strName[0];
+    }
+}
+function CheckImg2(id) {
+    jQuery("#" + id + "").change(function () {
+        var file = getNameFromPath(jQuery("#" + id).val());
+        if (file != null) {
+            var extension = file.substr((file.lastIndexOf('.') + 1));
+
+            switch (extension) {
+                case 'jpg':
+                case 'png':
+                case 'gif':
+                    flag = true;
+                    break;
+                default:
+                    flag = false;
+            }
+        }
+        if (flag == false) {
+            alert("You can upload only jpg,png,gif extension file");
+            return false;
+        }
+        else {
+           
+        }
+    });
+}
+
+function RemoveFileUpload(id) {
+    jQuery("#" + id).parent()[0].childNodes[0].value;
+   
+    if (jQuery.browser.msie) {
+        //before making an object of ActiveXObject,
+        //please make sure ActiveX is enabled in your IE browser
+
+        var objFSO = new ActiveXObject("Scripting.FileSystemObject");
+
+        var filePath = jQuery("#" + id).parent()[0].childNodes[0].value;
+
+        var objFile = objFSO.getFile(filePath);
+
+    }
+        //for FF, Safari, Opeara and Others
+    else {
+
+        var objFile = jQuery("#" + id).parent()[0].childNodes[0].files[0];
+
+    }
+    var formData = new FormData();
+    formData.append('objMT',jQuery("#frmSellyourcar").serialize())
+    formData.append(id, objFile);
+    jQuery.ajax({
+        url: "/Service/RemoveUploadImage",
+        type: "POST",
+        data: formData,
+
+        processData: false,  // tell jQuery not to process the data
+        contentType: false,   // tell jQuery not to set contentType
+        success: function (data) {
+
+        },
+        error: function (data) {
+
+        }
+    })
+    jQuery("#" + id).parent().remove();
+}
+function ClearFileUploads(id) {
+    
+    if (jQuery("#" + id).val() != '') {
+        //--------------Delete file from temp location
+
+        jQuery("#" + id)[0].files[0].value;
+        if (jQuery.browser.msie) {
+            //before making an object of ActiveXObject,
+            //please make sure ActiveX is enabled in your IE browser
+
+            var objFSO = new ActiveXObject("Scripting.FileSystemObject");
+
+            var filePath = jQuery("#" + id)[0].files[0].value;
+
+            var objFile = objFSO.getFile(filePath);
+
+        }
+            //for FF, Safari, Opeara and Others
+        else {
+
+            var objFile = jQuery("#" + id)[0].files[0];
+
+        }
+        var formData = new FormData();
+        formData.append('objMT', jQuery("#frmSellyourcar").serialize())
+        formData.append(id, objFile);
+        jQuery.ajax({
+            url: "/Service/RemoveUploadImage",
+            type: "POST",
+            data: formData,
+
+            processData: false,  // tell jQuery not to process the data
+            contentType: false,   // tell jQuery not to set contentType
+            success: function (data) {
+
+            },
+            error: function (data) {
+
+            }
+        })
+        //----------------Delete file from temp location End
+
+        jQuery("#" + id).replaceWith(jQuery("#" + id).clone());
+        jQuery("#" + id).val('');
+    }
+}
+
+
+
+//get file size
+function GetFileSize(fileid) {
+    try {
+        var fileSize = 0;
+        //for IE
+        if (jQuery.browser.msie) {
+            //before making an object of ActiveXObject,
+            //please make sure ActiveX is enabled in your IE browser
+            var objFSO = new ActiveXObject("Scripting.FileSystemObject"); var filePath = jQuery("#" + fileid)[0].value;
+            var objFile = objFSO.getFile(filePath);
+            var fileSize = objFile.size; //size in kb
+            fileSize = fileSize / 1048576; //size in mb
+        }
+            //for FF, Safari, Opeara and Others
+        else {
+            fileSize = jQuery("#" + fileid)[0].files[0].size //size in kb
+            fileSize = fileSize / 1048576; //size in mb
+        }
+        return fileSize;
+    }
+    catch (e) {
+        alert("Error is :" + e);
+    }
+}
+
+/*** FileUpload********/
+function showPop() {  
+    jQuery("#divprompt").show(); ///close the dialog
+    jQuery("#overlay").show(); //hide gray screen   
+}
+function Hidepop(id) {
+    jQuery("#"+id).find(':input').each(function ()
+    {
+        switch (this.type) {
+            case 'password':
+            case 'select-multiple':
+            case 'select-one':
+            case 'text':
+            case 'textarea':
+                jQuery(this).val('');
+                break;
+            case 'checkbox':
+            case 'radio':
+                this.checked = false;
+        }
+    });
+    
+    jQuery("#" + id).find('span').html('');
+    jQuery("#divprompt").hide(); ///close the dialog
+    jQuery("#overlay").hide(); //hide gray screen 
+}
+function HideStatus() {
+    jQuery("#divStatus").hide(); ///close the dialog
+    jQuery("#overlay").hide(); //hide gray screen     
+    jQuery("#bbp").attr('display','none');
+    jQuery("#bbp").fadeOut(250);
+}
+
+function showPop_video() {
+    jQuery("#divprompt_video").show(); ///close the dialog
+    jQuery("#overlay").show(); //hide gray screen   
+}
+function Hidepop_video() {
+    jQuery("#divprompt_video").hide(); ///close the dialog
+    jQuery("#overlay").hide(); //hide gray screen 
+}
+function HideStatus_video() {
+    jQuery("#divStatus").hide(); ///close the dialog
+    jQuery("#overlay").hide(); //hide gray screen 
+}
+/************************************/

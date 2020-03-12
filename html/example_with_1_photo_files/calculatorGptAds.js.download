@@ -1,0 +1,47 @@
+/**
+ * Defines and renders the ads used in the calculator modal on the VDP.
+ */
+function runCalcAds() {
+  var calculatorAdsRendered = {};
+  calculatorAdsRendered.ad320x100 = false;
+  calculatorAdsRendered.ad768x90 = false;
+
+  Reusables.Breakpoints.on($(window))
+    .define([0, 848], {
+      enter: function () {
+        $(".calc_lg_block").addClass("hidden");
+
+        // Show bottom mobile leaderboard
+        if (calculatorAdsRendered.ad320x100 == false)
+        {
+          calculatorAdsRendered.ad320x100 = true;
+          $(".calc_sm").each(function() {
+            var slotname = $(this).data("slotname");
+            googletag.cmd.push(function() { googletag.display(slotname); });
+          });
+        }
+        $(".calc_sm_block").removeClass("hidden");
+      }
+    })
+    .define([848, Infinity], {
+      enter: function () {
+        $(".calc_sm_block").addClass("hidden");
+
+        if (calculatorAdsRendered.ad768x90 == false)
+        {
+          calculatorAdsRendered.ad768x90 = true;
+          $(".calc_lg").each(function() {
+            var slotname = $(this).data("slotname");
+            googletag.cmd.push(function() {
+              googletag.display(slotname);
+            });
+          });
+        }
+        $(".calc_lg_block").removeClass("hidden");
+      }
+    });
+
+  // trigger the loaded screen width
+  Reusables.Breakpoints.evaluate();
+  setupSlotEvents();
+}

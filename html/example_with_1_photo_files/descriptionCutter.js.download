@@ -1,0 +1,171 @@
+
+/**
+ * format description in fake box to only have two lines of text with ellipsis
+ *
+ * @param {Object} element - element we are editing
+ * @param {number} lines - number of lines
+ * @param {string} link - more/less link
+ * @param {number} height - desired height in pixels
+ *
+ * @return {*}
+ */
+function formatDescription(element, lines, link, height) {
+  if (element.length > 1) {
+    element.each(function() {
+      formatDescription($(this), lines, '/listing/' + $(this).attr('id').replace(/[^\d]/g, ''), height);
+    });
+    return;
+  }
+  if (!lines) {
+    lines = 2;
+  }
+
+  var rowLength = 26;
+
+  if ($(window).width() < 480 ) {
+    // mobile size
+    rowLength = 59;
+    lines = 2;
+  } else if ($(window).width() < 800 ) {
+    // table size
+    rowLength = 37;
+  } else if ($(window).width() < 1024 ) {
+    rowLength = 26;
+  } else if ($(window).width() < 1280 ) {
+    rowLength = 23;
+  }
+
+  if ($(window).width() > 1024 && 'featured_ad_description' === $(element).attr('id')) {
+    rowLength = 93;
+    lines = 3;
+  }
+
+  if (!height) {
+      height = 65;
+  }
+
+  var description = $(element).html();
+
+  function cropDescription(dep, size) {
+    var cropSize = size;
+    var newDescription = '';
+
+    if (description.length > (cropSize * lines)) {
+      newDescription = description.substr(0, (cropSize * lines));
+      if (newDescription.length > 0) {
+          // try clean out cut link which may appear at the end
+          newDescription = newDescription.replace(/(?!.*<\/a>$)<a .*$/gi, '');
+      }
+
+      if (newDescription.length > 0 && link) {
+        newDescription += '...<a class="link" href="' + link + '" ' + (($(element).data('onclick')) ? 'onclick="' + $(element).data('onclick') + '"' : '') + '>more</a>';
+      }
+      $(element).html(newDescription);
+      element.show();
+    }
+
+    if (dep == 0 || ($(element).height() <= height)) {
+      return true;
+    }
+
+    dep--;
+    cropSize -= 3;
+    cropDescription(dep, cropSize);
+  };
+
+  cropDescription(12, rowLength);
+}
+
+
+/**
+ * tries to fit plain text into element box
+ *
+ * @param {Object} element - Element in which we are trying to fit the words
+ * @param {Object} options - additional options like lines, link and height
+ */
+function fitPlainText(element, options) {
+    var defaults = {
+        lines: 2,      // max number of lines to show
+        link: null,    // should more... link be shown
+        height: 0      // maximal height to fit in
+    },
+    settings = $.extend({}, defaults, options),
+    text = $(element).html().trim().replace(/[ ]{2,}/g, ' '),
+    // try to figure out width in pixels
+    canvas = fitPlainText.canvas || (fitPlainText.canvas = document.createElement('canvas')),
+    context = canvas.getContext('2d'),
+    metrics = null, elementWidth = 0, textWidth = 0, textLines = [], font, totalChars = 0;
+
+    if (!element) { return text; }
+
+    // get font of element
+    var font = ($(element).css('font-weight')  || 'normal') + ' ' +
+                $(element).css('font-size') + ' ' +
+                $(element).css('font-family');
+    context.font = font;
+
+    elementWidth = $(element).width();
+    // get lines separated by hard returns
+    lines = text.split(/[\r\n]+/);
+
+    for (var lineIndex = 0; lineIndex < lines.length; lineIndex++) {
+        var currentLine = '';
+        var words = lines[lineIndex].split(' ');
+
+        for (var wordIndex = 0; wordIndex < words.length; wordIndex++) {
+            textWidth = context.measureText(currentLine + ' ' + words[wordIndex]).width;
+
+            if (textWidth < elementWidth) {
+                currentLine += ' ' + words[wordIndex];
+            } else {
+                if (currentLine.trim()) {
+                    textLines.push(currentLine.trim());
+                }
+
+                currentLine = words[wordIndex];
+            }
+        }
+        if (currentLine.trim()) {
+            textLines.push(currentLine.trim());
+        }
+    }
+
+    // check max lines condition
+    if (settings.lines && settings.lines < textLines.length) {
+        textLines.splice(settings.lines, 100000);
+
+        totalChars = textLines.map(function(line) { return line.length; }).reduce(function(prev, curr) {
+            return prev + curr;
+        }, 0);
+        text = text.substr(0, totalChars);
+    }
+    // check height condition
+    if (settings.height) {
+        $(element).html(text);
+        $(element).show();
+
+        height = $(element).height();
+
+        if (settings.height < height) {
+            textLines.splice(Math.floor(settings.height / height * textLines.length), 100000);
+
+            totalChars = textLines.map(function(line) { return line.length; }).reduce(function(prev, curr) {
+                return prev + curr;
+            }, 0);
+            text = text.substr(0, totalChars);
+        }
+    }
+
+    if (text.length > 0) {
+        // try clean out cut link which may appear at the end
+        text = text.replace(/(?!.*<\/a>$)<a .*$/gi, '');
+    }
+
+    if (text.length > 0 && settings.link !== null) {
+        text = text.substr(0, text.length - 4); // reserve place for "more"
+        text += '...<a class="link" href="' + settings.link + '">more</a>';
+    }
+    $(element).html(text);
+
+    return text;
+}

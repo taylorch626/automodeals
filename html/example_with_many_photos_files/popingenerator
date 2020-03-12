@@ -1,0 +1,49 @@
+
+            (function() {
+                function AddScriptElement(source, callback) {
+                    var scriptElement = document.createElement('script');
+                    scriptElement.type = 'text/javascript';
+                    scriptElement.src = source;
+                    if (null != callback) {
+                        scriptElement.onreadystatechange = callback;
+                        scriptElement.onload = callback;
+                    }
+                    document.getElementsByTagName('head')[0].appendChild(scriptElement);
+                }
+
+                function BuildNewFileUrlFromBase(baseUrl, newPath) {
+                    var dummyAnchor = document.createElement('a');
+                    var split = baseUrl.split('/');
+                    dummyAnchor.href = lpTag.protocol + '//' + split[0];
+
+                    for(var i = 1; i < split.length; i++) {
+                        if(split[i]) {
+                            newPath = '/' + split[i] + newPath;
+                        }
+                    }
+
+                    dummyAnchor.pathname = newPath;
+                    return dummyAnchor.href;
+                }
+
+                function LoadPopinGenerator() {
+                    function popIn(){return false;} lpTag.taglets.caoEngager.disableEvents();
+
+                    try {
+                        lpTag.taglets.caoEngager.handleEvent(166, 'da857b55-c5a3-416f-8e8c-f2e9f46e2497', 70420, 0);
+
+                        var showPopIn = popIn();
+                        if (typeof showPopIn === 'undefined') { 
+                            lpTag.taglets.caoEngager.handleEvent(166, 'da857b55-c5a3-416f-8e8c-f2e9f46e2497', 70420, 2);
+                            lpTag.taglets.googleAnalytics.sendGoogleAnalyticsEngagementEvent({"sessionId":"da857b55-c5a3-416f-8e8c-f2e9f46e2497","name":"Default_","description":"default engagement","fileName":"CAOOverlay_SlideUp_02_Gray_Left_DesktopOnly.xsl","isPopOut":false,"isOffline":false,"type":0,"channel":"mtc","language":"en-US","placementId":-1,"disableLocationSelector":false,"windowPosition":0,"minimizedMobileWindowPosition":0,"mtc":{"tapToTextDisabled":false,"message":""},"abc":{},"status":0,"id":70420}, 'Display');
+                        }
+                        
+                    } catch (err) {
+                        console.log(err)
+                    }
+                }
+
+                var popinjsSrc = BuildNewFileUrlFromBase(lpTag.taglets.caoServiceMap.getDomain('configurationCDN'), '/scripts/popin.js');
+                AddScriptElement(popinjsSrc, LoadPopinGenerator);
+            })();
+        
