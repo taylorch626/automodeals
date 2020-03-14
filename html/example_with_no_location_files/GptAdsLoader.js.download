@@ -1,0 +1,150 @@
+// add AD Lightning script to the page
+var adl = document.createElement('script');
+adl.type = 'text/javascript';
+adl.defer = true;
+adl.src =
+  ('https:' == document.location.protocol ? 'https://' : 'http://') +
+  'tagan.adlightning.com/deseretdigital/op.js';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(adl, s);
+
+/**
+ * This function loads all the GPT slots with the same class name, and displays each slot loaded.
+ *
+ * @param {Array} slot             The slot info
+ * @param {string} loadBreakpoint  Breakpoint Name that is being loaded
+ * @param {function()} callback       method to be called after slot has been processed
+ *
+ * @return boolean
+ */
+function loadGptAdIntoSlot (slot, loadBreakpoint, callback) {
+  callback = callback || false;
+  var loadSlot = slot.slotSizes.indexOf(loadBreakpoint);
+  slot.slotLoaded = slot.slotLoaded || false; // set it if it doesn't exist
+  slot.forceLoad = slot.forceLoad || false; // set it if it doesn't exist
+
+  if (loadSlot === -1) {
+    // This is not the breakpoint you are looking for.
+    return slot.slotLoaded;
+  } else if (slot.slotLoaded === true && slot.forceLoad === false) {
+    // This slot has been loaded before, and we aren't trying to forceLoad a previously loaded slotClassName.
+    // Just show it.
+    $(slot.slotBlockClassName).each(function(index) {
+      if (loadedSlots.indexOf($(this).children(slot.slotClassName).attr("id")) > -1) {
+        $(this).css("display", "block");
+      }
+    });
+  } else {
+    if (window.googletag && googletag.apiReady) {
+      // This slot has not been loaded before. Load it, and show it as part of the setupSlotEvents() function below.
+      $(slot.slotClassName).each(function () {
+        // It's possible (due to outside, unique intervention. Just check the homepageGptAds.js, for example),
+        // to load only certain slots that match this slotClassName. slot.forceLoad = true allows us to
+        // load all the other slots that match, that haven't already been loaded.
+        if (slot.forceLoad || slot.slotLoaded === false) {
+          var slotname = $(this).data("slotname");
+
+          // loadedSlots is a global array, created below, to be used in conjunction with slot.forceLoad
+          // if not already in the loaded list, load it.
+          // By default, this array is empty, so all slots with a matching slot.slotClassName will be loaded.
+          if (loadedSlots.indexOf(slotname) == -1) {
+            googletag.cmd.push(function () {
+              googletag.display(slotname);
+            });
+          }
+        }
+      });
+      slot.forceLoad = false;
+    }
+  }
+
+  // Run our callback, ladies and gentlemen!
+  if (typeof callback == "function") {
+    callback(slot.slotBlockClassName);
+  }
+
+  return true;
+}
+
+/**
+ * global loadedSlots - Used for keeping track of slots we KNOW actually loaded.
+ * It is populated with the intercepted callback method below.
+ */
+var loadedSlots = [];
+
+// https://developers.google.com/doubleclick-gpt/common_implementation_mistakes
+
+/**
+ * This an example method that intercepts the googleads slotRenderEnded event
+ * We are using the loadedSlots global variable to prevent us from reloading slots that have already loaded.
+ * It is suggested that if you find it necessary to use this method,
+ * you reproduce it in your page-specific GptAds.js file
+*/
+/*
+$(document).on("ddm.slotRenderEnded", function (event, slotObject) {
+  if(slotObject.isEmpty === false) {
+    var thisSlot = slotObject.slot.getSlotElementId();
+    loadedSlots.push(thisSlot);
+  }
+});
+*/
+
+// new logic to show Report ad button below ad block and hide empty slots
+function setupSlotEvents() {
+
+  if (window.googletag && googletag.apiReady) {
+    googletag.cmd.push(function () {
+      googletag.pubads().addEventListener('slotRenderEnded', function (event) {
+        // get slot id which report button should belong to
+        var slotId = event.slot.getSlotElementId();
+
+        // hide the Advertise with us and Report ad links if the dfp slot is not rendered.
+        if (event.isEmpty) {
+          $('#' + slotId)
+            .parents('.ad_block, [data-displayAdCheck]')
+            .css('display', 'none');
+          $('#' + slotId).css('display', 'none'); // for resource widgets
+        } else {
+          $('#' + slotId)
+            .parents('.ad_block, [data-displayAdCheck]')
+            .css('display', 'block');
+          $('#' + slotId).css('display', 'block'); // for resource widgets
+        }
+
+        // create setup for Report ad button --------------------
+
+        // Define ADL selector explicitly - whatever we want
+        var adReportDialogSelector = slotId + '-options';
+
+        // create div to hold Report ad button
+        var addReportButtonDiv = document.createElement('div');
+        addReportButtonDiv.classList.add('adl-report-ad-container');
+
+        // find parent wrapper to the page, we already have it in our markup
+        var parentDiv = document
+          .getElementById(slotId)
+          .parentElement.querySelector('.display-ad-link-container');
+
+        // wing ads do not have Report ad button
+        if (parentDiv) {
+          parentDiv.id = adReportDialogSelector;
+          parentDiv.appendChild(addReportButtonDiv);
+
+          // NEW: Create event for adl to respond to.
+          var createReportBtnEvent = {
+            adlAction: 'createUserReportButton',
+            selector: '#' + adReportDialogSelector,
+            uniqueId: event.creativeId || event.sourceAgnosticCreativeId
+          };
+          window.postMessage(createReportBtnEvent, '*');
+        }
+        // send our own event so our other javascript can easily access this event
+        $(document).trigger('ddm.slotRenderEnded', [event]);
+      });
+    });
+  }
+}
+
+$(function () {
+  setupSlotEvents();
+});
