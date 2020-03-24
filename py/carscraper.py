@@ -121,7 +121,7 @@ def carscraper(**kwargs):
             currproxy = next(proxy_pool) # grab the next proxy in cycle                
 
 
-        attempts = len(proxydict) # for now, limit the total number of attempts to one per proxy. This will prevent endless while loop
+        attempts = 3*len(proxydict) # for now, limit the total number of attempts to three per proxy. This will prevent endless while loop
         chkproxy = 1
         while chkproxy and attempts:
             if (time.time() - tstart) > 60*refreshmin: # check if it's been more than refreshmin minutes since proxy_pool updated
@@ -140,8 +140,8 @@ def carscraper(**kwargs):
 
             try:
                 resp = requests.get(url,proxies={"http":currproxy, "https":currproxy},headers={'User-Agent': proxydict[currproxy]}, timeout=20)
-                print(f'Proxy success for {currproxy}')
-                print()
+                # print(f'Proxy success for {currproxy}')
+                # print()
                 chkproxy = 0
                 attempts += 1
             except:
@@ -190,7 +190,7 @@ def carscraper(**kwargs):
             fulllink = '/'.join([rooturl.rstrip('/'), currlink.lstrip('/')])
 
             if use_proxy:
-                attempts = len(proxydict) # for now, limit the total number of attempts to one per proxy. This will prevent endless while loop
+                attempts = 3*len(proxydict) # for now, limit the total number of attempts to three per proxy. This will prevent endless while loop
                 chkproxy = 1
                 while chkproxy and attempts:
                     if (time.time() - tstart) > 60*refreshmin: # check if it's been more than refreshmin minutes since proxy_pool updated
@@ -209,8 +209,8 @@ def carscraper(**kwargs):
 
                     try:
                         resp = requests.get(fulllink,proxies={"http":currproxy, "https":currproxy},headers={'User-Agent': proxydict[currproxy]}, timeout=20)
-                        print(f'Proxy success for {currproxy}')
-                        print()
+                        # print(f'Proxy success for {currproxy}')
+                        # print()
                         chkproxy = 0
                         attempts += 1
                     except:
@@ -346,10 +346,12 @@ def carscraper(**kwargs):
 
                                         # Check to see if liters_error_log already exists
                                         if os.path.isfile('errors/liters_error_log.csv'):
-#                                             print('found file. appending to existing file')
+                                            # print('found file. appending to existing file')
                                             err_df.to_csv('errors/liters_error_log.csv', mode='a', index=False, header=False)
+                                            # print()
+                                            # print('saved in inner try-except')
                                         else:
-#                                             print('no file found. creating new file')
+                                            # print('no file found. creating new file')
                                             err_df.to_csv('errors/liters_error_log.csv', index=False)
                                 except:
                                     # save to error log
@@ -357,13 +359,14 @@ def carscraper(**kwargs):
                                     
                                     # Check to see if liters_error_log already exists
                                     if os.path.isfile('errors/liters_error_log.csv'):
-#                                         print('found file. appending to existing file')
+                                        # print('found file. appending to existing file')
                                         err_df.to_csv('errors/liters_error_log.csv', mode='a', index=False, header=False)
+                                        # print()
+                                        # print('saved in outer try-except')
                                     else:
-#                                         print('no file found. creating new file')
+                                        # print('no file found. creating new file')
                                         err_df.to_csv('errors/liters_error_log.csv', index=False)                                   
                                     
-                                    pass
 #                                     print('couldn't parse liters info')
                             else:
                                 liters = livalue

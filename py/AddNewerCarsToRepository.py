@@ -19,7 +19,7 @@ def AddNewerCarsToRepository():
 
 
 	# Load dataframe
-	all_cars = pd.read_csv('data/all_cars_test_from_py.csv')
+	all_cars = pd.read_csv('data/all_cars.csv')
 
 	# Convert post_date back to datetime
 	all_cars['post_date'] = pd.to_datetime(all_cars['post_date'])
@@ -31,7 +31,7 @@ def AddNewerCarsToRepository():
 	# Now scrape for more cars and check for timestamp
 
 	# determine whether or not to use proxy IPs. Can use boolean or int for this
-	use_proxy = False
+	use_proxy = True
 
 	# Define root url for KSL cars
 	rooturl = "https://cars.ksl.com"
@@ -46,17 +46,17 @@ def AddNewerCarsToRepository():
 		
 		try:
 			if use_proxy:
-				curr_cars, moreresults, currproxy, proxydict = carscraper(url=url, rooturl=rooturl, maxts=rep_ts, use_proxy=use_proxy, currproxy=currproxy, refreshmin = 15, proxydict = proxydict)
+				curr_cars, moreresults, currproxy, proxydict = carscraper(url=url, rooturl=rooturl, maxts=rep_ts, use_proxy=use_proxy, currproxy=currproxy, refreshmin = 20, proxydict = proxydict)
 			else:
 				curr_cars, moreresults = carscraper(url=url, rooturl=rooturl, maxts=rep_ts, use_proxy=use_proxy)
 		except:
 			if use_proxy:
-				curr_cars, moreresults, currproxy, proxydict = carscraper(url=url, rooturl=rooturl, maxts=0, use_proxy=use_proxy, refreshmin = 15)
+				curr_cars, moreresults, currproxy, proxydict = carscraper(url=url, rooturl=rooturl, maxts=0, use_proxy=use_proxy, refreshmin = 20)
 			else:
 				pass
 		
 		count += 1    
-	#     print(f'More results? {moreresults}')
+	    # print(f'More results? {moreresults}')
 		if type(curr_cars) is pd.core.frame.DataFrame: # make sure real data was returned
 			try:
 				newer_cars = pd.concat([newer_cars, curr_cars], ignore_index=True)
@@ -65,10 +65,10 @@ def AddNewerCarsToRepository():
 		else:
 			print('No newer car data found!')
 		
-		# TEMPORARY: add in hard stop after a couple of pages
-		if count == 2:
+		# TEMPORARY: add in hard stop after a reasonable # of pages to expect in a single day
+		if count == 150:
 			moreresults = 0
-			print('HARD STOP added here by TCH on 3/23/20')
+			print(f'HARD STOP at {count} pages added here by TCH on 3/23/20')
 		
 	# add newer_cars
 	if type(newer_cars) is pd.core.frame.DataFrame:
@@ -78,8 +78,9 @@ def AddNewerCarsToRepository():
 	# Remove any duplicate rows
 
 	all_cars = removeduplicates(all_cars)
+	return all_cars.shape[0]
 
+	
 	# Save updated dataframe to csv
 
-
-	all_cars.to_csv('data/all_cars_test_from_py_UPDATED.csv', index=False)
+	all_cars.to_csv('data/all_cars.csv', index=False)
