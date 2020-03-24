@@ -1,28 +1,17 @@
 # -*- coding: utf-8 -*-
 
-'''This script is used to automate updating of the all_cars.csv repository and should be used in tandem with a task scheduler.'''
+'''This script is used to automate updating of the all_cars.csv repository and should be used in tandem with a task scheduler.
+It should be run from just within the automodeals directory so that the subfunction dependencies work out properly.
 
-import subprocess as cmd
-import datetime as datetime
+For example, in Windows cmd, cd to the automodeals directory and then run
+>python3 py\updateWrapper.py'''
 
-# cmd.run("echo 'Test of auto print function'", check=True, shell=True)
+from AddNewerCarsToRepository import AddNewerCarsToRepository as ANCTR
+from uploadRepository import uploadRepository
 
-try:
-	cmd.run("git add data\all_cars_test_from_py_UPDATED.csv", check=True, shell=True)
-except:
-	print('Adding crashed!')
+# Scrape for the most recent cars
+# Hardcoded at the moment to stop after 2 search pages
+ANCTR()
 
-try:
-	cmd.run("git commit -m '{datetime.datetime.now()} - Uploaded newer cars to all_cars_from_py_UPDATED.csv'", check=True, shell=True)
-except:
-	print('Committing crashed!')
-	
-try:
-	cmd.run("git pull project master", check=True, shell=True)
-except:
-	print('Pulling crashed!')
-
-try:
-	cmd.run("git push project master", check=True, shell=True)
-except:
-	print('Pushing crashed!')
+# commit and push to git
+uploadRepository()
