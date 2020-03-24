@@ -51,7 +51,7 @@ def AddNewerCarsToRepository():
 				curr_cars, moreresults = carscraper(url=url, rooturl=rooturl, maxts=rep_ts, use_proxy=use_proxy)
 		except:
 			if use_proxy:
-				curr_cars, moreresults, currproxy, proxydict = carscraper(url=url, rooturl=rooturl, maxts=0, use_proxy=use_proxy, refreshmin = 20)
+				curr_cars, moreresults, currproxy, proxydict = carscraper(url=url, rooturl=rooturl, maxts=rep_ts, use_proxy=use_proxy, refreshmin = 20)
 			else:
 				pass
 		
