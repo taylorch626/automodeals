@@ -223,8 +223,8 @@ def carscraper(**kwargs):
                             chkproxy = 1
                             attempts -=1
                         else:
-                            print(f'Proxy success for {currproxy}')
-                            print()
+                            # print(f'Proxy success for {currproxy}')
+                            # print()
                             chkproxy = 0
                             attempts += 1
                     except:
