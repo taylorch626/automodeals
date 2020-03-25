@@ -15,7 +15,7 @@ def uploadRepository(newsz):
 		
 	# message = str(datetime.datetime.now()) + ' - Uploaded newer cars to all_cars.csv'
 	message = f'{str(datetime.datetime.now())} - There are now {newsz} cars in all_cars.csv'
-	# print(message)
+	print(message)
 
 	if cont == 1:
 		try:
