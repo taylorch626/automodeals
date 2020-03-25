@@ -92,4 +92,4 @@ def AddNewerCarsToRepository():
 
 	all_cars.to_csv('data/all_cars.csv', index=False)
 
-    return all_cars.shape[0]
+	return all_cars.shape[0]
