@@ -142,10 +142,15 @@ def carscraper(**kwargs):
 
             try:
                 resp = requests.get(url,proxies={"http":currproxy, "https":currproxy},headers={'User-Agent': proxydict[currproxy]}, timeout=20)
-                # print(f'Proxy success for {currproxy}')
-                # print()
-                chkproxy = 0
-                attempts += 1
+                if resp.status_code == 403:
+                    # congrats, your proxy IP just got blocked!
+                    chkproxy = 1
+                    attempts -=1
+                else:
+                    # print(f'Proxy success for {currproxy}')
+                    # print()
+                    chkproxy = 0
+                    attempts += 1
             except:
                 prevproxy = currproxy
                 currproxy = next(proxy_pool)
@@ -213,10 +218,15 @@ def carscraper(**kwargs):
 
                     try:
                         resp = requests.get(fulllink,proxies={"http":currproxy, "https":currproxy},headers={'User-Agent': proxydict[currproxy]}, timeout=20)
-                        # print(f'Proxy success for {currproxy}')
-                        # print()
-                        chkproxy = 0
-                        attempts += 1
+                        if resp.status_code == 403:
+                            # congrats, your proxy IP just got blocked!
+                            chkproxy = 1
+                            attempts -=1
+                        else:
+                            print(f'Proxy success for {currproxy}')
+                            print()
+                            chkproxy = 0
+                            attempts += 1
                     except:
                         prevproxy = currproxy
                         currproxy = next(proxy_pool)
