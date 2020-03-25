@@ -66,7 +66,7 @@ def AddNewerCarsToRepository():
 			print('No newer car data found!')
 		
 		# TEMPORARY: add in hard stop after a reasonable # of pages to expect in a single day
-		if count == 150:
+		if count == 175:
 			moreresults = 0
 			print(f'HARD STOP at {count} pages added here by TCH on 3/23/20')
 		
@@ -78,9 +78,18 @@ def AddNewerCarsToRepository():
 	# Remove any duplicate rows
 
 	all_cars = removeduplicates(all_cars)
-	return all_cars.shape[0]
-
+	
+	
+    # Save updated dataframe to csv
+	try:
+		dailynm = f'data/daily/all_cars_{datetime.now().strftime("%Y%m%d_%H%M%S")}.csv'
+		all_cars.to_csv(dailynm, index=False)
+	except:
+		print()
+		print("Couldn't save daily csv to data/daily directory")
 	
 	# Save updated dataframe to csv
 
 	all_cars.to_csv('data/all_cars.csv', index=False)
+
+    return all_cars.shape[0]
