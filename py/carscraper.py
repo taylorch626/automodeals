@@ -121,11 +121,13 @@ def carscraper(**kwargs):
             currproxy = next(proxy_pool) # grab the next proxy in cycle                
 
 
-        attempts = 3*len(proxydict) # for now, limit the total number of attempts to three per proxy. This will prevent endless while loop
+        attempts = 10*len(proxydict) # for now, limit the total number of attempts to ten per proxy. This will prevent endless while loop
         chkproxy = 1
         while chkproxy and attempts:
             if (time.time() - tstart) > 60*refreshmin: # check if it's been more than refreshmin minutes since proxy_pool updated
                 print('Refreshing proxy pool...')
+
+                tstart = time.time() # reset start time
 
                 currproxies = set(proxydict.keys())
                 newproxies = generateProxies()
@@ -190,11 +192,13 @@ def carscraper(**kwargs):
             fulllink = '/'.join([rooturl.rstrip('/'), currlink.lstrip('/')])
 
             if use_proxy:
-                attempts = 3*len(proxydict) # for now, limit the total number of attempts to three per proxy. This will prevent endless while loop
+                attempts = 10*len(proxydict) # for now, limit the total number of attempts to ten per proxy. This will prevent endless while loop
                 chkproxy = 1
                 while chkproxy and attempts:
                     if (time.time() - tstart) > 60*refreshmin: # check if it's been more than refreshmin minutes since proxy_pool updated
                         print('Refreshing proxy pool...')
+
+                        tstart = time.time() # reset start time
 
                         currproxies = set(proxydict.keys())
                         newproxies = generateProxies()
