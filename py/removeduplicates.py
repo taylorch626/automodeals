@@ -13,5 +13,5 @@ def removeduplicates(df):
 		newsize = df.shape[0]
 		df = df.reset_index()
 		del df['index']
-		print(f'Removed {oldsize - newsize} duplicates before saving')
+		print(f'Removed {oldsize - newsize} duplicates')
 	return df

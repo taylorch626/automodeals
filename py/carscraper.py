@@ -16,12 +16,13 @@ import random
 from itertools import cycle
 import os
 from generateProxies import generateProxies
+from removeduplicates import removeduplicates
 
 def carscraper(**kwargs):
     '''VARIABLE INPUTS:
     url: should be of the form "https://cars.ksl.com/search/newUsed/Used;Certified/perPage/96/page/0"
     rooturl: should be something like "https://cars.ksl.com"
-    maxts: the maximum timestamp of the all_cars repository
+    prev_links: a set of the full URL for each listing in the repository
     use_proxy: a boolean or binary to indicate if a proxy should be used
     curr_proxy: a string indicating the current proxy IP from last function call
     proxydict: a dictionary of proxy IPs and associated user-agents to cycle through
@@ -63,13 +64,13 @@ def carscraper(**kwargs):
     else:
         raise ValueError('rooturl is a required input for carscraper().')
         
-    if 'maxts' in kwargs.keys():
-        if isinstance(kwargs['maxts'],np.int64) or isinstance(kwargs['maxts'],int) or isinstance(kwargs['maxts'],float):
-            maxts = kwargs['maxts']
+    if 'prev_links' in kwargs.keys():
+        if isinstance(kwargs['prev_links'],set):
+            prev_links = kwargs['prev_links']
         else:
-            raise TypeError(f'Expected np.int64 or int for maxts but got {type(kwargs["maxts"])}.')
+            raise TypeError(f'Expected set for prev_links but got {type(kwargs["prev_links"])}.')
     else:
-        raise ValueError('maxts is a required input for carscraper().')
+        prev_links = set() # make a dummy set to check links against
         
     if 'use_proxy' in kwargs.keys():
         if isinstance(kwargs['use_proxy'],int) or isinstance(kwargs['use_proxy'],bool):
@@ -174,27 +175,42 @@ def carscraper(**kwargs):
     links = pgsoup.select("div.title > a.link") # grab all 96 (or up to 96) links
 #     tstamps = pgsoup.select("div.listing-detail-line script") # grab all 96 (or up to 96) timestamps
     # ^^^ this line no longer works as of Mar 17, 2020 due to timestamp being used on KSL backend rather than with frontend js
+	
+    # Check to make sure all links are new on this search page
+    fulllinks = set()
+    for link in links:
+	
+	    # We're going to want to strip the "?ad_cid=[number]" from the end of these links as they're not needed to load the page properly
+        # Regular expressions should come in handy here
+        cutidx = re.search('(\?ad_cid=.+)',link['href']).start()
+        currlink = link['href'][:cutidx]
+
+        # Generate full link for the current listing
+        fulllink = '/'.join([rooturl.rstrip('/'), currlink.lstrip('/')])
+        fulllinks.add(fulllink)
+    
+    # Check against full set from repo
+    # print(f'Length of fulllinks is {len(fulllinks)}')
+    fulllinks = fulllinks.difference(prev_links)
+    # print(f'Length of unique fulllinks is {len(fulllinks)}')
+    if fulllinks:
+        # print('At least one new link was found!')
+        pass
+    else:
+        print('Exiting carscraper function')
+        if use_proxy:
+            return None, 0, None, None
+        else:
+            return None, 0
 
     # Loop through links and scrape data for each new listing
     all_cars = []
-    with progressbar.ProgressBar(max_value=len(links)) as bar:
-        for idx, link in enumerate(links): # *** only load first x results for now to avoid ban before implementing spoofing
+    with progressbar.ProgressBar(max_value=len(fulllinks)) as bar:
+        for idx, fulllink in enumerate(fulllinks): # *** only load first x results for now to avoid ban before implementing spoofing
 
             # Reset all fields to None before next loop
             price=year=make=model=body=mileage=title_type=city=state=seller=None
             trim=ext_color=int_color=transmission=liters=cylinders=fuel_type=n_doors=ext_condition=int_condition=drive_type=None
-
-            # We're going to want to strip the "?ad_cid=[number]" from the end of these links as they're not needed to load the page properly
-            # Regular expressions should come in handy here
-
-            cutidx = re.search('(\?ad_cid=.+)',link['href']).start()
-            currlink = link['href'][:cutidx]
-
-            # Somewhere here we should do a check to make sure that the timestamp for currlink is newer than our newest file in our repository
-            # That is, compare the timestamps with a simple conditional, where if the conditional is not met, this loop breaks to avoid useless computation time
-
-            # Generate full link for the current listing
-            fulllink = '/'.join([rooturl.rstrip('/'), currlink.lstrip('/')])
 
             if use_proxy:
                 attempts = 10*len(proxydict) # for now, limit the total number of attempts to ten per proxy. This will prevent endless while loop
@@ -258,10 +274,10 @@ def carscraper(**kwargs):
                 postdate = datetime.strptime(poststr, '%B %d, %Y') # Convert to type to datetime
                 
                 # Check if date is newer than maxts (with some leniency for same day)
-                if datetime.timestamp(postdate) < maxts:
-                    print('************ Found end of new data ************')
-                    moreresults = 0
-                    break
+                # if datetime.timestamp(postdate) < maxts:
+                    # print('************ Found end of new data ************')
+                    # moreresults = 0
+                    # break
 
                 # Get listing price
                 price = lstsoup.select('h3.price')[0].text.strip().replace('$','').replace(',','')
