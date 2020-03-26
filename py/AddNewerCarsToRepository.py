@@ -31,7 +31,7 @@ def AddNewerCarsToRepository():
 	# Now scrape for more cars and check for new links
 
 	# determine whether or not to use proxy IPs. Can use boolean or int for this
-	use_proxy = False
+	use_proxy = True
 
 	# Define root url for KSL cars
 	rooturl = "https://cars.ksl.com"
