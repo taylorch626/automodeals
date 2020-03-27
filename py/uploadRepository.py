@@ -48,7 +48,8 @@ def uploadRepository(newsz, **kwargs):
 		litcont = 0
 	if litcont:
 		try:
-			cmd.run("git commit -m 'More liters string parsing errors added to error log'", check=True, shell=True)
+			message = 'More liters string parsing errors added to error log'
+			cmd.check_call(['git'] + ['commit', '-m', f'{message}'])
 		except:
 			print("Couldn't commit liters string parsing error log via git. Commit manually.")
 
