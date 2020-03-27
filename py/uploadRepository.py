@@ -38,6 +38,19 @@ def uploadRepository(newsz, **kwargs):
 				crash_df.to_csv('errors/git_error_log.csv', mode='a', index=False, header=False)
 			else:
 				crash_df.to_csv('errors/git_error_log.csv', index=False)
+				
+	# Add and commit liters parsing log, too
+	try:
+		cmd.run("git add errors/liters_error_log.csv", check=True, shell=True)
+		litcont=1
+	except:
+		print("Couldn't add liters string parsing error log via git. Add manually.")
+		litcont = 0
+	if litcont:
+		try:
+			cmd.run("git commit -m 'More liters string parsing errors added to error log'", check=True, shell=True)
+		except:
+			print("Couldn't commit liters string parsing error log via git. Commit manually.")
 
 	message = f'{str(datetime.now().strftime("%Y-%m-%d %H%M%S"))} - There are now {newsz} cars in all_cars.csv'
 
