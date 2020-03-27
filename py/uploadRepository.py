@@ -4,6 +4,8 @@
 
 import subprocess as cmd
 from datetime import datetime
+import os
+import pandas as pd
 
 def uploadRepository(newsz, **kwargs):
 
@@ -17,6 +19,12 @@ def uploadRepository(newsz, **kwargs):
 		cont = 1
 	except:
 		print('Adding crashed!')
+		# Save to error log
+		crash_df = pd.DataFrame({'timestamp':[str(datetime.now().strftime("%Y-%m-%d %H%M%S"))], 'message':['Git add crash']})
+		if os.path.isfile('errors/git_error_log.csv'):
+			crash_df.to_csv('errors/git_error_log.csv', mode='a', index=False, header=False)
+		else:
+			crash_df.to_csv('errors/git_error_log.csv', index=False)			
 		cont = 0
 		
 	if dailynm:
@@ -24,6 +32,12 @@ def uploadRepository(newsz, **kwargs):
 			cmd.run(f"git add {dailynm}", check=True, shell=True)
 		except:
 			print("Couldn't add backup daily csv via git. Add manually.")
+			# Save to error log
+			crash_df = pd.DataFrame({'timestamp':[str(datetime.now().strftime("%Y-%m-%d %H%M%S"))], 'message':["Couldn't add backup daily csv via git. Add manually."]})
+			if os.path.isfile('errors/git_error_log.csv'):
+				crash_df.to_csv('errors/git_error_log.csv', mode='a', index=False, header=False)
+			else:
+				crash_df.to_csv('errors/git_error_log.csv', index=False)
 
 	message = f'{str(datetime.now().strftime("%Y-%m-%d %H%M%S"))} - There are now {newsz} cars in all_cars.csv'
 	print(message)
@@ -34,6 +48,12 @@ def uploadRepository(newsz, **kwargs):
 			cont = 1
 		except:
 			print('Committing crashed!')
+			# Save to error log
+			crash_df = pd.DataFrame({'timestamp':[str(datetime.now().strftime("%Y-%m-%d %H%M%S"))], 'message':["Git commit crash"]})
+			if os.path.isfile('errors/git_error_log.csv'):
+				crash_df.to_csv('errors/git_error_log.csv', mode='a', index=False, header=False)
+			else:
+				crash_df.to_csv('errors/git_error_log.csv', index=False)
 			cont = 0
 
 	if cont == 1:
@@ -42,6 +62,12 @@ def uploadRepository(newsz, **kwargs):
 			cont = 1
 		except:
 			print('Pulling crashed!')
+			# Save to error log
+			crash_df = pd.DataFrame({'timestamp':[str(datetime.now().strftime("%Y-%m-%d %H%M%S"))], 'message':["Git pull crash"]})
+			if os.path.isfile('errors/git_error_log.csv'):
+				crash_df.to_csv('errors/git_error_log.csv', mode='a', index=False, header=False)
+			else:
+				crash_df.to_csv('errors/git_error_log.csv', index=False)
 			cont = 0
 
 	if cont == 1:
@@ -50,7 +76,14 @@ def uploadRepository(newsz, **kwargs):
 			cont = 1
 		except:
 			print('Pushing crashed!')
+			# Save to error log
+			crash_df = pd.DataFrame({'timestamp':[str(datetime.now().strftime("%Y-%m-%d %H%M%S"))], 'message':["Git push crash"]})
+			if os.path.isfile('errors/git_error_log.csv'):
+				crash_df.to_csv('errors/git_error_log.csv', mode='a', index=False, header=False)
+			else:
+				crash_df.to_csv('errors/git_error_log.csv', index=False)
 			cont = 0
 
 	if cont == 1:
+		print()
 		print(message)
