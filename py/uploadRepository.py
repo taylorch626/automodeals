@@ -39,7 +39,7 @@ def uploadRepository(newsz, **kwargs):
 			else:
 				crash_df.to_csv('errors/git_error_log.csv', index=False)
 
-	message = f'{str(datetime.now().strftime("%Y-%m-%d %H%M%S"))} - There are now {newsz} cars in all_cars.csv'
+	message = f'{str(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))} - There are now {newsz} cars in all_cars.csv'
 
 	if cont == 1:
 		try:
