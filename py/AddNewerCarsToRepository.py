@@ -95,18 +95,10 @@ def AddNewerCarsToRepository():
 	# Remove any duplicate rows
 
 	all_cars = removeduplicates(all_cars)
-	
-	
-    # Save updated dataframe to csv
-	try:
-		dailynm = f'data/daily/all_cars_{datetime.now().strftime("%Y%m%d_%H%M%S")}.csv'
-		all_cars.to_csv(dailynm, index=False)
-	except:
-		print()
-		print("Couldn't save daily csv to data/daily directory")
+
 	
 	# Save updated dataframe to csv
 
 	all_cars.to_csv('data/all_cars.csv', index=False)
 
-	return all_cars.shape[0]
+	return all_cars

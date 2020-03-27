@@ -5,7 +5,13 @@
 import subprocess as cmd
 import datetime as datetime
 
-def uploadRepository(newsz):
+def uploadRepository(newsz, **kwargs):
+
+	if 'dailynm' in kwargs.keys():
+		dailynm = kwargs['dailynm']
+	else:
+		dailynm = None
+
 	try:
 		cmd.run("git add data/all_cars.csv", check=True, shell=True)
 		cont = 1
@@ -13,7 +19,12 @@ def uploadRepository(newsz):
 		print('Adding crashed!')
 		cont = 0
 		
-	# message = str(datetime.datetime.now()) + ' - Uploaded newer cars to all_cars.csv'
+	if dailynm:
+		try:
+			cmd.run(f"git add {'data/daily/'+dailynm}", check=True, shell=True)
+		except:
+			print("Couldn't add backup daily csv via git. Add manually.")
+
 	message = f'{str(datetime.datetime.now())} - There are now {newsz} cars in all_cars.csv'
 	print(message)
 
