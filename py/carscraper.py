@@ -122,9 +122,10 @@ def carscraper(**kwargs):
             currproxy = next(proxy_pool) # grab the next proxy in cycle                
 
 
-        attempts = 10*len(proxydict) # for now, limit the total number of attempts to ten per proxy. This will prevent endless while loop
+        # attempts = 10*len(proxydict) # for now, limit the total number of attempts to ten per proxy. This will prevent endless while loop
         chkproxy = 1
-        while chkproxy and attempts:
+        while chkproxy:
+        # while chkproxy and attempts:
             if (time.time() - tstart) > 60*refreshmin: # check if it's been more than refreshmin minutes since proxy_pool updated
                 print('Refreshing proxy pool...')
 
@@ -146,18 +147,18 @@ def carscraper(**kwargs):
                 if resp.status_code == 403:
                     # congrats, your proxy IP just got blocked!
                     chkproxy = 1
-                    attempts -=1
+                    # attempts -=1
                 else:
                     # print(f'Proxy success for {currproxy}')
                     # print()
                     chkproxy = 0
-                    attempts += 1
+                    # attempts += 1
             except:
                 prevproxy = currproxy
                 currproxy = next(proxy_pool)
                 print(f'Proxy error for {prevproxy}! Next up is {currproxy}')
-                attempts -= 1
-                print(f'Attempts remaining: {attempts}')
+                # attempts -= 1
+                # print(f'Attempts remaining: {attempts}')
                 
     else:
         # don't use the proxy
@@ -213,9 +214,10 @@ def carscraper(**kwargs):
             trim=ext_color=int_color=transmission=liters=cylinders=fuel_type=n_doors=ext_condition=int_condition=drive_type=None
 
             if use_proxy:
-                attempts = 10*len(proxydict) # for now, limit the total number of attempts to ten per proxy. This will prevent endless while loop
+                # attempts = 10*len(proxydict) # for now, limit the total number of attempts to ten per proxy. This will prevent endless while loop
                 chkproxy = 1
-                while chkproxy and attempts:
+                while chkproxy:
+                # while chkproxy and attempts:
                     if (time.time() - tstart) > 60*refreshmin: # check if it's been more than refreshmin minutes since proxy_pool updated
                         print('Refreshing proxy pool...')
 
@@ -237,18 +239,18 @@ def carscraper(**kwargs):
                         if resp.status_code == 403:
                             # congrats, your proxy IP just got blocked!
                             chkproxy = 1
-                            attempts -=1
+                            # attempts -=1
                         else:
                             # print(f'Proxy success for {currproxy}')
                             # print()
                             chkproxy = 0
-                            attempts += 1
+                            # attempts += 1
                     except:
                         prevproxy = currproxy
                         currproxy = next(proxy_pool)
                         print(f'Proxy error for {prevproxy}! Next up is {currproxy}')
-                        attempts -= 1
-                        print(f'Attempts remaining: {attempts}')
+                        # attempts -= 1
+                        # print(f'Attempts remaining: {attempts}')
                         
             else:
                 # don't use the proxy
