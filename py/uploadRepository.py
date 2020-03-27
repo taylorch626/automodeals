@@ -3,7 +3,7 @@
 '''This is automated code to add and commit the updated all_cars.csv file to GitHub'''
 
 import subprocess as cmd
-import datetime as datetime
+from datetime import datetime
 
 def uploadRepository(newsz, **kwargs):
 
@@ -21,11 +21,11 @@ def uploadRepository(newsz, **kwargs):
 		
 	if dailynm:
 		try:
-			cmd.run(f"git add {'data/daily/'+dailynm}", check=True, shell=True)
+			cmd.run(f"git add {'dailynm}", check=True, shell=True)
 		except:
 			print("Couldn't add backup daily csv via git. Add manually.")
 
-	message = f'{str(datetime.datetime.now())} - There are now {newsz} cars in all_cars.csv'
+	message = f'{str(datetime.now().strftime("%Y-%m-%d %H%M%S"))} - There are now {newsz} cars in all_cars.csv'
 	print(message)
 
 	if cont == 1:
