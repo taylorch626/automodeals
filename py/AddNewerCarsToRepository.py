@@ -31,7 +31,7 @@ def AddNewerCarsToRepository():
 	# Now scrape for more cars and check for new links
 
 	# determine whether or not to use proxy IPs. Can use boolean or int for this
-	use_proxy = True
+	use_proxy = False # leave at False unless you know your IP has been banned. Otherwise, if ban occurs mid-scrape, carscraper() will account for this and start using proxies
 
 	# Define root url for KSL cars
 	rooturl = "https://cars.ksl.com"
@@ -47,16 +47,16 @@ def AddNewerCarsToRepository():
 		
 		try:
 			if use_proxy:
-				curr_cars, moreresults, currproxy, proxydict = carscraper(url=url, rooturl=rooturl, prev_links=prev_links, use_proxy=use_proxy, currproxy=currproxy, refreshmin = 20, proxydict = proxydict)
+				curr_cars, moreresults, currproxy, proxydict, use_proxy = carscraper(url=url, rooturl=rooturl, prev_links=prev_links, use_proxy=use_proxy, currproxy=currproxy, refreshmin = 20, proxydict = proxydict)
 			else:
-				curr_cars, moreresults = carscraper(url=url, rooturl=rooturl, prev_links=prev_links, use_proxy=use_proxy)
+				curr_cars, moreresults, use_proxy = carscraper(url=url, rooturl=rooturl, prev_links=prev_links, use_proxy=use_proxy)
 		except:
 			if use_proxy:
-				curr_cars, moreresults, currproxy, proxydict = carscraper(url=url, rooturl=rooturl, prev_links=prev_links, use_proxy=use_proxy, refreshmin = 20)
+				curr_cars, moreresults, currproxy, proxydict, use_proxy = carscraper(url=url, rooturl=rooturl, prev_links=prev_links, use_proxy=use_proxy, refreshmin = 20)
 			else:
 				pass
 		
-		count += 1    
+		count += 1
 	    # print(f'More results? {moreresults}')
 		if type(curr_cars) is pd.core.frame.DataFrame: # make sure real data was returned
 			try:
