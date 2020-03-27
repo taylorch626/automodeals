@@ -21,7 +21,7 @@ def uploadRepository(newsz, **kwargs):
 		
 	if dailynm:
 		try:
-			cmd.run(f"git add {'dailynm}", check=True, shell=True)
+			cmd.run(f"git add {dailynm}", check=True, shell=True)
 		except:
 			print("Couldn't add backup daily csv via git. Add manually.")
 
