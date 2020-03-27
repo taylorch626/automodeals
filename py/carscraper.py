@@ -87,7 +87,7 @@ def carscraper(**kwargs):
     
     if resp.status_code == 403:
         print('Congrats! your current IP is blocked (still). Switching to a proxy.')
-		print()
+        print()
         use_proxy = True
     else:
         use_proxy = False
