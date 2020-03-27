@@ -47,12 +47,12 @@ def AddNewerCarsToRepository():
 		
 		try:
 			if use_proxy:
-				curr_cars, moreresults, currproxy, proxydict, use_proxy = carscraper(url=url, rooturl=rooturl, prev_links=prev_links, use_proxy=use_proxy, currproxy=currproxy, refreshmin = 20, proxydict = proxydict)
+				curr_cars, moreresults, currproxy, proxydict = carscraper(url=url, rooturl=rooturl, prev_links=prev_links, use_proxy=use_proxy, currproxy=currproxy, refreshmin = 20, proxydict = proxydict)
 			else:
-				curr_cars, moreresults, use_proxy = carscraper(url=url, rooturl=rooturl, prev_links=prev_links, use_proxy=use_proxy)
+				curr_cars, moreresults = carscraper(url=url, rooturl=rooturl, prev_links=prev_links, use_proxy=use_proxy)
 		except:
 			if use_proxy:
-				curr_cars, moreresults, currproxy, proxydict, use_proxy = carscraper(url=url, rooturl=rooturl, prev_links=prev_links, use_proxy=use_proxy, refreshmin = 20)
+				curr_cars, moreresults, currproxy, proxydict = carscraper(url=url, rooturl=rooturl, prev_links=prev_links, use_proxy=use_proxy, refreshmin = 20)
 			else:
 				pass
 		

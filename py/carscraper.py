@@ -191,11 +191,11 @@ def carscraper(**kwargs):
     if not fulllinks:
         print('Exiting carscraper function')
         if use_proxy:
-            # order of return below is curr_cars, moreresults, currproxy, proxydict, use_proxy
-            return None, 0, None, None, use_proxy
+            # order of return below is curr_cars, moreresults, currproxy, proxydict
+            return None, 0, None, None
         else:
-            # order of return below is curr_cars, moreresults, use_proxy
-            return None, 0, use_proxy
+            # order of return below is curr_cars, moreresults
+            return None, 0
 
     # Loop through links and scrape data for each new listing
     all_cars = []
@@ -455,6 +455,6 @@ def carscraper(**kwargs):
         del all_cars['index']
         all_cars.fillna(value=np.nan, inplace=True)
     if use_proxy:
-        return all_cars, moreresults, currproxy, proxydict, use_proxy
+        return all_cars, moreresults, currproxy, proxydict
     else:
-        return all_cars, moreresults, use_proxy
+        return all_cars, moreresults
