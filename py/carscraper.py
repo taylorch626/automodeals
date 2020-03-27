@@ -33,7 +33,7 @@ def carscraper(**kwargs):
     # Need to spoof a user-agent in order to get past crawler block
     user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
     
-    # the following were pulled manually on 3/12/20 from https://www.whatismybrowser.com/guides/the-latest-user-agent/
+    the following were pulled manually on 3/12/20 from https://www.whatismybrowser.com/guides/the-latest-user-agent/
     user_agents = ['Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
                    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
                    'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
@@ -42,7 +42,7 @@ def carscraper(**kwargs):
                    'Mozilla/5.0 (X11; Linux i586; rv:31.0) Gecko/20100101 Firefox/74.0',
                    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0 Safari/605.1.15',
                    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36 Edg/80.0.361.62',
-                   'Mozilla/5.0 (Windows NT 10.0; Trident/7.0; rv:11.0) like Gecko']    
+                   'Mozilla/5.0 (Windows NT 10.0; Trident/7.0; rv:11.0) like Gecko']
     
     
     # Parse the kwargs
@@ -80,7 +80,18 @@ def carscraper(**kwargs):
     else:
         # default is to NOT use proxy
         use_proxy = False
-        
+
+
+    # Try and scrape the current search page without a proxy each time carscraper is called (just in case IP has been un-blocked)
+    resp = requests.get(url, headers = {'User-Agent': user_agent})
+    
+    if resp.status_code == 403:
+        print('Congrats! your current IP is blocked (still). Switching to a proxy.')
+		print()
+        use_proxy = True
+    else:
+        use_proxy = False
+
     if use_proxy:
         # The following inputs are only useful when using a proxy
         
@@ -106,9 +117,6 @@ def carscraper(**kwargs):
             refreshmin = 15
             print(f'No refreshmin found. Set to default value of {refreshmin}.')
         
-    
-    
-    if use_proxy:
         tstart = time.time() # set a start time to use for refreshing proxy list (if needed)    
 
         if 'currproxy' in kwargs.keys():
@@ -122,10 +130,8 @@ def carscraper(**kwargs):
             currproxy = next(proxy_pool) # grab the next proxy in cycle                
 
 
-        # attempts = 10*len(proxydict) # for now, limit the total number of attempts to ten per proxy. This will prevent endless while loop
         chkproxy = 1
         while chkproxy:
-        # while chkproxy and attempts:
             if (time.time() - tstart) > 60*refreshmin: # check if it's been more than refreshmin minutes since proxy_pool updated
                 print('Refreshing proxy pool...')
 
@@ -147,22 +153,14 @@ def carscraper(**kwargs):
                 if resp.status_code == 403:
                     # congrats, your proxy IP just got blocked!
                     chkproxy = 1
-                    # attempts -=1
                 else:
-                    # print(f'Proxy success for {currproxy}')
-                    # print()
+                    # proxy was successful
                     chkproxy = 0
-                    # attempts += 1
             except:
                 prevproxy = currproxy
                 currproxy = next(proxy_pool)
                 print(f'Proxy error for {prevproxy}! Next up is {currproxy}')
-                # attempts -= 1
-                # print(f'Attempts remaining: {attempts}')
-                
-    else:
-        # don't use the proxy
-        resp = requests.get(url, headers = {'User-Agent': user_agent})
+
         
     html = resp.content
     pgsoup = BeautifulSoup(html, "html.parser")
@@ -174,8 +172,6 @@ def carscraper(**kwargs):
         moreresults = 0
     
     links = pgsoup.select("div.title > a.link") # grab all 96 (or up to 96) links
-#     tstamps = pgsoup.select("div.listing-detail-line script") # grab all 96 (or up to 96) timestamps
-    # ^^^ this line no longer works as of Mar 17, 2020 due to timestamp being used on KSL backend rather than with frontend js
 	
     # Check to make sure all links are new on this search page
     fulllinks = set()
@@ -191,18 +187,15 @@ def carscraper(**kwargs):
         fulllinks.add(fulllink)
     
     # Check against full set from repo
-    # print(f'Length of fulllinks is {len(fulllinks)}')
     fulllinks = fulllinks.difference(prev_links)
-    # print(f'Length of unique fulllinks is {len(fulllinks)}')
-    if fulllinks:
-        # print('At least one new link was found!')
-        pass
-    else:
+    if not fulllinks:
         print('Exiting carscraper function')
         if use_proxy:
-            return None, 0, None, None
+            # order of return below is curr_cars, moreresults, currproxy, proxydict, use_proxy
+            return None, 0, None, None, use_proxy
         else:
-            return None, 0
+            # order of return below is curr_cars, moreresults, use_proxy
+            return None, 0, use_proxy
 
     # Loop through links and scrape data for each new listing
     all_cars = []
@@ -213,11 +206,16 @@ def carscraper(**kwargs):
             price=year=make=model=body=mileage=title_type=city=state=seller=None
             trim=ext_color=int_color=transmission=liters=cylinders=fuel_type=n_doors=ext_condition=int_condition=drive_type=None
 
+            # Try to load the page without a proxy first, if it worked for the main search page, above
+            if not use_proxy:
+                resp = requests.get(fulllink, headers = {'User-Agent': user_agent})
+                if resp.status_code == 403:
+                    print('Congrats! your current IP is blocked (still). Switching to a proxy.')
+                    use_proxy = True
+
             if use_proxy:
-                # attempts = 10*len(proxydict) # for now, limit the total number of attempts to ten per proxy. This will prevent endless while loop
                 chkproxy = 1
                 while chkproxy:
-                # while chkproxy and attempts:
                     if (time.time() - tstart) > 60*refreshmin: # check if it's been more than refreshmin minutes since proxy_pool updated
                         print('Refreshing proxy pool...')
 
@@ -239,23 +237,14 @@ def carscraper(**kwargs):
                         if resp.status_code == 403:
                             # congrats, your proxy IP just got blocked!
                             chkproxy = 1
-                            # attempts -=1
                         else:
-                            # print(f'Proxy success for {currproxy}')
-                            # print()
+                            # proxy was successful
                             chkproxy = 0
-                            # attempts += 1
                     except:
                         prevproxy = currproxy
                         currproxy = next(proxy_pool)
                         print(f'Proxy error for {prevproxy}! Next up is {currproxy}')
-                        # attempts -= 1
-                        # print(f'Attempts remaining: {attempts}')
-                        
-            else:
-                # don't use the proxy
-                resp = requests.get(fulllink, headers = {'User-Agent': user_agent})
-            
+
             
             lsthtml = resp.content
             lstsoup = BeautifulSoup(lsthtml, "html.parser")
@@ -466,6 +455,6 @@ def carscraper(**kwargs):
         del all_cars['index']
         all_cars.fillna(value=np.nan, inplace=True)
     if use_proxy:
-        return all_cars, moreresults, currproxy, proxydict
+        return all_cars, moreresults, currproxy, proxydict, use_proxy
     else:
-        return all_cars, moreresults
+        return all_cars, moreresults, use_proxy
