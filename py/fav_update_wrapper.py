@@ -14,4 +14,4 @@ cars_df = merge_all_with_fav(cars_path,cars_fav_path)
 
 updated_cars = favorites_views_updater(cars_df)
 
-updated_cars.to_csv('data/all_cars_view_fav_test.csv',index=False)
+updated_cars.to_csv('data/all_cars_view_fav.csv',index=False)
