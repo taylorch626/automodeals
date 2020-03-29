@@ -14,10 +14,11 @@ merged_df = merge_all_with_favorites(cars_path, cars_fav_path)
 # import libraries
 import pandas as pd
 
-def merge_all_with_favorites(cars_path, cars_fav_path):
+def merge_all_with_fav(cars_path, cars_fav_path):
     # load files
     cars_df = pd.read_csv(cars_path)
     cars_fav_df = pd.read_csv(cars_fav_path)
+    column_order = cars_fav_df.columns
     
     # index by URL before trying to merge
     cars_link = cars_df.reindex(columns=cars_fav_df.columns).set_index('link')
@@ -30,5 +31,7 @@ def merge_all_with_favorites(cars_path, cars_fav_path):
     cars_merged['workingURL'] = cars_merged['workingURL'].fillna(1)
     
     cars_merged = cars_merged.reset_index()
+    
+    cars_merged = cars_merged[column_order]
     
     return cars_merged
