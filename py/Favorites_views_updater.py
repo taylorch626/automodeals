@@ -181,7 +181,7 @@ def favorites_views_updater(cars_df, **kwargs):
                                 print('Proxy pool updated!')
     
                         try:
-                            print(f'Attempting to get {ad["link"]} with proxy {currproxy})
+                            print(f'Attempting to get {ad["link"]} with proxy {currproxy}')
                             ad_response = requests.get(ad['link'],proxies={"http":currproxy, "https":currproxy},headers={'User-Agent': proxydict[currproxy]}, timeout=20)
                             print(f'Proxy success for {currproxy}. Code: {ad_response.status_code}')
                             print()
@@ -194,7 +194,7 @@ def favorites_views_updater(cars_df, **kwargs):
                             attempts -= 1
                             print(f'Attempts remaining: {attempts}')
                 else:
-                    print('Attempting to get {ad["link"]} without proxy')
+                    print(f'Attempting to get {ad["link"]} without proxy')
                     ad_response = requests.get(ad['link'], headers = {'User-Agent': user_agent}, timeout=31)
                     print(f'Success, status code: {ad_response.status_code}')
                     if ad_response.status_code == '403':
@@ -219,7 +219,7 @@ def favorites_views_updater(cars_df, **kwargs):
                                     print('Proxy pool updated!')
         
                             try:
-                                print(f'Attempting to get {ad["link"]} with proxy {currproxy})
+                                print(f'Attempting to get {ad["link"]} with proxy {currproxy}')
                                 ad_response = requests.get(ad['link'],proxies={"http":currproxy, "https":currproxy},headers={'User-Agent': proxydict[currproxy]}, timeout=20)
                                 print(f'Proxy success for {currproxy}. Code: {ad_response.status_code}')
                                 print()
