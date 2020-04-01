@@ -33,8 +33,8 @@ def favorites_views_updater(cars_df, **kwargs):
     REQUIRED INPUTS:
     cars_df: data frame with information as pulled from carscraper()
     VARIABLE INPUTS:
-    min_age: int specifying minimum age (days) listing must be before updating information. Default 3
-    min_last_pull: int specifying minimum time (days) since last pull for new information. Default 1
+    min_age: int specifying minimum age (days) listing must be before updating information. Default 1
+    min_last_pull: int specifying minimum time (days) since last pull for new information. Default 2
     use_proxy: bool indicating to use a proxy. Default 0
     proxy_dict: dictionary of proxy IPs and user agents'''
     
@@ -53,7 +53,7 @@ def favorites_views_updater(cars_df, **kwargs):
         else:
             raise TypeError(f'Expected int for min_last_pull but got {type(kwargs["min_last_pull"])}.')
     else:
-        min_last_pull = 1 # days
+        min_last_pull = 2 # days
         
     if 'use_proxy' in kwargs.keys():
         if isinstance(kwargs['use_proxy'],int) or isinstance(kwargs['use_proxy'],bool):
@@ -146,7 +146,9 @@ def favorites_views_updater(cars_df, **kwargs):
     
     # test if IP isn't blocked with generic cars.ksl.com
     if not use_proxy:
-        resp = requests.get('https://cars.ksl.com', headers = {'User-Agent': user_agent})
+        print('Checking native IP.')
+        resp = requests.get('https://cars.ksl.com', headers = {'User-Agent': user_agent}, timeout=31)
+        print('Successful.')
         if resp.status_code == 403: # blocked
             print('IP Blocked. Continuing with proxies')
             use_proxy = 1
@@ -179,8 +181,9 @@ def favorites_views_updater(cars_df, **kwargs):
                                 print('Proxy pool updated!')
     
                         try:
+                            print(f'Attempting to get {ad["link"]} with proxy {currproxy}')
                             ad_response = requests.get(ad['link'],proxies={"http":currproxy, "https":currproxy},headers={'User-Agent': proxydict[currproxy]}, timeout=20)
-                            print(f'Proxy success for {currproxy}')
+                            print(f'Proxy success for {currproxy}. Code: {ad_response.status_code}')
                             print()
                             chkproxy = 0
                             attempts += 1
@@ -191,7 +194,9 @@ def favorites_views_updater(cars_df, **kwargs):
                             attempts -= 1
                             print(f'Attempts remaining: {attempts}')
                 else:
-                    ad_response = requests.get(ad['link'], headers = {'User-Agent': user_agent})
+                    print(f'Attempting to get {ad["link"]} without proxy')
+                    ad_response = requests.get(ad['link'], headers = {'User-Agent': user_agent}, timeout=31)
+                    print(f'Success, status code: {ad_response.status_code}')
                     if ad_response.status_code == '403':
                         print('IP was just blocked. Running with proxies')
                         use_proxy = 1
@@ -214,8 +219,9 @@ def favorites_views_updater(cars_df, **kwargs):
                                     print('Proxy pool updated!')
         
                             try:
+                                print(f'Attempting to get {ad["link"]} with proxy {currproxy}')
                                 ad_response = requests.get(ad['link'],proxies={"http":currproxy, "https":currproxy},headers={'User-Agent': proxydict[currproxy]}, timeout=20)
-                                print(f'Proxy success for {currproxy}')
+                                print(f'Proxy success for {currproxy}. Code: {ad_response.status_code}')
                                 print()
                                 chkproxy = 0
                                 attempts += 1
