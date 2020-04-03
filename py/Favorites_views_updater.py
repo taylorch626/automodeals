@@ -181,23 +181,23 @@ def favorites_views_updater(cars_df, **kwargs):
                                 print('Proxy pool updated!')
     
                         try:
-                            print(f'Attempting to get {ad["link"]} with proxy {currproxy}')
+                            print(f'\nAttempting to get {ad["link"]} with proxy {currproxy}')
                             ad_response = requests.get(ad['link'],proxies={"http":currproxy, "https":currproxy},headers={'User-Agent': proxydict[currproxy]}, timeout=20)
-                            print(f'Proxy success for {currproxy}. Code: {ad_response.status_code}')
+                            print(f'\nProxy success for {currproxy}. Code: {ad_response.status_code}')
                             print()
                             chkproxy = 0
                             attempts += 1
                         except:
                             prevproxy = currproxy
                             currproxy = next(proxy_pool)
-                            print(f'Proxy error for {prevproxy}! Next up is {currproxy}')
+                            print(f'\nProxy error for {prevproxy}! Next up is {currproxy}')
                             attempts -= 1
                             print(f'Attempts remaining: {attempts}')
                 else:
-                    print(f'Attempting to get {ad["link"]} without proxy')
+                    print(f'\nAttempting to get {ad["link"]} without proxy')
                     ad_response = requests.get(ad['link'], headers = {'User-Agent': user_agent}, timeout=31)
-                    print(f'Success, status code: {ad_response.status_code}')
-                    if ad_response.status_code == '403':
+                    print(f'\nSuccess, status code: {ad_response.status_code}')
+                    except:
                         print('IP was just blocked. Running with proxies')
                         use_proxy = 1
                         attempts = len(proxydict)
@@ -219,9 +219,9 @@ def favorites_views_updater(cars_df, **kwargs):
                                     print('Proxy pool updated!')
         
                             try:
-                                print(f'Attempting to get {ad["link"]} with proxy {currproxy}')
+                                print(f'\nAttempting to get {ad["link"]} with proxy {currproxy}')
                                 ad_response = requests.get(ad['link'],proxies={"http":currproxy, "https":currproxy},headers={'User-Agent': proxydict[currproxy]}, timeout=20)
-                                print(f'Proxy success for {currproxy}. Code: {ad_response.status_code}')
+                                print(f'\nProxy success for {currproxy}. Code: {ad_response.status_code}')
                                 print()
                                 chkproxy = 0
                                 attempts += 1
