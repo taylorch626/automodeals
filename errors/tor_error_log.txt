@@ -1,0 +1,203 @@
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+ERROR:root:Fri, 03 Apr 2020 18:22:22: SOCKSHTTPSConnectionPool(host='cars.ksl.com', port=443): Max retries exceeded with url: /listing/5002893 (Caused by SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])")))
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "peek of closed file"
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "peek of closed file"
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "peek of closed file"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+ERROR:root:Fri, 03 Apr 2020 18:22:47: SOCKSHTTPSConnectionPool(host='cars.ksl.com', port=443): Max retries exceeded with url: /listing/5002893 (Caused by SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])")))
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+ERROR:root:Fri, 03 Apr 2020 18:23:45: SOCKSHTTPSConnectionPool(host='cars.ksl.com', port=443): Max retries exceeded with url: /listing/5002893 (Caused by SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])")))
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+ERROR:root:Fri, 03 Apr 2020 18:23:53: SOCKSHTTPSConnectionPool(host='cars.ksl.com', port=443): Max retries exceeded with url: /listing/5002893 (Caused by SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])")))
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+ERROR:root:Fri, 03 Apr 2020 18:23:56: SOCKSHTTPSConnectionPool(host='cars.ksl.com', port=443): Max retries exceeded with url: /listing/5002893 (Caused by SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])")))
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+ERROR:root:Fri, 03 Apr 2020 18:24:01: SOCKSHTTPSConnectionPool(host='cars.ksl.com', port=443): Max retries exceeded with url: /listing/5002893 (Caused by SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])")))
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+ERROR:root:Fri, 03 Apr 2020 18:24:10: SOCKSHTTPSConnectionPool(host='cars.ksl.com', port=443): Max retries exceeded with url: /listing/5002893 (Caused by SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])")))
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+ERROR:root:Fri, 03 Apr 2020 18:24:14: SOCKSHTTPSConnectionPool(host='cars.ksl.com', port=443): Max retries exceeded with url: /listing/5002893 (Caused by SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])")))
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+ERROR:root:Fri, 03 Apr 2020 18:24:46: SOCKSHTTPSConnectionPool(host='cars.ksl.com', port=443): Max retries exceeded with url: /listing/5002893 (Caused by SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])")))
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+ERROR:root:Fri, 03 Apr 2020 18:25:22: SOCKSHTTPSConnectionPool(host='cars.ksl.com', port=443): Max retries exceeded with url: /listing/5002893 (Caused by SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])")))
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+ERROR:root:Fri, 03 Apr 2020 18:25:57: SOCKSHTTPSConnectionPool(host='cars.ksl.com', port=443): Max retries exceeded with url: /listing/5002893 (Caused by SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])")))
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+ERROR:root:Fri, 03 Apr 2020 18:26:04: SOCKSHTTPSConnectionPool(host='cars.ksl.com', port=443): Max retries exceeded with url: /listing/5002893 (Caused by SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])")))
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+ERROR:root:Fri, 03 Apr 2020 18:26:15: SOCKSHTTPSConnectionPool(host='cars.ksl.com', port=443): Max retries exceeded with url: /listing/5002893 (Caused by SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])")))
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0010)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+ERROR:root:Fri, 03 Apr 2020 18:55:01: SOCKSHTTPSConnectionPool(host='cars.ksl.com', port=443): Max retries exceeded with url: /listing/4040448 (Caused by SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])")))
+ERROR:root:Fri, 03 Apr 2020 18:55:23: SOCKSHTTPSConnectionPool(host='cars.ksl.com', port=443): Max retries exceeded with url: /listing/4319308 (Caused by SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])")))
+ERROR:root:Fri, 03 Apr 2020 19:04:59: SOCKSHTTPSConnectionPool(host='cars.ksl.com', port=443): Max retries exceeded with url: /listing/5110228 (Caused by SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])")))
+ERROR:root:Fri, 03 Apr 2020 19:05:03: SOCKSHTTPSConnectionPool(host='cars.ksl.com', port=443): Max retries exceeded with url: /listing/5120977 (Caused by SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])")))
+DEBUG:stem:GETCONF __owningcontrollerprocess (runtime: 0.0000)
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "[WinError 10038] An operation was attempted on something that is not a socket"
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "peek of closed file"
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "peek of closed file"
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "peek of closed file"
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "peek of closed file"
+INFO:stem:Error while receiving a control message (SocketClosed): received exception "peek of closed file"
+WARNING:urllib3.connectionpool:Retrying (Retry(total=9, connect=5, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])"))': /listing/3075677
+ERROR:root:Fri, 03 Apr 2020 19:09:52: SOCKSHTTPSConnectionPool(host='cars.ksl.com', port=443): Max retries exceeded with url: /listing/5196320 (Caused by SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])")))
+WARNING:urllib3.connectionpool:Retrying (Retry(total=9, connect=5, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])"))': /listing/3712922
+WARNING:urllib3.connectionpool:Retrying (Retry(total=9, connect=5, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])"))': /listing/3741150
+WARNING:urllib3.connectionpool:Retrying (Retry(total=9, connect=5, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])"))': /listing/3821300
+WARNING:urllib3.connectionpool:Retrying (Retry(total=9, connect=5, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])"))': /listing/3954052
+ERROR:root:Fri, 03 Apr 2020 19:11:17: SOCKSHTTPSConnectionPool(host='cars.ksl.com', port=443): Max retries exceeded with url: /listing/5219739 (Caused by SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])")))
+WARNING:urllib3.connectionpool:Retrying (Retry(total=9, connect=5, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])"))': /listing/4040448
+WARNING:urllib3.connectionpool:Retrying (Retry(total=9, connect=5, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])"))': /listing/4168506
+ERROR:root:Fri, 03 Apr 2020 19:11:48: SOCKSHTTPSConnectionPool(host='cars.ksl.com', port=443): Max retries exceeded with url: /listing/5225408 (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')])")))
+WARNING:urllib3.connectionpool:Retrying (Retry(total=9, connect=5, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])"))': /listing/4269054
+ERROR:root:Fri, 03 Apr 2020 19:11:56: SOCKSHTTPSConnectionPool(host='cars.ksl.com', port=443): Max retries exceeded with url: /listing/5226422 (Caused by SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])")))
+WARNING:urllib3.connectionpool:Retrying (Retry(total=9, connect=5, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])"))': /listing/3712922
+WARNING:urllib3.connectionpool:Retrying (Retry(total=9, connect=5, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])"))': /listing/3821300
+WARNING:urllib3.connectionpool:Retrying (Retry(total=9, connect=5, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])"))': /listing/4428072
+WARNING:urllib3.connectionpool:Retrying (Retry(total=9, connect=5, read=None, redirect=None, status=None)) after connection broken by 'SSLError(SSLError("read error: Error([('SSL routines', 'ssl3_read_n', 'unexpected eof while reading')])"))': /listing/4733548
