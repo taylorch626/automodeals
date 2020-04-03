@@ -16,7 +16,6 @@ proxy_dict: dictionary of proxy IPs and user agents'''
 # Import libraries
 import time
 import random
-from itertools import cycle
 import pandas as pd
 import numpy as np
 import requests
@@ -27,9 +26,7 @@ from stem import Signal
 from stem.control import Controller
 import psutil
 import os
-
-# Import functions
-from generateProxies import generateProxies
+import logging
 
 # Create sub_functions
 def get_tor_session():
@@ -92,7 +89,7 @@ def favorites_views_updater_tor(cars_df, tor_location, **kwargs):
             print(f'Expected int or float for use_tor but got {type(kwargs["refreshmin"])}. Set to default value of {refreshmin}.')
     else:
         use_tor = 1
-        print(f'No use_tor found. Set to default value of {refreshmin}.')
+        print(f'No use_tor found. Set to default value of {use_tor}.')
                       
         
     # new columns to add if not already there
@@ -108,6 +105,9 @@ def favorites_views_updater_tor(cars_df, tor_location, **kwargs):
         cars_df['favorite_rate'] = np.NaN
     if not 'fav_per_view' in cars_df.columns:
         cars_df['fav_per_view'] = np.NaN
+        
+    # set up log file
+    logging.basicConfig(filename='../errors/tor_error_log.txt')
     
     # conversions to datetime
     orig_dates = cars_df['post_date']
@@ -151,25 +151,38 @@ def favorites_views_updater_tor(cars_df, tor_location, **kwargs):
         views = []
         favorites = []
         working_url = []
+        # import pdb; pdb.set_trace()
         with progressbar.ProgressBar(max_value=len(cars_need_update.index)) as bar:
             for i, ad in cars_need_update.iterrows():
                 # get file, first attempt without tor
                 if not use_tor:
+                    time.sleep(random.random()) # avoid bans
                     ad_response = requests.get(ad['link'], headers = {'User-Agent': user_agent})
                     if ad_response.status_code != 200: # get new IP
                         print(f'IP probably blocked. Running with tor')
                         use_tor = 1
                 if use_tor:
                     # find how long session has been active
+                    tor_ip_attempts = 0
                     if time.time() - tstart > refreshmin * 60:
                         print(f'Renewing Tor session. Exceeded refreshmin = {refreshmin} minutes')
                         renew_connection()
                         tstart = time.time()
                     while True:
-                        ad_response = session.get(ad['link'], headers = {'User-Agent': user_agent})
+                        time.sleep(random.random()) # avoid bans
+                        try:
+                            ad_response = session.get(ad['link'], headers = {'User-Agent': user_agent})
+                        except Exception as tor_exception:
+                            print(tor_exception)
+                            currTime = time.strftime("%a, %d %b %Y %H:%M:%S", time.gmtime(time.time()))
+                            logging.error(f'{currTime}: {tor_exception}')
                         if ad_response.status_code == 200:
                             break
-                        renew_connection() # if status is no good, renew the connection
+                        if ad_response.status_code == 404:
+                            break
+                        tor_ip_attempts += 1
+                        if tor_ip_attempts == 5: # tor doesn't like constantly getting new connection requests
+                            renew_connection() # get a new IP
                 
                 # Parse html
                 pull_ts = pd.to_datetime(time.time(), unit='s')
