@@ -14,22 +14,23 @@ def uploadRepository(newsz, **kwargs):
 	else:
 		dailynm = None
 
-	try:
-		cmd.run("git add data/all_cars.csv", check=True, shell=True)
-		cont = 1
-	except:
-		print('Adding crashed!')
-		# Save to error log
-		crash_df = pd.DataFrame({'timestamp':[str(datetime.now().strftime("%Y-%m-%d %H%M%S"))], 'message':['Git add crash']})
-		if os.path.isfile('errors/git_error_log.csv'):
-			crash_df.to_csv('errors/git_error_log.csv', mode='a', index=False, header=False)
-		else:
-			crash_df.to_csv('errors/git_error_log.csv', index=False)			
-		cont = 0
+	# try:
+		# cmd.run("git add data/all_cars.csv", check=True, shell=True)
+		# cont = 1
+	# except:
+		# print('Adding crashed!')
+		Save to error log
+		# crash_df = pd.DataFrame({'timestamp':[str(datetime.now().strftime("%Y-%m-%d %H%M%S"))], 'message':['Git add crash']})
+		# if os.path.isfile('errors/git_error_log.csv'):
+			# crash_df.to_csv('errors/git_error_log.csv', mode='a', index=False, header=False)
+		# else:
+			# crash_df.to_csv('errors/git_error_log.csv', index=False)			
+		# cont = 0
 		
 	if dailynm:
 		try:
 			cmd.run(f"git add {dailynm}", check=True, shell=True)
+			cont = 1
 		except:
 			print("Couldn't add backup daily csv via git. Add manually.")
 			# Save to error log
@@ -38,6 +39,7 @@ def uploadRepository(newsz, **kwargs):
 				crash_df.to_csv('errors/git_error_log.csv', mode='a', index=False, header=False)
 			else:
 				crash_df.to_csv('errors/git_error_log.csv', index=False)
+			cont = 0
 
 	message = f'{str(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))} - There are now {newsz} cars in all_cars.csv'
 

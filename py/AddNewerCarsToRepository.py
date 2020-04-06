@@ -99,6 +99,6 @@ def AddNewerCarsToRepository():
 	
 	# Save updated dataframe to csv
 
-	all_cars.to_csv('data/all_cars.csv', index=False)
+	# all_cars.to_csv('data/all_cars.csv', index=False) # commented out 4/6/20 to set hard stop point for data analysis for project
 
 	return all_cars
