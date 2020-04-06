@@ -19,7 +19,7 @@ def uploadRepository(newsz, **kwargs):
 		# cont = 1
 	# except:
 		# print('Adding crashed!')
-		Save to error log
+		# Save to error log
 		# crash_df = pd.DataFrame({'timestamp':[str(datetime.now().strftime("%Y-%m-%d %H%M%S"))], 'message':['Git add crash']})
 		# if os.path.isfile('errors/git_error_log.csv'):
 			# crash_df.to_csv('errors/git_error_log.csv', mode='a', index=False, header=False)
