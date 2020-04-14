@@ -67,7 +67,7 @@ def favorites_views_updater_tor_retry(cars_df, tor_location, **kwargs):
         else:
             raise TypeError(f'Expected int for min_age but got {type(kwargs["min_age"])}.')
     else:
-        min_age = 0 # days
+        min_age = 1 # days
         
     if 'min_last_pull' in kwargs.keys():
         if isinstance(kwargs['min_last_pull'],int):
@@ -75,7 +75,7 @@ def favorites_views_updater_tor_retry(cars_df, tor_location, **kwargs):
         else:
             raise TypeError(f'Expected int for min_last_pull but got {type(kwargs["min_last_pull"])}.')
     else:
-        min_last_pull = 20 # days
+        min_last_pull = 2 # days
 
     if 'refreshmin' in kwargs.keys():
         if isinstance(kwargs['refreshmin'],int) or isinstance(kwargs['refreshmin'],float):
@@ -95,17 +95,7 @@ def favorites_views_updater_tor_retry(cars_df, tor_location, **kwargs):
             print(f'Expected int or float for use_tor but got {type(kwargs["use_tor"])}. Set to default value of {use_tor}.')
     else:
         use_tor = 1
-        print(f'No "use_tor" found. Set to default value of {use_tor}.')
-
-    if 'only_new' in kwargs.keys():
-        if isinstance(kwargs['only_new'],int) or isinstance(kwargs['only_new'],bool):
-            only_new = kwargs['only_new']
-        else:
-            only_new = 1
-            print(f'Expected int or float for only_new but got {type(kwargs["only_new"])}. Set to default value of {only_new}.')
-    else:
-        only_new = 0
-        print(f'No "only_new" found. Set to default value of {only_new}.')
+        print(f'No use_tor found. Set to default value of {use_tor}.')
                       
         
     # new columns to add if not already there
@@ -139,15 +129,9 @@ def favorites_views_updater_tor_retry(cars_df, tor_location, **kwargs):
     # find ads that haven't been pulled for more than x days
     min_last_pull_dt = pd.to_timedelta(min_last_pull*60*60*24, unit='seconds') # time in seconds for use with datetime
     no_recent_update = cars_df['lastpull_ts'] < (curr_time - min_last_pull_dt)
-    
-    # find ads that have never been pulled
-    never_pulled = cars_df['views'].isna()
 
-    if only_new:
-        cars_need_update = cars_df[never_pulled & cars_df['workingURL']]
-    else:
-        # subselect ads that need updating based on previous criteria and having a working URL last time it was checked
-        cars_need_update = cars_df[old_ads & no_recent_update & cars_df['workingURL']]
+    # subselect ads that need updating based on previous criteria and having a working URL last time it was checked
+    cars_need_update = cars_df[old_ads & no_recent_update & cars_df['workingURL']]
 
     user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36'
     
@@ -173,9 +157,8 @@ def favorites_views_updater_tor_retry(cars_df, tor_location, **kwargs):
         views = []
         favorites = []
         working_url = []
-#        import pdb; pdb.set_trace()
+        # import pdb; pdb.set_trace()
         with progressbar.ProgressBar(max_value=len(cars_need_update.index)) as bar:
-            count = 0
             for i, ad in cars_need_update.iterrows():
                 # get file, first attempt without tor
                 if not use_tor:
@@ -227,22 +210,20 @@ def favorites_views_updater_tor_retry(cars_df, tor_location, **kwargs):
                     # get favorites
                     favoritecount = int(ad_soup.select('span.vdp-info-value')[2].text.split()[0])
                     favorites.append(favoritecount)
-                    
-                count += 1
                 try:
-                    bar.update(count)
+                    bar.update(i)
                 except:
                     pass
-        print('Finished pulling articles. Merging new data.')
+                
         cars_updated = cars_need_update
         cars_updated['views'] = views
         cars_updated['favorites'] = favorites
         cars_updated['lastpull_ts'] = last_pull
         cars_updated['workingURL'] = working_url
-        cars_updated['fav_per_view'] = cars_updated['favorites'] / cars_updated['views']
+#        cars_updated['fav_per_view'] = cars_updated['favorites'] / cars_updated['views']
         # rates calculated per day
-        cars_updated['view_rate'] = cars_updated['views'] / ((cars_updated['lastpull_ts'] - cars_updated['post_date']).dt.total_seconds()*60*60*24)
-        cars_updated['favorite_rate'] = cars_updated['favorites'] / ((cars_updated['lastpull_ts'] - cars_updated['post_date']).dt.total_seconds()*60*60*24)
+#        cars_updated['view_rate'] = cars_updated['views'] / ((cars_updated['lastpull_ts'] - cars_updated['post_date']).dt.total_seconds()*60*60*24)
+#        cars_updated['favorite_rate'] = cars_updated['favorites'] / ((cars_updated['lastpull_ts'] - cars_updated['post_date']).dt.total_seconds()*60*60*24)
     
         cars_df.update(cars_updated)
     else:
