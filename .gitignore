@@ -103,3 +103,6 @@ ENV/
 
 # Custom log file
 dailyupdatetask.log
+
+# Gmaps API key
+gmaps_api_key.txt
