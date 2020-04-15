@@ -19,4 +19,4 @@ cars_merged = cars_link.combine_first(cars_fav_link)
 
 cars_merged = cars_merged.reset_index()
 
-cars_merged.to_csv('../data/all_cars_final.csv', index=False)
+cars_merged.to_csv('../data/all_cars.csv', index=False)
