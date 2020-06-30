@@ -1,7 +1,0 @@
-div.cao-integration > img[style] {
-  height: 15px !important; /* So much for not using important. Thanks CAO for having inline styles. /s */
-}
-
-div.cao-integration > img:hover {
-  cursor: pointer;
-}
